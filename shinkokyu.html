@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>チャッピー＆サリーのしあわせ深呼吸</title>
+
+  <style>
+    body{
+      font-family:"Hiragino Kaku Gothic ProN", sans-serif;
+      text-align:center;
+      background:#fff0f5;
+      color:#6b4b2a;
+      margin:0;
+      padding:20px 14px 40px;
+    }
+
+    .main-card{
+      width:92%;
+      max-width:620px;
+      margin:0 auto;
+      background:rgba(255,255,255,0.94);
+      border-radius:28px;
+      padding:22px 16px 26px;
+      box-shadow:0 6px 18px rgba(0,0,0,0.08);
+      box-sizing:border-box;
+    }
+
+    h1{
+      font-size:28px;
+      line-height:1.4;
+      margin:0 0 16px;
+      color:#6b4b2a;
+    }
+
+    .image-wrap{
+      position:relative;
+      width:94%;
+      max-width:520px;
+      margin:0 auto 18px;
+    }
+
+    .breath-img{
+      width:100%;
+      border-radius:22px;
+      display:block;
+      box-shadow:0 8px 18px rgba(0,0,0,0.12);
+      opacity:1;
+      transform:scale(1);
+      transition:
+        opacity 0.6s ease,
+        transform 4s ease;
+    }
+
+    .breath-img.fade{
+      opacity:0;
+    }
+
+    .breath-img.inhale{
+      transform:scale(1.04);
+    }
+
+    .breath-img.exhale{
+      transform:scale(0.98);
+      transition-duration:6s;
+    }
+
+    .sparkle{
+      position:absolute;
+      font-size:28px;
+      opacity:0;
+      pointer-events:none;
+      animation:sparkle 2.2s ease-in-out infinite;
+    }
+
+    .sparkle.one{
+      top:12%;
+      left:10%;
+    }
+
+    .sparkle.two{
+      top:18%;
+      right:10%;
+      animation-delay:0.6s;
+    }
+
+    .sparkle.three{
+      bottom:14%;
+      right:16%;
+      animation-delay:1.1s;
+    }
+
+    @keyframes sparkle{
+      0%,100%{
+        opacity:0;
+        transform:scale(0.7) rotate(0deg);
+      }
+      50%{
+        opacity:1;
+        transform:scale(1.15) rotate(12deg);
+      }
+    }
+
+    .message-box{
+      width:88%;
+      max-width:480px;
+      margin:0 auto 16px;
+      padding:16px 14px;
+      background:#fffdf8;
+      border-radius:22px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.05);
+      box-sizing:border-box;
+    }
+
+    .message{
+      font-size:19px;
+      line-height:1.7;
+      min-height:96px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      white-space:pre-line;
+    }
+
+    .progress{
+      font-size:14px;
+      color:#9a7b5d;
+      margin:2px 0 10px;
+      min-height:22px;
+    }
+
+    .button-wrap{
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:8px;
+    }
+
+    button{
+      padding:14px 22px;
+      border:none;
+      border-radius:30px;
+      color:white;
+      font-size:18px;
+      cursor:pointer;
+      box-shadow:0 4px 10px rgba(0,0,0,0.08);
+      min-width:180px;
+    }
+
+    .start-btn{
+      background:linear-gradient(135deg,#8fd8c8,#9fc8ff,#c5b3ff);
+    }
+
+    .again-btn{
+      background:linear-gradient(135deg,#f6b1c7,#eab0f5);
+    }
+
+    .back-btn{
+      background:linear-gradient(135deg,#ffbe73,#f6a65d);
+    }
+
+    .hidden{
+      display:none !important;
+    }
+
+    @media(max-width:480px){
+      h1{
+        font-size:24px;
+      }
+
+      .message{
+        font-size:17px;
+        min-height:88px;
+      }
+
+      button{
+        font-size:16px;
+        min-width:160px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="main-card">
+
+    <h1>🌿 チャッピー＆サリーの<br>しあわせ深呼吸 🌈</h1>
+
+    <div class="image-wrap">
+      <img
+        id="breathImg"
+        class="breath-img"
+        src="https://raw.githubusercontent.com/Chappy-Sally/chappy-sally-images/main/covers/CS_shinkokyu.png"
+        alt="チャッピー＆サリーのしあわせ深呼吸"
+      >
+
+      <div id="sparkles" class="hidden">
+        <span class="sparkle one">✨</span>
+        <span class="sparkle two">✨</span>
+        <span class="sparkle three">✨</span>
+      </div>
+    </div>
+
+    <div class="message-box">
+      <div id="breathMessage" class="message">うまくできなくても大丈夫😊
+
+チャッピーとサリーと一緒に
+ゆっくり深呼吸してみよう🌿</div>
+    </div>
+
+    <div id="progressText" class="progress"></div>
+
+    <div class="button-wrap">
+      <button
+        id="startBtn"
+        class="start-btn"
+        onclick="startBreathing()"
+      >
+        🌿 深呼吸をはじめる
+      </button>
+
+      <button
+        id="againBtn"
+        class="again-btn hidden"
+        onclick="startBreathing()"
+      >
+        🌿 もう一度深呼吸する
+      </button>
+
+      <button
+        class="back-btn"
+        onclick="location.href='index.html'"
+      >
+         🏠️ メニューへ戻る
+      </button>
+    </div>
+
+  </div>
+
+  <script>
+    const imageBase =
+      "https://raw.githubusercontent.com/Chappy-Sally/chappy-sally-images/main/covers/";
+
+    const steps = [
+      {
+        image:"CS_shinkokyu_suu.png",
+        message:"ゆっくり\nすぅ〜〜🌿",
+        progress:"1回目・吸って",
+        duration:4000,
+        motion:"inhale"
+      },
+      {
+        image:"CS_shinkokyu_haku.png",
+        message:"力をぬいて\nはぁ〜〜🌈",
+        progress:"1回目・吐いて",
+        duration:6000,
+        motion:"exhale"
+      },
+      {
+        image:"CS_shinkokyu_suu.png",
+        message:"もう一度\nゆっくり すぅ〜〜🌿",
+        progress:"2回目・吸って",
+        duration:4000,
+        motion:"inhale"
+      },
+      {
+        image:"CS_shinkokyu_haku.png",
+        message:"ゆっくり\nはぁ〜〜🌈",
+        progress:"2回目・吐いて",
+        duration:6000,
+        motion:"exhale"
+      },
+      {
+        image:"CS_shinkokyu_cs.png",
+        message:"うふふっ🤭✨\n\n今日も大丈夫🌈\n\nゆっくり深呼吸\nできたね😊💕",
+        progress:"しあわせ深呼吸できました🌿",
+        duration:0,
+        motion:""
+      }
+    ];
+
+    let currentStep = 0;
+    let timeoutId = null;
+
+    const breathImg = document.getElementById("breathImg");
+    const breathMessage = document.getElementById("breathMessage");
+    const progressText = document.getElementById("progressText");
+    const startBtn = document.getElementById("startBtn");
+    const againBtn = document.getElementById("againBtn");
+    const sparkles = document.getElementById("sparkles");
+
+    function startBreathing(){
+      clearTimeout(timeoutId);
+
+      currentStep = 0;
+
+      startBtn.classList.add("hidden");
+      againBtn.classList.add("hidden");
+      sparkles.classList.add("hidden");
+
+      showStep();
+    }
+
+    function showStep(){
+      const step = steps[currentStep];
+
+      changeImage(step.image, step.motion);
+
+      breathMessage.textContent = step.message;
+      progressText.textContent = step.progress;
+
+      if(currentStep === steps.length - 1){
+        sparkles.classList.remove("hidden");
+        againBtn.classList.remove("hidden");
+        return;
+      }
+
+      timeoutId = setTimeout(() => {
+        currentStep++;
+        showStep();
+      }, step.duration);
+    }
+
+    function changeImage(fileName, motion){
+      breathImg.classList.add("fade");
+
+      setTimeout(() => {
+        breathImg.src = imageBase + fileName;
+
+        breathImg.classList.remove("inhale", "exhale");
+
+        if(motion){
+          breathImg.classList.add(motion);
+        }
+
+        breathImg.classList.remove("fade");
+      }, 350);
+    }
+  </script>
+
+</body>
+</html>
