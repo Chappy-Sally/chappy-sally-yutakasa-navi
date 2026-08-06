@@ -1,36 +1,38 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
 
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1, viewport-fit=cover"
-  />
+  >
 
   <title>チャッピー＆サリーの豊かさを育てるナビ</title>
 
   <meta
     name="description"
-    content="今ある豊かさに気づくやさしい時間。チャッピー＆サリーと一緒に、今日の豊かさ・存在給・視点の切り替え・安心に戻る時間を育てるアプリです。"
-  />
+    content="今ある豊かさに気づき、安心と豊かさをやさしく育てるアプリです。"
+  >
 
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="breath.css">
+
+  <script src="script.js" defer></script>
+  <script src="breath.js" defer></script>
+  <script src="storage.js" defer></script>
 </head>
 
 <body>
 
   <div class="app">
 
-    <!-- =========================
-         ホーム画面
-    ========================== -->
+    <!-- ホーム画面 -->
     <main id="homeScreen" class="screen active-screen">
 
       <header class="hero-card">
-
         <h1>
-          チャッピー＆サリーの<br />
+          チャッピー＆サリーの<br>
           豊かさを育てるナビ
         </h1>
 
@@ -38,36 +40,32 @@
           src="https://raw.githubusercontent.com/Chappy-Sally/chappy-sally-images/main/covers/cs_Yutakasa.png"
           alt="チャッピー＆サリーの豊かさを育てるナビ"
           class="cover-image"
-        />
+        >
 
         <p class="lead-text">
-          今ある豊かさに気づく やさしい時間🌿<br />
-          足りないから「もうある」へ。<br />
-          チャッピー＆サリーと一緒に、<br />
+          今ある豊かさに気づく やさしい時間🌿<br>
+          足りないから「もうある」へ。<br>
+          チャッピー＆サリーと一緒に、<br>
           今日の豊かさを見つけよう😊
         </p>
-
       </header>
 
 
       <section class="message-card">
-
         <h2>☀️ おはよ〜メッセージ</h2>
 
         <p id="todayDate" class="today-date"></p>
 
         <div class="message-box">
-
           <p id="morningMessage" class="main-message">
-            おはよ〜😊<br />
+            おはよ〜😊<br>
             今日も、もうある豊かさを見つけにいこう🌈
           </p>
 
           <p id="morningSubMessage" class="sub-message">
-            小さな「うれしい」「ありがたい」「助かった」も、<br />
+            小さな「うれしい」「ありがたい」「助かった」も、<br>
             ちゃんと豊かさだよ🤭
           </p>
-
         </div>
 
         <button
@@ -77,12 +75,10 @@
         >
           メッセージをもう一度みる
         </button>
-
       </section>
 
 
       <nav class="menu-card">
-
         <h2>🌱 今日のメニュー</h2>
 
         <div class="menu-grid">
@@ -136,130 +132,100 @@
           </button>
 
         </div>
-
       </nav>
 
 
       <footer class="footer-card">
-
         <p>
-          たくさんなくても大丈夫。<br />
-          今日見つけた小さな豊かさが、<br />
+          たくさんなくても大丈夫。<br>
+          今日見つけた小さな豊かさが、<br>
           しあわせの種になるよ🌼
         </p>
-
       </footer>
 
     </main>
 
 
-
-    <!-- =========================
-         今日の3つのワーク画面
-    ========================== -->
+    <!-- 今日の3つのワーク -->
     <section id="workScreen" class="screen">
 
       <div class="content-card">
-
         <h2>✨ 今日の3つのワーク</h2>
 
         <p class="section-text">
-          「もうある」を見つけるための、<br />
+          「もうある」を見つけるための、<br>
           やさしい3つのワークだよ😊
         </p>
 
 
         <div class="work-block">
-
           <h3>① 今日すでにある豊かさ</h3>
 
           <p class="mini-text">
-            今あるもの、受け取っているもの、<br />
+            今あるもの、受け取っているもの、<br>
             助かっていることを3つ書いてみよう。
           </p>
 
-          <label for="arutakasa1">
-            1つめ
-          </label>
-
+          <label for="arutakasa1">1つめ</label>
           <input
             type="text"
             id="arutakasa1"
             placeholder="例：今日も安心して眠れた"
-          />
+          >
 
-
-          <label for="arutakasa2">
-            2つめ
-          </label>
-
+          <label for="arutakasa2">2つめ</label>
           <input
             type="text"
             id="arutakasa2"
             placeholder="例：飲めるお水がある"
-          />
+          >
 
-
-          <label for="arutakasa3">
-            3つめ
-          </label>
-
+          <label for="arutakasa3">3つめ</label>
           <input
             type="text"
             id="arutakasa3"
             placeholder="例：話せる人がいる"
-          />
-
+          >
         </div>
 
 
         <div class="work-block">
-
           <h3>② 今日あったいいこと</h3>
 
           <p class="mini-text">
-            うれしかったこと、助かったこと、<br />
+            うれしかったこと、助かったこと、<br>
             ちょっと笑えたことを書いてみよう。
           </p>
 
-          <label for="goodThing">
-            今日のいいこと
-          </label>
+          <label for="goodThing">今日のいいこと</label>
 
           <textarea
             id="goodThing"
             rows="5"
-            placeholder="例：お茶がおいしかった。信号が青でスムーズだった。アイデアが浮かんだ。"
+            placeholder="例：お茶がおいしかった。信号が青だった。アイデアが浮かんだ。"
           ></textarea>
-
         </div>
 
 
         <div class="work-block">
-
           <h3>③ 今日の存在給</h3>
 
           <p class="mini-text">
-            今日、あなたが「いるだけ」<br />
-            「生きているだけ」で生まれた豊かさを<br />
-            見つけてみよう。
+            今日、あなたがいることで生まれた<br>
+            豊かさを見つけてみよう😊
           </p>
 
-          <label for="sonzaikyu">
-            今日の存在給
-          </label>
+          <label for="sonzaikyu">今日の存在給</label>
 
           <textarea
             id="sonzaikyu"
             rows="5"
-            placeholder="例：笑顔であいさつした。体を休ませた。今日もここにいた。アイデアをひとつ思いついた。"
+            placeholder="例：笑顔であいさつした。体を休ませた。今日もここにいた。"
           ></textarea>
-
         </div>
 
 
         <div class="page-buttons">
-
           <button
             class="back-home-btn"
             type="button"
@@ -275,81 +241,56 @@
           >
             今日のまとめへ →
           </button>
-
         </div>
-
       </div>
 
     </section>
 
 
-
-    <!-- =========================
-         深呼吸画面
-    ========================== -->
+    <!-- 深呼吸 -->
     <section id="breathScreen" class="screen">
 
       <div class="content-card breath-page">
-
         <h2>
-          🌿 チャッピー＆サリーの<br />
+          🌿 チャッピー＆サリーの<br>
           しあわせ深呼吸
         </h2>
 
         <p class="section-text">
-          うまくできなくても大丈夫😊<br />
+          うまくできなくても大丈夫😊<br>
           今すぐ全部解決しなくても大丈夫だよ。
         </p>
 
 
         <div class="image-wrap">
-
           <img
             id="breathImg"
             class="breath-img"
             src="https://raw.githubusercontent.com/Chappy-Sally/chappy-sally-images/main/covers/CS_shinkokyu.png"
             alt="チャッピー＆サリーのしあわせ深呼吸"
-          />
+          >
 
           <div id="sparkles" class="hidden">
-
-            <span class="sparkle one">
-              ✨
-            </span>
-
-            <span class="sparkle two">
-              ✨
-            </span>
-
-            <span class="sparkle three">
-              ✨
-            </span>
-
+            <span class="sparkle one">✨</span>
+            <span class="sparkle two">✨</span>
+            <span class="sparkle three">✨</span>
           </div>
-
         </div>
 
 
         <div class="breath-message-box">
-
           <div id="breathMessage" class="breath-message">
-            うまくできなくても大丈夫😊
+うまくできなくても大丈夫😊
 
-            チャッピーとサリーと一緒に
-            ゆっくり深呼吸してみよう🌿
+チャッピーとサリーと一緒に
+ゆっくり深呼吸してみよう🌿
           </div>
-
         </div>
 
-
-        <div
-          id="progressText"
-          class="progress"
-        ></div>
+        <div id="progressText" class="progress"></div>
 
 
         <div class="breath-button-wrap">
-
           <button
             id="startBtn"
             class="start-btn"
@@ -365,12 +306,10 @@
           >
             🌿 もう一度深呼吸する
           </button>
-
         </div>
 
 
         <div class="work-block">
-
           <label for="nowAnxiety">
             今、不安に見えていること
           </label>
@@ -381,7 +320,6 @@
             placeholder="例：お金のことが心配。支払いが近くて不安。"
           ></textarea>
 
-
           <label for="nowSafety">
             今ある安心
           </label>
@@ -389,14 +327,12 @@
           <textarea
             id="nowSafety"
             rows="4"
-            placeholder="例：今日は眠る場所がある。相談できる人がいる。今すぐ全部じゃなくても大丈夫。"
+            placeholder="例：今日は眠る場所がある。相談できる人がいる。"
           ></textarea>
-
         </div>
 
 
         <div class="page-buttons">
-
           <button
             class="back-home-btn"
             type="button"
@@ -404,59 +340,39 @@
           >
             🏠 メニューへ戻る
           </button>
-
         </div>
-
       </div>
 
     </section>
 
 
-
-    <!-- =========================
-         視点を変える画面
-    ========================== -->
+    <!-- 視点を変える -->
     <section id="shiftScreen" class="screen">
 
       <div class="content-card">
-
         <h2>🔄 視点を変えてみる</h2>
 
         <p class="section-text">
-          出来事は同じでも、見方が変わると<br />
+          出来事は同じでも、見方が変わると<br>
           気持ちがやわらぐことがあるよ🌈
         </p>
 
 
         <div class="example-box">
-
-          <p>
-            「こんなに使っちゃった」
-          </p>
-
-          <p class="arrow-text">
-            ↓
-          </p>
-
-          <p>
-            「それだけのものを受け取れた」
-          </p>
-
+          <p>「こんなに使っちゃった」</p>
+          <p class="arrow-text">↓</p>
+          <p>「それだけのものを受け取れた」</p>
         </div>
 
 
         <div class="work-block">
-
-          <label for="beforeShift">
-            今の見方
-          </label>
+          <label for="beforeShift">今の見方</label>
 
           <textarea
             id="beforeShift"
             rows="4"
             placeholder="例：こんなに使っちゃった。今日は何もできなかった。"
           ></textarea>
-
 
           <label for="afterShift">
             別の角度から見ると？
@@ -465,9 +381,8 @@
           <textarea
             id="afterShift"
             rows="5"
-            placeholder="例：それだけ受け取れた。今日は体を休ませることができた。必要なものを選べた。"
+            placeholder="例：それだけ受け取れた。今日は体を休ませることができた。"
           ></textarea>
-
 
           <label for="shiftNotice">
             気づいたこと
@@ -476,14 +391,12 @@
           <textarea
             id="shiftNotice"
             rows="4"
-            placeholder="例：私は減ったことばかり見ていたけれど、受け取ったものもあった。"
+            placeholder="例：減ったことばかり見ていたけれど、受け取ったものもあった。"
           ></textarea>
-
         </div>
 
 
         <div class="page-buttons">
-
           <button
             class="back-home-btn"
             type="button"
@@ -491,32 +404,25 @@
           >
             🏠 メニューへ戻る
           </button>
-
         </div>
-
       </div>
 
     </section>
 
 
-
-    <!-- =========================
-         勝手に設定していた役割画面
-    ========================== -->
+    <!-- 勝手に設定していた役割 -->
     <section id="roleScreen" class="screen">
 
       <div class="content-card">
-
         <h2>🪞 勝手に設定していた役割</h2>
 
         <p class="section-text">
-          人やお金や仕事に、知らないうちに<br />
+          人やお金や仕事に、知らないうちに<br>
           どんな役割を持たせていたか見てみよう😊
         </p>
 
 
         <div class="work-block">
-
           <label for="roleTarget">
             相手・もの・こと
           </label>
@@ -525,8 +431,7 @@
             type="text"
             id="roleTarget"
             placeholder="例：お金、仕事、お客様、家族"
-          />
-
+          >
 
           <label for="roleSet">
             私が勝手に設定していた役割
@@ -535,9 +440,8 @@
           <textarea
             id="roleSet"
             rows="4"
-            placeholder="例：お金は私を安心させてくれるもの。仕事は我慢して続けるもの。"
+            placeholder="例：お金は私を安心させてくれるもの。"
           ></textarea>
-
 
           <label for="roleWant">
             本当はどうしてほしかった？
@@ -546,9 +450,8 @@
           <textarea
             id="roleWant"
             rows="4"
-            placeholder="例：少ない日でも安心したかった。無理せず豊かさを感じたかった。"
+            placeholder="例：お金が少ない日でも安心したかった。"
           ></textarea>
-
 
           <label for="roleFear">
             役割どおりじゃないと何が不安？
@@ -557,9 +460,8 @@
           <textarea
             id="roleFear"
             rows="4"
-            placeholder="例：私は大丈夫じゃない気がする。価値がない気がする。"
+            placeholder="例：私は大丈夫じゃない気がする。"
           ></textarea>
-
 
           <label for="roleCare">
             今の私が自分に渡せる安心
@@ -568,14 +470,12 @@
           <textarea
             id="roleCare"
             rows="5"
-            placeholder="例：今すぐ完璧じゃなくても大丈夫。私は私を責めなくていい。"
+            placeholder="例：今すぐ完璧じゃなくても大丈夫。"
           ></textarea>
-
         </div>
 
 
         <div class="page-buttons">
-
           <button
             class="back-home-btn"
             type="button"
@@ -583,42 +483,33 @@
           >
             🏠 メニューへ戻る
           </button>
-
         </div>
-
       </div>
 
     </section>
 
 
-
-    <!-- =========================
-         お金の受け取りメモ画面
-    ========================== -->
+    <!-- 使ったお金の受け取りメモ -->
     <section id="moneyScreen" class="screen">
 
       <div class="content-card">
-
         <h2>💰 使ったお金の受け取りメモ</h2>
 
         <p class="section-text">
-          「使った」だけで終わらせず、<br />
+          「使った」だけで終わらせず、<br>
           何を受け取ったかも見てみよう🤭
         </p>
 
 
         <div class="money-message-box">
-
           <p>
-            レシートは、減った金額だけじゃなくて<br />
+            レシートは、減った金額だけじゃなくて<br>
             手にできた豊かさの記録でもあるよ✨
           </p>
-
         </div>
 
 
         <div class="work-block">
-
           <label for="moneyAmount">
             今日使った金額
           </label>
@@ -628,8 +519,7 @@
             id="moneyAmount"
             inputmode="numeric"
             placeholder="例：1200円"
-          />
-
+          >
 
           <label for="moneyReceived">
             そのお金で受け取ったもの
@@ -638,9 +528,8 @@
           <textarea
             id="moneyReceived"
             rows="5"
-            placeholder="例：おいしいランチ、安心、便利さ、癒し、楽しさ"
+            placeholder="例：おいしい食事、安心、便利さ、癒し、楽しさ"
           ></textarea>
-
 
           <label for="moneyFeeling">
             その時の気持ち
@@ -652,40 +541,25 @@
             placeholder="例：満たされた。助かった。うれしかった。"
           ></textarea>
 
-
           <label for="moneyAgain">
             また選びたい？
           </label>
 
           <select id="moneyAgain">
-
-            <option value="">
-              選んでね
-            </option>
-
-            <option value="また選びたい">
-              また選びたい
-            </option>
-
-            <option value="必要だった">
-              必要だった
-            </option>
-
+            <option value="">選んでね</option>
+            <option value="また選びたい">また選びたい</option>
+            <option value="必要だった">必要だった</option>
             <option value="なくてもよかったかも">
               なくてもよかったかも
             </option>
-
             <option value="次は別の使い方をしたい">
               次は別の使い方をしたい
             </option>
-
           </select>
-
         </div>
 
 
         <div class="page-buttons">
-
           <button
             class="back-home-btn"
             type="button"
@@ -701,32 +575,25 @@
           >
             今日のまとめへ →
           </button>
-
         </div>
-
       </div>
 
     </section>
 
 
-
-    <!-- =========================
-         今日のまとめ画面
-    ========================== -->
+    <!-- 今日のまとめ -->
     <section id="summaryScreen" class="screen">
 
       <div class="content-card">
-
         <h2>📝 今日のまとめ</h2>
 
         <p class="section-text">
-          今日見つけた豊かさを、<br />
+          今日見つけた豊かさを、<br>
           やさしく振り返ってみよう✨
         </p>
 
 
         <div class="work-block">
-
           <label for="todayGrowth">
             今日の豊かさの気づき
           </label>
@@ -736,7 +603,6 @@
             rows="5"
             placeholder="例：足りないと思っていたけど、今日もちゃんと受け取っていた。"
           ></textarea>
-
 
           <label for="todayMeter">
             今日の豊かさ度
@@ -749,26 +615,22 @@
             max="5"
             step="1"
             value="3"
-          />
+          >
 
           <p id="meterText" class="meter-text">
             3 / 5
           </p>
-
         </div>
 
 
         <div class="summary-message">
-
           <p id="closingMessage">
             今日もちゃんと、豊かさはあったね😊🌱
           </p>
-
         </div>
 
 
         <div class="action-buttons">
-
           <button
             id="saveBtn"
             class="main-btn"
@@ -792,9 +654,7 @@
           >
             入力をリセット
           </button>
-
         </div>
-
 
         <div
           id="noticeMessage"
@@ -804,7 +664,6 @@
 
 
         <div class="page-buttons">
-
           <button
             class="back-home-btn"
             type="button"
@@ -812,17 +671,12 @@
           >
             🏠 メニューへ戻る
           </button>
-
         </div>
-
       </div>
 
     </section>
 
   </div>
 
-
-  <script src="script.js"></script>
-
 </body>
-  </html>
+</html>
