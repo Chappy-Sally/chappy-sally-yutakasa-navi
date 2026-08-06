@@ -8,11 +8,13 @@
     content="width=device-width, initial-scale=1, viewport-fit=cover"
   >
 
-  <title>チャッピー＆サリーの豊かさを育てるナビ</title>
+  <title>
+    チャッピー＆サリーのお金の不安を安心に戻すナビ
+  </title>
 
   <meta
     name="description"
-    content="今ある豊かさに気づき、安心と豊かさをやさしく育てるアプリです。"
+    content="お金の不安や心配をやさしく整理して安心に戻り、そのあとで今ある豊かさを育てるナビです。"
   >
 
   <link rel="stylesheet" href="style.css">
@@ -25,38 +27,43 @@
 
   <div class="app">
 
-    <!-- 表紙 -->
+    <!-- =====================================
+         表紙
+    ====================================== -->
     <header class="hero-card">
 
       <h1>
         チャッピー＆サリーの<br>
-        豊かさを育てるナビ
+        お金の不安を<br>
+        安心に戻すナビ
       </h1>
 
       <img
         src="https://raw.githubusercontent.com/Chappy-Sally/chappy-sally-images/main/covers/cs_Yutakasa.png"
-        alt="チャッピー＆サリーの豊かさを育てるナビ"
+        alt="チャッピー＆サリーのお金の不安を安心に戻すナビ"
         class="cover-image"
       >
 
       <p class="lead-text">
-        今ある豊かさに気づく<br>
-        やさしい時間🌿
+        お金の不安をひとりで抱えず、<br>
+        やさしく整理する時間🌿
       </p>
 
       <p class="hero-message">
-        足りないから「もうある」へ。<br>
-        チャッピー＆サリーと一緒に、<br>
-        今日の豊かさを見つけよう😊
+        不安を無理に消さなくても大丈夫。<br>
+        今の気持ちや分かっていることを整理して、<br>
+        少しずつ安心に戻っていこう😊
       </p>
 
     </header>
 
 
-    <!-- 朝のメッセージ -->
+    <!-- =====================================
+         はじめのメッセージ
+    ====================================== -->
     <section class="message-card">
 
-      <h2>☀️ おはよ〜メッセージ</h2>
+      <h2>🌿 今の気持ちに近いところから</h2>
 
       <p
         id="todayDate"
@@ -65,159 +72,77 @@
 
       <div class="message-box">
 
-        <p
-          id="morningMessage"
-          class="main-message"
-        >
-          おはよ〜😊<br>
-          今日も、もうある豊かさを<br>
-          見つけにいこう🌈
+        <p class="main-message">
+          お金のことが気になった時は、<br>
+          ひとりで答えを出さなくても大丈夫だよ😊
         </p>
 
-        <p
-          id="morningSubMessage"
-          class="sub-message"
-        >
-          小さな「うれしい」も、<br>
-          ちゃんと豊かさだよ🤭
+        <p class="sub-message">
+          今知りたいことや、気になっていることから<br>
+          自由に選んで始めてね🐶🌈
         </p>
 
       </div>
-
-      <button
-        id="changeMessageBtn"
-        class="sub-btn"
-        type="button"
-      >
-        メッセージをもう一度みる
-      </button>
 
     </section>
 
 
-    <!-- 豊かさミッション -->
-    <section class="mission-card">
-
-      <h2>✨ 今日の豊かさミッション</h2>
-
-      <p class="mission-intro">
-        今日の暮らしの中に隠れている<br>
-        豊かさを探しにいこう🤭🌱
-      </p>
-
-      <div class="mission-box">
-
-        <p class="mission-label">
-          今日のミッション
-        </p>
-
-        <p
-          id="missionText"
-          class="mission-text"
-        >
-          今日、無料で受け取った豊かさを<br>
-          ひとつ見つけてみよう😊
-        </p>
-
-      </div>
-
-      <div class="mission-buttons">
-
-        <button
-          id="changeMissionBtn"
-          class="mission-change-btn"
-          type="button"
-        >
-          🎁 別のミッションをみる
-        </button>
-
-        <button
-          id="completeMissionBtn"
-          class="mission-complete-btn"
-          type="button"
-        >
-          🌱 できたよ！
-        </button>
-
-      </div>
-
-      <div class="coin-box">
-
-        <span>💰 豊かさコイン</span>
-
-        <strong id="coinCount">
-          0
-        </strong>
-
-        <span>枚</span>
-
-      </div>
-
-      <p
-        id="missionResult"
-        class="mission-result"
-        aria-live="polite"
-      ></p>
-
-    </section>
-
-
-    <!-- メニュー -->
+    <!-- =====================================
+         4つの入口
+    ====================================== -->
     <nav class="menu-card">
 
-      <h2>🌱 今日のメニュー</h2>
+      <h2>💰 どこから始める？</h2>
+
+      <p class="mission-intro">
+        順番どおりでなくても大丈夫。<br>
+        今のあなたに合うところをタップしてね😊
+      </p>
 
       <div class="menu-grid">
 
+        <!-- 1 -->
         <a
-          href="work.html"
+          href="money-about.html"
           class="menu-btn"
         >
-          ✨ 今日の3つのワーク
+          <span>
+            💰 お金って<br>
+            なんだろう？
+          </span>
         </a>
 
+        <!-- 2 -->
         <a
-          href="breath.html"
+          href="money-image.html"
           class="menu-btn"
         >
-          🌿 深呼吸して安心に戻る
+          <span>
+            💭 お金って、あなたにとって<br>
+            どんな存在？
+          </span>
         </a>
 
+        <!-- 3 -->
         <a
-          href="shift.html"
+          href="money-anxiety.html"
           class="menu-btn"
         >
-          🔄 視点を変えてみる
+          <span>
+            🌿 お金のことで<br>
+            不安になることはありますか？
+          </span>
         </a>
 
+        <!-- 4 -->
         <a
-          href="role.html"
+          href="abundance.html"
           class="menu-btn"
         >
-          🪞 勝手に設定していた役割
-        </a>
-
-        <a
-          href="money.html"
-          class="menu-btn"
-        >
-          💰 使ったお金の<br>
-          受け取りメモ
-        </a>
-
-        <a
-          href="summary.html"
-          class="menu-btn"
-        >
-          📝 今日のまとめ
-        </a>
-
-        <a
-          href="chat.html"
-          class="menu-btn chat-menu-btn"
-        >
-          🐶 チャッピーに<br>
-          話してみる
+          <span>
+            🌱 安心に戻ったら、<br>
+            豊かさを育ててみよう
+          </span>
         </a>
 
       </div>
@@ -225,13 +150,50 @@
     </nav>
 
 
-    <!-- フッター -->
+    <!-- =====================================
+         深呼吸の案内
+    ====================================== -->
+    <section class="mission-card">
+
+      <h2>🌿 不安が強い時は</h2>
+
+      <p class="mission-intro">
+        考える前に、チャッピー＆サリーと<br>
+        ゆっくり深呼吸してみよう😊
+      </p>
+
+      <div class="mission-box">
+
+        <p class="mission-text">
+          今すぐ全部を解決しなくても大丈夫。<br>
+          まずは心を少し休ませよう🌈
+        </p>
+
+      </div>
+
+      <div class="mission-buttons">
+
+        <a
+          href="breath.html"
+          class="next-btn"
+        >
+          🌿 しあわせ深呼吸をする
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================
+         フッター
+    ====================================== -->
     <footer class="footer-card">
 
       <p>
-        たくさんなくても大丈夫。<br>
-        今日見つけた小さな豊かさが、<br>
-        しあわせの種になるよ🌼
+        不安を整理して安心に戻れたら、<br>
+        今あるものや受け取っているものも<br>
+        少しずつ見えてくるよ😊🌱
       </p>
 
     </footer>
