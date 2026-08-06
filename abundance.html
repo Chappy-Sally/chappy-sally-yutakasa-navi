@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  >
+
+  <title>
+    豊かさを育ててみよう｜お金の不安を安心に戻すナビ
+  </title>
+
+  <meta
+    name="description"
+    content="お金の不安を整理して安心に戻ったあと、今あるもの、受け取っているもの、自分が生み出している豊かさに気づくページです。"
+  >
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="pages.css">
+
+  <script src="storage.js" defer></script>
+</head>
+
+<body>
+
+  <div class="app">
+
+    <main class="content-card">
+
+      <!-- ページタイトル -->
+      <header class="page-header">
+
+        <p class="page-label">
+          チャッピー＆サリーの<br>
+          お金の不安を安心に戻すナビ
+        </p>
+
+        <h1 class="page-title">
+          🌱 安心に戻ったら、<br>
+          豊かさを育ててみよう
+        </h1>
+
+        <p class="section-text">
+          不安を感じている時に、<br>
+          無理に豊かさを探さなくても大丈夫😊
+        </p>
+
+        <p class="section-text">
+          少し心が落ち着いた時に、<br>
+          今すでにあるものや、<br>
+          今日受け取ったものを見てみよう🌿
+        </p>
+
+      </header>
+
+
+      <!-- チャッピー＆サリーからのメッセージ -->
+      <section class="message-box">
+
+        <p class="main-message">
+          豊かさは、大きなお金だけじゃないよ😊
+        </p>
+
+        <p class="sub-message">
+          食べられたこと、休めたこと、<br>
+          誰かと話せたこと、笑えたこと。<br>
+          小さな豊かさも、ちゃんとここにあるよ🌈
+        </p>
+
+      </section>
+
+
+      <!-- 今ある豊かさ -->
+      <section class="work-block">
+
+        <h2 class="work-title">
+          ① 今すでにある豊かさ
+        </h2>
+
+        <p class="mini-text">
+          今持っているもの、助かっていること、<br>
+          今日も受け取っているものを見つけてみよう🌿
+        </p>
+
+        <label for="arutakasa1">
+          1つめ
+        </label>
+
+        <input
+          type="text"
+          id="arutakasa1"
+          placeholder="例：安心して眠れる場所がある"
+        >
+
+
+        <label for="arutakasa2">
+          2つめ
+        </label>
+
+        <input
+          type="text"
+          id="arutakasa2"
+          placeholder="例：飲めるお水や食べられるものがある"
+        >
+
+
+        <label for="arutakasa3">
+          3つめ
+        </label>
+
+        <input
+          type="text"
+          id="arutakasa3"
+          placeholder="例：話を聞いてくれる人がいる"
+        >
+
+      </section>
+
+
+      <!-- 今日受け取ったもの -->
+      <section class="work-block">
+
+        <h2 class="work-title">
+          ② 今日、受け取った豊かさ
+        </h2>
+
+        <p class="mini-text">
+          お金を払って受け取ったものだけでなく、<br>
+          無料で受け取ったものも探してみよう😊
+        </p>
+
+        <div class="example-box">
+
+          <p>
+            太陽の光や、気持ちのいい風☀️
+          </p>
+
+          <p>
+            誰かからのやさしい言葉🌼
+          </p>
+
+          <p>
+            便利な道具やサービス✨
+          </p>
+
+          <p>
+            おいしい食事や好きなおやつ😋
+          </p>
+
+        </div>
+
+        <label for="receivedAbundance">
+          今日、受け取った豊かさ
+        </label>
+
+        <textarea
+          id="receivedAbundance"
+          rows="5"
+          placeholder="例：おいしいお茶、家族との会話、涼しい部屋、便利なスマホ"
+        ></textarea>
+
+
+        <label for="receivedFeeling">
+          受け取って、どんな気持ちになった？
+        </label>
+
+        <textarea
+          id="receivedFeeling"
+          rows="4"
+          placeholder="例：うれしかった。助かった。ほっとした。しあわせだった。"
+        ></textarea>
+
+      </section>
+
+
+      <!-- 今日のいいこと -->
+      <section class="work-block">
+
+        <h2 class="work-title">
+          ③ 今日あった、ちょっといいこと
+        </h2>
+
+        <p class="mini-text">
+          大きな出来事でなくて大丈夫。<br>
+          少しうれしかったことや、笑えたことを書いてみよう🤭
+        </p>
+
+        <label for="goodThing">
+          今日のちょっといいこと
+        </label>
+
+        <textarea
+          id="goodThing"
+          rows="5"
+          placeholder="例：信号が青だった。お茶がおいしかった。アイデアが浮かんだ。"
+        ></textarea>
+
+      </section>
+
+
+      <!-- 存在給 -->
+      <section class="work-block">
+
+        <h2 class="work-title">
+          ④ 今日の存在給
+        </h2>
+
+        <p class="mini-text">
+          たくさん働いたかではなく、<br>
+          今日あなたがいたことで生まれた豊かさを見てみよう😊
+        </p>
+
+        <div class="example-box existence-example">
+
+          <p>
+            笑顔であいさつした
+          </p>
+
+          <p>
+            誰かの話を聞いた
+          </p>
+
+          <p>
+            自分の体を休ませた
+          </p>
+
+          <p>
+            今日もここにいた
+          </p>
+
+        </div>
+
+        <label for="sonzaikyu">
+          今日の存在給
+        </label>
+
+        <textarea
+          id="sonzaikyu"
+          rows="5"
+          placeholder="例：家族が安心できる場所にいた。ひとつアイデアを生み出した。"
+        ></textarea>
+
+      </section>
+
+
+      <!-- 使ったお金で受け取ったもの -->
+      <section class="work-block">
+
+        <h2 class="work-title">
+          ⑤ お金さんが届けてくれた豊かさ
+        </h2>
+
+        <p class="mini-text">
+          今日お金を使ったなら、<br>
+          何に姿を変えて戻ってきたか見てみよう💰
+        </p>
+
+        <label for="abundanceMoneyReceived">
+          お金さんが届けてくれたもの
+        </label>
+
+        <textarea
+          id="abundanceMoneyReceived"
+          rows="5"
+          placeholder="例：食事、安心、便利さ、楽しさ、癒し、移動できる自由"
+        ></textarea>
+
+        <p class="mini-text">
+          もっと詳しく振り返りたい時は、<br>
+          「使ったお金の受け取りメモ」も使えるよ😊
+        </p>
+
+        <div class="page-buttons">
+
+          <a
+            href="money.html"
+            class="next-btn"
+          >
+            💰 受け取りメモを開く
+          </a>
+
+        </div>
+
+      </section>
+
+
+      <!-- 今日選びたい豊かさ -->
+      <section class="work-block">
+
+        <h2 class="work-title">
+          ⑥ 今日、もうひとつ育てたい豊かさ
+        </h2>
+
+        <p class="mini-text">
+          無理に何かを買わなくても大丈夫。<br>
+          今できる小さなしあわせを選んでみよう🌱
+        </p>
+
+        <div class="example-box">
+
+          <p>
+            お茶をゆっくり味わう
+          </p>
+
+          <p>
+            好きな音楽を聴く
+          </p>
+
+          <p>
+            空や花を眺める
+          </p>
+
+          <p>
+            今日は何もしない時間を作る🤣
+          </p>
+
+        </div>
+
+        <label for="todayAbundanceChoice">
+          今日、育てたい小さな豊かさ
+        </label>
+
+        <textarea
+          id="todayAbundanceChoice"
+          rows="4"
+          placeholder="例：好きなお茶を飲みながら、ゆっくり休む。"
+        ></textarea>
+
+      </section>
+
+
+      <!-- やさしいヒント -->
+      <section class="hint-box">
+
+        <h2 class="hint-title">
+          💡 豊かさを感じられない日も大丈夫
+        </h2>
+
+        <p>
+          不安がまだ強い時は、<br>
+          豊かさを見つけられなくても大丈夫。
+        </p>
+
+        <p>
+          「今日は安心に戻るだけ」にしても、<br>
+          それも大切な一歩だよ🌿
+        </p>
+
+        <p>
+          豊かさは、安心できた心の中で<br>
+          少しずつ育っていくよ🌱
+        </p>
+
+      </section>
+
+
+      <!-- 終わりのメッセージ -->
+      <section class="complete-box">
+
+        <p class="complete-main">
+          今日の豊かさの種を見つけました🌱✨
+        </p>
+
+        <p>
+          たくさん見つからなくても大丈夫。<br>
+          ひとつ気づけたら、今日は花まる😊
+        </p>
+
+        <p>
+          安心して育てた小さな種が、<br>
+          いつか大きな豊かさになっていくよ🌈
+        </p>
+
+      </section>
+
+
+      <!-- ページ移動ボタン -->
+      <div class="page-buttons">
+
+        <a
+          href="index.html"
+          class="back-home-btn"
+        >
+          🏠 メニューへ戻る
+        </a>
+
+        <a
+          href="summary.html"
+          class="next-btn"
+        >
+          📝 内容をまとめる →
+        </a>
+
+      </div>
+
+    </main>
+
+  </div>
+
+</body>
+</html>
