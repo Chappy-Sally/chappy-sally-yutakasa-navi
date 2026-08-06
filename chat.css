@@ -1,0 +1,242 @@
+/* ========================================
+   チャッピーに話すページ全体
+======================================== */
+
+.chat-card{
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,0.97) 0%,
+      rgba(255,249,253,0.97) 100%
+    );
+}
+
+
+/* ========================================
+   チャッピーからのメッセージ
+======================================== */
+
+.chat-message-box{
+  margin-bottom:16px;
+  padding:18px 15px;
+  color:#684968;
+  background:
+    linear-gradient(
+      180deg,
+      #fff7fc 0%,
+      #f3e9ff 100%
+    );
+  border:1px solid #e3cfea;
+  border-radius:22px;
+  text-align:center;
+}
+
+.chat-message-box .main-message{
+  color:#704f70;
+}
+
+.chat-message-box .sub-message{
+  color:#826781;
+}
+
+
+/* ========================================
+   入力ワーク
+======================================== */
+
+.chat-card .work-block{
+  margin-top:14px;
+  padding:18px 15px;
+  background:
+    linear-gradient(
+      180deg,
+      #fffafd 0%,
+      #fff5fb 100%
+    );
+  border:1px solid #ead7e8;
+  border-radius:22px;
+}
+
+.chat-card .work-title{
+  color:#76527b;
+}
+
+
+/* ========================================
+   チャッピーへのお願い
+======================================== */
+
+.chat-prompt-box{
+  margin-top:16px;
+  padding:18px 15px;
+  color:#674d69;
+  background:
+    linear-gradient(
+      160deg,
+      #fffafd 0%,
+      #f5ebff 55%,
+      #edf9f5 100%
+    );
+  border:1px solid #dfd0e7;
+  border-radius:22px;
+  text-align:center;
+}
+
+.chat-prompt-title{
+  margin:0 0 10px;
+  color:#76527b;
+  font-size:19px;
+  font-weight:700;
+}
+
+.chat-prompt-box p{
+  margin:8px 0;
+  font-size:15px;
+  line-height:1.9;
+}
+
+
+/* ========================================
+   チャッピーと話す準備
+======================================== */
+
+.chat-card .action-section{
+  margin-top:17px;
+  padding:18px 15px;
+  background:
+    linear-gradient(
+      180deg,
+      #fffaf4 0%,
+      #fff5fc 100%
+    );
+  border:1px solid #ead8e8;
+  border-radius:22px;
+}
+
+.chat-card .action-title{
+  margin:0 0 12px;
+  color:#76527b;
+  font-size:20px;
+}
+
+
+/* ========================================
+   チャッピーボタン
+======================================== */
+
+.chat-card .chat-btn{
+  color:#ffffff;
+  background:
+    linear-gradient(
+      135deg,
+      #d99ae5,
+      #a99be8
+    );
+  box-shadow:
+    0 5px 13px rgba(161,126,205,0.25);
+}
+
+.chat-card .main-btn{
+  color:#5f4770;
+  background:
+    linear-gradient(
+      180deg,
+      #f6e7ff 0%,
+      #e7d2ff 100%
+    );
+  border:1px solid #d7bde9;
+  box-shadow:
+    0 5px 13px rgba(162,126,190,0.18);
+}
+
+
+/* ========================================
+   使い方
+======================================== */
+
+.chat-card .hint-box{
+  margin-top:16px;
+  padding:18px 15px;
+  color:#66566d;
+  background:
+    linear-gradient(
+      180deg,
+      #f9fcff 0%,
+      #f1f5ff 100%
+    );
+  border:1px solid #d9e1ee;
+  border-radius:22px;
+}
+
+.chat-card .hint-title{
+  margin:0 0 12px;
+  color:#65738b;
+  font-size:19px;
+  text-align:center;
+}
+
+.chat-card .hint-box p{
+  margin:8px 0;
+  padding:9px 11px;
+  background:rgba(255,255,255,0.72);
+  border-radius:13px;
+  font-size:14px;
+  line-height:1.75;
+}
+
+
+/* ========================================
+   終わりのメッセージ
+======================================== */
+
+.chat-card .complete-box{
+  margin-top:17px;
+  padding:18px 15px;
+  color:#68516c;
+  background:
+    linear-gradient(
+      160deg,
+      #fff9fd 0%,
+      #f7eaff 50%,
+      #effbf7 100%
+    );
+  border:1px solid #e1cfe5;
+  border-radius:22px;
+  text-align:center;
+}
+
+.chat-card .complete-box p{
+  margin:5px 0;
+  font-size:15px;
+  line-height:1.85;
+}
+
+.chat-card .complete-main{
+  color:#704f70;
+  font-size:18px;
+  font-weight:700;
+}
+
+
+/* ========================================
+   スマホ
+======================================== */
+
+@media (max-width:480px){
+
+  .chat-message-box,
+  .chat-card .work-block,
+  .chat-prompt-box,
+  .chat-card .action-section,
+  .chat-card .hint-box,
+  .chat-card .complete-box{
+    padding:16px 13px;
+  }
+
+  .chat-prompt-title,
+  .chat-card .action-title,
+  .chat-card .hint-title{
+    font-size:18px;
+  }
+
+}
