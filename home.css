@@ -394,4 +394,11 @@
     font-size:15px;
   }
 
+   .menu-btn,
+.menu-btn:link,
+.menu-btn:visited,
+.menu-btn:hover,
+.menu-btn:active{
+  color:#6b4b2a;
+  text-decoration:none;
 }
