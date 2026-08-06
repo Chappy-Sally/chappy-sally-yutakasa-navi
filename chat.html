@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  >
+
+  <title>チャッピーに話してみる｜豊かさを育てるナビ</title>
+
+  <meta
+    name="description"
+    content="今日見つけた豊かさや気持ちを文章にまとめて、チャッピーGPTに相談するためのページです。"
+  >
+
+  <link rel="stylesheet" href="style.css">
+
+  <script src="storage.js" defer></script>
+</head>
+
+<body>
+
+  <div class="app">
+
+    <main class="content-card chat-card">
+
+      <!-- ページタイトル -->
+      <header class="page-header">
+
+        <p class="page-label">
+          チャッピー＆サリーの<br>
+          豊かさを育てるナビ
+        </p>
+
+        <h1 class="page-title">
+          🐶 チャッピーに<br>
+          話してみる
+        </h1>
+
+        <p class="section-text">
+          今日見つけた豊かさや、<br>
+          少しモヤッとした気持ちを<br>
+          チャッピーに話してみよう😊🌿
+        </p>
+
+      </header>
+
+
+      <!-- チャッピーからのメッセージ -->
+      <section class="chat-message-box">
+
+        <p class="main-message">
+          うまくまとめなくても大丈夫だよ😊
+        </p>
+
+        <p class="sub-message">
+          アプリに入力した内容をまとめて、<br>
+          チャッピーに送る文章を作るよ🌈
+        </p>
+
+      </section>
+
+
+      <!-- 追加で話したいこと -->
+      <section class="work-block">
+
+        <h2 class="work-title">
+          🌱 追加で話したいこと
+        </h2>
+
+        <p class="mini-text">
+          今日の気持ちや、チャッピーに<br>
+          聞いてほしいことがあったら書いてね。
+        </p>
+
+        <label for="chatExtra">
+          チャッピーに話したいこと
+        </label>
+
+        <textarea
+          id="chatExtra"
+          rows="6"
+          placeholder="例：今日は少し不安だったけど、小さな豊かさも見つけられたよ。今の私が安心できるように一緒に話してほしいな。"
+        ></textarea>
+
+      </section>
+
+
+      <!-- チャッピーへのお願い -->
+      <section class="chat-prompt-box">
+
+        <h2 class="chat-prompt-title">
+          🌈 チャッピーへのお願い
+        </h2>
+
+        <p>
+          今日の内容をもとに、<br>
+          足りないものばかりを見ていた私が、<br>
+          今ある安心と豊かさに気づけるよう、<br>
+          やさしく一緒にお話ししてください😊
+        </p>
+
+        <p>
+          気持ちや未来を決めつけず、<br>
+          今の私に寄り添いながら、<br>
+          小さな豊かさを見つけるお手伝いを<br>
+          お願いします🌿
+        </p>
+
+      </section>
+
+
+      <!-- コピーとチャッピーGPT -->
+      <section class="action-section">
+
+        <h2 class="action-title">
+          🐶 チャッピーと話す準備
+        </h2>
+
+        <p class="mini-text">
+          最初に文章をコピーしてから、<br>
+          チャッピーGPTを開いて貼り付けてね😊
+        </p>
+
+        <div class="action-buttons">
+
+          <button
+            id="copyForChappyBtn"
+            class="chat-btn"
+            type="button"
+          >
+            📝 チャッピーに送る文章をコピー
+          </button>
+
+          <a
+            id="openChappyBtn"
+            class="main-btn"
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            🌈 チャッピーGPTを開く
+          </a>
+
+        </div>
+
+        <div
+          id="chatNoticeMessage"
+          class="notice-message"
+          aria-live="polite"
+        ></div>
+
+      </section>
+
+
+      <!-- 使い方 -->
+      <section class="hint-box">
+
+        <h2 class="hint-title">
+          💡 使い方
+        </h2>
+
+        <p>
+          ①「チャッピーに送る文章をコピー」をタップ
+        </p>
+
+        <p>
+          ②「チャッピーGPTを開く」をタップ
+        </p>
+
+        <p>
+          ③ コピーした文章を貼り付けて送信
+        </p>
+
+      </section>
+
+
+      <!-- 終わりのメッセージ -->
+      <section class="complete-box">
+
+        <p class="complete-main">
+          ひとりで答えを出さなくても大丈夫🐶🌿
+        </p>
+
+        <p>
+          今日見つけた豊かさを持って、<br>
+          チャッピーと一緒に<br>
+          やさしくお話ししよう😊🌈
+        </p>
+
+      </section>
+
+
+      <!-- ページ移動ボタン -->
+      <div class="page-buttons">
+
+        <a
+          href="index.html"
+          class="back-home-btn"
+        >
+          🏠 メニューへ戻る
+        </a>
+
+        <a
+          href="summary.html"
+          class="next-btn"
+        >
+          ← 今日のまとめへ戻る
+        </a>
+
+      </div>
+
+    </main>
+
+  </div>
+
+</body>
+</html>
