@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  >
+
+  <title>今日のまとめ｜豊かさを育てるナビ</title>
+
+  <meta
+    name="description"
+    content="今日見つけた豊かさや気づきをやさしく振り返り、チャッピーに送る準備をするページです。"
+  >
+
+  <link rel="stylesheet" href="style.css">
+
+  <script src="script.js" defer></script>
+  <script src="storage.js" defer></script>
+</head>
+
+<body>
+
+  <div class="app">
+
+    <main class="content-card">
+
+      <!-- ページタイトル -->
+      <header class="page-header">
+
+        <p class="page-label">
+          チャッピー＆サリーの<br>
+          豊かさを育てるナビ
+        </p>
+
+        <h1 class="page-title">
+          📝 今日のまとめ
+        </h1>
+
+        <p class="section-text">
+          今日見つけた豊かさを、<br>
+          やさしく振り返ってみよう😊🌿
+        </p>
+
+      </header>
+
+
+      <!-- 今日の気づき -->
+      <section class="work-block">
+
+        <h2 class="work-title">
+          🌱 今日の豊かさの気づき
+        </h2>
+
+        <p class="mini-text">
+          たくさん書かなくても大丈夫。<br>
+          今日いちばん心に残ったことを<br>
+          ひとつ書いてみよう✨
+        </p>
+
+        <label for="todayGrowth">
+          今日気づいたこと
+        </label>
+
+        <textarea
+          id="todayGrowth"
+          rows="6"
+          placeholder="例：足りないと思っていたけど、今日もちゃんと受け取っていた。"
+        ></textarea>
+
+      </section>
+
+
+      <!-- 豊かさ度 -->
+      <section class="work-block">
+
+        <h2 class="work-title">
+          🌈 今日の豊かさ度
+        </h2>
+
+        <p class="mini-text">
+          正解はないよ😊<br>
+          今の気持ちに近いところを選んでね。
+        </p>
+
+        <label for="todayMeter">
+          今日の豊かさ度
+        </label>
+
+        <input
+          type="range"
+          id="todayMeter"
+          min="1"
+          max="5"
+          step="1"
+          value="3"
+        >
+
+        <p
+          id="meterText"
+          class="meter-text"
+        >
+          3 / 5
+        </p>
+
+      </section>
+
+
+      <!-- まとめメッセージ -->
+      <section class="summary-message">
+
+        <p id="closingMessage">
+          今日もちゃんと、豊かさはあったね😊🌱
+        </p>
+
+      </section>
+
+
+      <!-- 保存とコピー -->
+      <section class="action-section">
+
+        <h2 class="action-title">
+          🌿 今日の内容をどうする？
+        </h2>
+
+        <div class="action-buttons">
+
+          <button
+            id="saveBtn"
+            class="main-btn"
+            type="button"
+          >
+            🌿 途中保存する
+          </button>
+
+          <button
+            id="copyBtn"
+            class="main-btn"
+            type="button"
+          >
+            📝 まとめをコピー
+          </button>
+
+          <a
+            href="chat.html"
+            class="chat-btn"
+          >
+            🐶 チャッピーに話してみる
+          </a>
+
+          <button
+            id="resetBtn"
+            class="sub-btn"
+            type="button"
+          >
+            入力をリセット
+          </button>
+
+        </div>
+
+        <div
+          id="noticeMessage"
+          class="notice-message"
+          aria-live="polite"
+        ></div>
+
+      </section>
+
+
+      <!-- 終わりのメッセージ -->
+      <section class="complete-box">
+
+        <p class="complete-main">
+          今日の豊かさを見つけられました🌼
+        </p>
+
+        <p>
+          大きな変化がなくても大丈夫。<br>
+          気づけたことが、もう一歩だよ😊🌈
+        </p>
+
+      </section>
+
+
+      <!-- ページ移動ボタン -->
+      <div class="page-buttons">
+
+        <a
+          href="index.html"
+          class="back-home-btn"
+        >
+          🏠 メニューへ戻る
+        </a>
+
+        <a
+          href="chat.html"
+          class="next-btn"
+        >
+          チャッピーに話す →
+        </a>
+
+      </div>
+
+    </main>
+
+  </div>
+
+</body>
+</html>
