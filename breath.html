@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  >
+
+  <title>しあわせ深呼吸｜豊かさを育てるナビ</title>
+
+  <meta
+    name="description"
+    content="チャッピー＆サリーと一緒に深呼吸をして、今ある安心に戻るページです。"
+  >
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="breath.css">
+
+  <script src="breath.js" defer></script>
+  <script src="storage.js" defer></script>
+</head>
+
+<body>
+
+  <div class="app">
+
+    <main class="content-card breath-page">
+
+      <!-- ページタイトル -->
+      <header class="page-header">
+
+        <p class="page-label">
+          チャッピー＆サリーの<br>
+          豊かさを育てるナビ
+        </p>
+
+        <h1 class="page-title">
+          🌿 しあわせ深呼吸
+        </h1>
+
+        <p class="section-text">
+          今すぐ全部解決しなくても大丈夫😊<br>
+          チャッピー＆サリーと一緒に、<br>
+          ゆっくり安心に戻ろう。
+        </p>
+
+      </header>
+
+
+      <!-- 深呼吸の画像 -->
+      <section class="breath-main">
+
+        <div class="image-wrap">
+
+          <img
+            id="breathImg"
+            class="breath-img"
+            src="https://raw.githubusercontent.com/Chappy-Sally/chappy-sally-images/main/covers/CS_shinkokyu.png"
+            alt="チャッピー＆サリーのしあわせ深呼吸"
+          >
+
+          <div
+            id="sparkles"
+            class="hidden"
+          >
+            <span class="sparkle one">✨</span>
+            <span class="sparkle two">✨</span>
+            <span class="sparkle three">✨</span>
+          </div>
+
+        </div>
+
+
+        <!-- 深呼吸メッセージ -->
+        <div class="breath-message-box">
+
+          <div
+            id="breathMessage"
+            class="breath-message"
+          >
+うまくできなくても大丈夫😊
+
+チャッピーとサリーと一緒に
+ゆっくり深呼吸してみよう🌿
+          </div>
+
+        </div>
+
+
+        <!-- 進み具合 -->
+        <div
+          id="progressText"
+          class="progress"
+          aria-live="polite"
+        ></div>
+
+
+        <!-- 深呼吸ボタン -->
+        <div class="breath-button-wrap">
+
+          <button
+            id="startBtn"
+            class="start-btn"
+            type="button"
+          >
+            🌿 深呼吸をはじめる
+          </button>
+
+          <button
+            id="againBtn"
+            class="again-btn hidden"
+            type="button"
+          >
+            🌿 もう一度深呼吸する
+          </button>
+
+        </div>
+
+      </section>
+
+
+      <!-- 安心を見つけるワーク -->
+      <section class="work-block">
+
+        <h2 class="work-title">
+          🌱 今ある安心を見つけよう
+        </h2>
+
+        <p class="mini-text">
+          不安を無理に消さなくても大丈夫。<br>
+          不安と一緒に、今ある安心にも<br>
+          少し目を向けてみよう😊
+        </p>
+
+
+        <label for="nowAnxiety">
+          今、不安に見えていること
+        </label>
+
+        <textarea
+          id="nowAnxiety"
+          rows="4"
+          placeholder="例：お金のことが心配。支払いが近くて不安。"
+        ></textarea>
+
+
+        <label for="nowSafety">
+          今ここにある安心
+        </label>
+
+        <textarea
+          id="nowSafety"
+          rows="4"
+          placeholder="例：今日は眠る場所がある。食べるものがある。相談できる人がいる。"
+        ></textarea>
+
+      </section>
+
+
+      <!-- 終わりのメッセージ -->
+      <section class="complete-box">
+
+        <p class="complete-main">
+          今日も安心に戻る時間を作れました🌿
+        </p>
+
+        <p>
+          不安がなくならなくても大丈夫。<br>
+          深呼吸できたことも、<br>
+          今ある豊かさのひとつだよ😊🌈
+        </p>
+
+      </section>
+
+
+      <!-- ページ移動ボタン -->
+      <div class="page-buttons">
+
+        <a
+          href="index.html"
+          class="back-home-btn"
+        >
+          🏠 メニューへ戻る
+        </a>
+
+        <a
+          href="shift.html"
+          class="next-btn"
+        >
+          視点を変えてみる →
+        </a>
+
+      </div>
+
+    </main>
+
+  </div>
+
+</body>
+</html>
