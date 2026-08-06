@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  >
+
+  <title>使ったお金の受け取りメモ｜豊かさを育てるナビ</title>
+
+  <meta
+    name="description"
+    content="使ったお金で何を受け取ったかに気づき、罪悪感ではなく豊かさの循環を見るためのワークです。"
+  >
+
+  <link rel="stylesheet" href="style.css">
+
+  <script src="storage.js" defer></script>
+</head>
+
+<body>
+
+  <div class="app">
+
+    <main class="content-card">
+
+      <!-- ページタイトル -->
+      <header class="page-header">
+
+        <p class="page-label">
+          チャッピー＆サリーの<br>
+          豊かさを育てるナビ
+        </p>
+
+        <h1 class="page-title">
+          💰 使ったお金の<br>
+          受け取りメモ
+        </h1>
+
+        <p class="section-text">
+          「お金が減った」だけで終わらせず、<br>
+          そのお金で何を受け取れたかも<br>
+          やさしく見てみよう😊
+        </p>
+
+      </header>
+
+
+      <!-- メッセージ -->
+      <section class="money-message-box">
+
+        <p class="main-message">
+          レシートは、<br>
+          お金が減った記録だけじゃないよ。
+        </p>
+
+        <p class="sub-message">
+          食べ物、安心、便利さ、楽しさなど、<br>
+          手にできた豊かさの記録でもあるんだよ🤭✨
+        </p>
+
+      </section>
+
+
+      <!-- ワーク -->
+      <section class="work-block">
+
+        <h2 class="work-title">
+          🌱 今日受け取った豊かさを見てみよう
+        </h2>
+
+
+        <label for="moneyAmount">
+          今日使った金額
+        </label>
+
+        <input
+          type="text"
+          id="moneyAmount"
+          inputmode="numeric"
+          placeholder="例：1200円"
+        >
+
+
+        <label for="moneyReceived">
+          そのお金で受け取ったもの
+        </label>
+
+        <textarea
+          id="moneyReceived"
+          rows="5"
+          placeholder="例：おいしい食事、安心、便利さ、癒し、楽しさ"
+        ></textarea>
+
+
+        <label for="moneyFeeling">
+          受け取った時の気持ち
+        </label>
+
+        <textarea
+          id="moneyFeeling"
+          rows="4"
+          placeholder="例：うれしかった。助かった。安心した。満たされた。"
+        ></textarea>
+
+
+        <label for="moneyAgain">
+          この使い方を、また選びたい？
+        </label>
+
+        <select id="moneyAgain">
+
+          <option value="">
+            選んでね
+          </option>
+
+          <option value="また選びたい">
+            また選びたい
+          </option>
+
+          <option value="必要だった">
+            必要だった
+          </option>
+
+          <option value="今回はこれでよかった">
+            今回はこれでよかった
+          </option>
+
+          <option value="なくてもよかったかも">
+            なくてもよかったかも
+          </option>
+
+          <option value="次は別の使い方をしたい">
+            次は別の使い方をしたい
+          </option>
+
+        </select>
+
+      </section>
+
+
+      <!-- 受け取りの例 -->
+      <section class="hint-box">
+
+        <h2 class="hint-title">
+          💡 こんな豊かさを受け取っているかも
+        </h2>
+
+        <p>
+          食べ物から、満足や元気を受け取った
+        </p>
+
+        <p>
+          交通費から、移動できる安心を受け取った
+        </p>
+
+        <p>
+          日用品から、暮らしやすさを受け取った
+        </p>
+
+        <p>
+          おやつから、楽しみやしあわせを受け取った
+        </p>
+
+        <p>
+          誰かへの贈り物から、喜びやつながりを受け取った
+        </p>
+
+      </section>
+
+
+      <!-- やさしい注意 -->
+      <section class="soft-note-box">
+
+        <p>
+          「豊かさを受け取った」と見ることは、<br>
+          どんな買い物も無理に肯定することではないよ🌿
+        </p>
+
+        <p>
+          次も選びたいか、別の選び方をしたいか、<br>
+          責めずに気づけたらそれで大丈夫😊
+        </p>
+
+      </section>
+
+
+      <!-- 終わりのメッセージ -->
+      <section class="complete-box">
+
+        <p class="complete-main">
+          お金さんが豊かさに姿を変えました💰🌈
+        </p>
+
+        <p>
+          今日もお金さんが、<br>
+          食べ物や安心や楽しさになって<br>
+          あなたのところへ届いていたね🤭
+        </p>
+
+      </section>
+
+
+      <!-- ページ移動ボタン -->
+      <div class="page-buttons">
+
+        <a
+          href="index.html"
+          class="back-home-btn"
+        >
+          🏠 メニューへ戻る
+        </a>
+
+        <a
+          href="summary.html"
+          class="next-btn"
+        >
+          今日のまとめへ →
+        </a>
+
+      </div>
+
+    </main>
+
+  </div>
+
+</body>
+</html>
