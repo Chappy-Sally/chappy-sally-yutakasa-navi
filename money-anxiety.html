@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  >
+
+  <title>
+    お金の不安を整理する｜お金の不安を安心に戻すナビ
+  </title>
+
+  <meta
+    name="description"
+    content="お金の不安や支払いについて、支払日、支払額、使えるお金、入金予定を整理し、安心に戻るためのページです。"
+  >
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="pages.css">
+
+  <script src="storage.js" defer></script>
+</head>
+
+<body>
+
+  <div class="app">
+
+    <main class="content-card">
+
+      <!-- ページタイトル -->
+      <header class="page-header">
+
+        <p class="page-label">
+          チャッピー＆サリーの<br>
+          お金の不安を安心に戻すナビ
+        </p>
+
+        <h1 class="page-title">
+          💰 お金の不安を<br>
+          やさしく整理しよう
+        </h1>
+
+        <p class="section-text">
+          お金のことが不安になると、<br>
+          まだ起きていないことまで<br>
+          怖く見えることがあるよね🌿
+        </p>
+
+        <p class="section-text">
+          今すぐ答えを出さなくても大丈夫。<br>
+          まずは気持ちと事実を、<br>
+          ひとつずつ整理してみよう😊
+        </p>
+
+      </header>
+
+
+      <!-- 深呼吸への案内 -->
+      <section class="message-box">
+
+        <p class="main-message">
+          不安が強い時は、先に深呼吸しても大丈夫🌿
+        </p>
+
+        <p class="sub-message">
+          焦ったまま計算しなくてもいいよ。<br>
+          少し落ち着いてから、一緒に見ていこう😊
+        </p>
+
+        <div class="page-buttons">
+
+          <a
+            href="breath.html"
+            class="next-btn"
+          >
+            🌿 先に深呼吸する
+          </a>
+
+        </div>
+
+      </section>
+
+
+      <!-- 今の不安 -->
+      <section class="work-block">
+
+        <h2 class="work-title">
+          ① 今、何が不安？
+        </h2>
+
+        <p class="mini-text">
+          うまくまとめなくても大丈夫。<br>
+          今浮かんでいることを、そのまま書いてみよう。
+        </p>
+
+        <label for="anxietyFeeling">
+          今、お金のことで不安なこと
+        </label>
+
+        <textarea
+          id="anxietyFeeling"
+          rows="5"
+          placeholder="例：支払日が近づくと、足りなくなる気がして不安になる。"
+        ></textarea>
+
+
+        <label for="anxietyWorstFear">
+          このままだと、どうなると思っている？
+        </label>
+
+        <textarea
+          id="anxietyWorstFear"
+          rows="5"
+          placeholder="例：払えないかもしれない。督促が来るかもしれない。生活できなくなるかもしれない。"
+        ></textarea>
+
+      </section>
+
+
+      <!-- 支払いの把握 -->
+      <section class="work-block">
+
+        <h2 class="work-title">
+          ② 支払いを確認してみよう
+        </h2>
+
+        <p class="mini-text">
+          不安の大きさではなく、<br>
+          今分かっている事実を確認してみよう🌿
+        </p>
+
+        <label for="paymentName">
+          何の支払い？
+        </label>
+
+        <input
+          type="text"
+          id="paymentName"
+          placeholder="例：家賃、カード、電気代、保険料"
+        >
+
+
+        <label for="paymentDate">
+          支払日はいつ？
+        </label>
+
+        <input
+          type="date"
+          id="paymentDate"
+        >
+
+
+        <label for="paymentAmount">
+          支払額はいくら？
+        </label>
+
+        <input
+          type="text"
+          id="paymentAmount"
+          inputmode="numeric"
+          placeholder="例：30000円"
+        >
+
+
+        <label for="otherPayments">
+          ほかに気になっている支払い
+        </label>
+
+        <textarea
+          id="otherPayments"
+          rows="4"
+          placeholder="例：25日にカード代、月末に電気代がある。"
+        ></textarea>
+
+      </section>
+
+
+      <!-- 現在のお金 -->
+      <section class="work-block">
+
+        <h2 class="work-title">
+          ③ 今、使えるお金を確認しよう
+        </h2>
+
+        <p class="mini-text">
+          正確に分からない時は、<br>
+          分かる範囲だけで大丈夫だよ😊
+        </p>
+
+        <label for="availableMoney">
+          今、支払いに使えるお金
+        </label>
+
+        <input
+          type="text"
+          id="availableMoney"
+          inputmode="numeric"
+          placeholder="例：20000円"
+        >
+
+
+        <label for="cashOnHand">
+          手元に残しておきたい生活費
+        </label>
+
+        <input
+          type="text"
+          id="cashOnHand"
+          inputmode="numeric"
+          placeholder="例：10000円"
+        >
+
+
+        <label for="moneyUnknown">
+          まだ確認できていないこと
+        </label>
+
+        <textarea
+          id="moneyUnknown"
+          rows="4"
+          placeholder="例：口座残高をまだ見ていない。カードの確定額が分からない。"
+        ></textarea>
+
+      </section>
+
+
+      <!-- 入金予定 -->
+      <section class="work-block">
+
+        <h2 class="work-title">
+          ④ 入ってくる予定のお金はある？
+        </h2>
+
+        <p class="mini-text">
+          給料、振込、返金、売上など、<br>
+          今分かっている予定を書いてみよう🌱
+        </p>
+
+        <label for="incomeSource">
+          何のお金が入る予定？
+        </label>
+
+        <input
+          type="text"
+          id="incomeSource"
+          placeholder="例：給料、売上、返金、家族からの振込"
+        >
+
+
+        <label for="incomeDate">
+          入金予定日はいつ？
+        </label>
+
+        <input
+          type="date"
+          id="incomeDate"
+        >
+
+
+        <label for="incomeAmount">
+          入金予定額はいくら？
+        </label>
+
+        <input
+          type="text"
+          id="incomeAmount"
+          inputmode="numeric"
+          placeholder="例：50000円"
+        >
+
+
+        <label for="otherIncome">
+          ほかの入金予定や可能性
+        </label>
+
+        <textarea
+          id="otherIncome"
+          rows="4"
+          placeholder="例：商品の売上が入るかもしれない。返金の確認中。"
+        ></textarea>
+
+      </section>
+
+
+      <!-- 不安と事実を分ける -->
+      <section class="work-block">
+
+        <h2 class="work-title">
+          ⑤ 不安と、今分かっている事実
+        </h2>
+
+        <p class="mini-text">
+          不安を否定しなくて大丈夫。<br>
+          不安とは別に、今分かっていることも見てみよう😊
+        </p>
+
+        <label for="anxietyThought">
+          不安が言っていること
+        </label>
+
+        <textarea
+          id="anxietyThought"
+          rows="4"
+          placeholder="例：絶対に払えない。もうどうにもならない。"
+        ></textarea>
+
+
+        <label for="knownFacts">
+          今、実際に分かっている事実
+        </label>
+
+        <textarea
+          id="knownFacts"
+          rows="5"
+          placeholder="例：まだ支払日まで10日ある。20日に入金予定がある。支払先には相談できる。"
+        ></textarea>
+
+      </section>
+
+
+      <!-- 今できること -->
+      <section class="work-block">
+
+        <h2 class="work-title">
+          ⑥ 今できそうな小さなこと
+        </h2>
+
+        <p class="mini-text">
+          全部を解決しなくても大丈夫。<br>
+          今日できる小さな確認を、ひとつ選んでみよう🌿
+        </p>
+
+        <div class="example-box">
+
+          <p>
+            口座残高を確認する
+          </p>
+
+          <p>
+            請求額を確認する
+          </p>
+
+          <p>
+            入金日を確認する
+          </p>
+
+          <p>
+            支払先に相談できるか調べる
+          </p>
+
+          <p>
+            今日は確認せず、まず休む
+          </p>
+
+        </div>
+
+        <label for="smallMoneyAction">
+          今の私にできそうなこと
+        </label>
+
+        <textarea
+          id="smallMoneyAction"
+          rows="4"
+          placeholder="例：今日はカードの確定額だけ確認する。"
+        ></textarea>
+
+      </section>
+
+
+      <!-- チャッピーGPTへ -->
+      <section class="hint-box">
+
+        <h2 class="hint-title">
+          🐶 視点を変えるのは、チャッピーと一緒に
+        </h2>
+
+        <p>
+          自分だけで前向きな答えを<br>
+          無理に作らなくても大丈夫。
+        </p>
+
+        <p>
+          入力した内容をコピーして、<br>
+          チャッピーGPTに貼り付けてみよう。
+        </p>
+
+        <p>
+          不安と事実を一緒に見ながら、<br>
+          今のあなたが安心できる視点を探していくよ🌿
+        </p>
+
+      </section>
+
+
+      <!-- 終わりのメッセージ -->
+      <section class="complete-box">
+
+        <p class="complete-main">
+          お金の不安を、ひとりで抱えずに整理できました🌿
+        </p>
+
+        <p>
+          まだ不安が残っていても大丈夫。<br>
+          分からなかったことが少し見えたら、<br>
+          それも安心へ戻る一歩だよ😊
+        </p>
+
+      </section>
+
+
+      <!-- ページ移動ボタン -->
+      <div class="page-buttons">
+
+        <a
+          href="index.html"
+          class="back-home-btn"
+        >
+          🏠 メニューへ戻る
+        </a>
+
+        <a
+          href="summary.html"
+          class="next-btn"
+        >
+          📝 内容をまとめる →
+        </a>
+
+      </div>
+
+    </main>
+
+  </div>
+
+</body>
+</html>
