@@ -1,0 +1,316 @@
+/* ========================================
+   ワークブロック
+======================================== */
+
+.work-block{
+  margin-top:14px;
+  padding:18px 15px;
+  background:#fffaf4;
+  border:1px solid #f1dfc2;
+  border-radius:22px;
+}
+
+
+/* ========================================
+   視点変更・存在給の例
+======================================== */
+
+.example-box{
+  margin:14px 0;
+  padding:18px 14px;
+  color:#76522c;
+  background:
+    linear-gradient(
+      180deg,
+      #fffdf8 0%,
+      #fff3dd 100%
+    );
+  border:1px solid #f0ddb7;
+  border-radius:22px;
+  font-weight:700;
+  text-align:center;
+}
+
+.example-box p{
+  margin:5px 0;
+}
+
+.example-before{
+  color:#8c6745;
+}
+
+.example-after{
+  color:#5d815f;
+  font-size:18px;
+}
+
+.arrow-text{
+  color:#d39a35;
+  font-size:24px;
+}
+
+.existence-example{
+  margin-bottom:16px;
+  font-size:14px;
+  font-weight:600;
+}
+
+
+/* ========================================
+   ヒント
+======================================== */
+
+.hint-box{
+  margin-top:16px;
+  padding:18px 15px;
+  color:#694e36;
+  background:
+    linear-gradient(
+      180deg,
+      #f7fcff 0%,
+      #eaf7f4 100%
+    );
+  border:1px solid #cfe9e0;
+  border-radius:22px;
+}
+
+.hint-title{
+  margin:0 0 12px;
+  color:#52766a;
+  font-size:19px;
+  text-align:center;
+}
+
+.hint-box p{
+  margin:8px 0;
+  padding:8px 10px;
+  background:rgba(255,255,255,0.65);
+  border-radius:13px;
+  font-size:14px;
+  line-height:1.75;
+}
+
+
+/* ========================================
+   お金の受け取りメモ
+======================================== */
+
+.money-message-box{
+  margin-bottom:14px;
+  padding:18px 15px;
+  color:#755027;
+  background:
+    linear-gradient(
+      180deg,
+      #fffbe8 0%,
+      #fff0bd 100%
+    );
+  border:1px solid #ecd58f;
+  border-radius:22px;
+  text-align:center;
+}
+
+.money-message-box .main-message{
+  margin-bottom:8px;
+}
+
+.money-message-box .sub-message{
+  color:#7d5a28;
+}
+
+.soft-note-box{
+  margin-top:16px;
+  padding:17px 15px;
+  color:#76604b;
+  background:
+    linear-gradient(
+      180deg,
+      #fffdfb 0%,
+      #f7f2ed 100%
+    );
+  border:1px solid #e5dad0;
+  border-radius:22px;
+  font-size:14px;
+  line-height:1.85;
+  text-align:center;
+}
+
+.soft-note-box p{
+  margin:6px 0;
+}
+
+
+/* ========================================
+   終わりのメッセージ
+======================================== */
+
+.complete-box{
+  margin-top:17px;
+  padding:18px 15px;
+  color:#6d5230;
+  background:
+    linear-gradient(
+      160deg,
+      #fffdf3 0%,
+      #fff2c9 50%,
+      #f1fbf6 100%
+    );
+  border:1px solid #ead9ac;
+  border-radius:22px;
+  text-align:center;
+}
+
+.complete-box p{
+  margin:5px 0;
+  font-size:15px;
+  line-height:1.85;
+}
+
+.complete-main{
+  color:#6f4a24;
+  font-size:18px !important;
+  font-weight:700;
+}
+
+
+/* ========================================
+   豊かさ度
+======================================== */
+
+input[type="range"]{
+  width:100%;
+  margin-top:10px;
+  accent-color:#f3bf59;
+}
+
+.meter-text{
+  margin:8px 0 0;
+  color:#8a6334;
+  font-size:18px;
+  font-weight:700;
+  text-align:center;
+}
+
+
+/* ========================================
+   今日のまとめ
+======================================== */
+
+.summary-message{
+  margin-top:16px;
+  padding:17px 14px;
+  background:
+    linear-gradient(
+      180deg,
+      #fffdf8 0%,
+      #fff1d5 100%
+    );
+  border:1px solid #f2dfb8;
+  border-radius:20px;
+}
+
+.summary-message p{
+  margin:0;
+  color:#6f4a24;
+  font-size:20px;
+  font-weight:700;
+  line-height:1.8;
+  text-align:center;
+}
+
+.action-section{
+  margin-top:17px;
+  padding:18px 15px;
+  background:#fffaf4;
+  border:1px solid #f1dfc2;
+  border-radius:22px;
+}
+
+.action-title{
+  margin:0 0 12px;
+  color:#76502a;
+  font-size:20px;
+}
+
+
+/* ========================================
+   ページごとの雰囲気
+======================================== */
+
+body:has(.existence-example) .content-card{
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,0.97) 0%,
+      rgba(255,251,242,0.97) 100%
+    );
+}
+
+body:has(.example-before) .content-card{
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,0.97) 0%,
+      rgba(248,245,255,0.97) 100%
+    );
+}
+
+body:has(.money-message-box) .content-card{
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,0.97) 0%,
+      rgba(255,251,233,0.97) 100%
+    );
+}
+
+body:has(#todayMeter) .content-card{
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,0.97) 0%,
+      rgba(247,253,250,0.97) 100%
+    );
+}
+
+
+/* ========================================
+   タブレット・PC
+======================================== */
+
+@media (min-width:640px){
+
+  .work-block,
+  .hint-box,
+  .complete-box,
+  .action-section{
+    padding:22px 20px;
+  }
+
+}
+
+
+/* ========================================
+   スマホ
+======================================== */
+
+@media (max-width:480px){
+
+  .work-block,
+  .hint-box,
+  .complete-box,
+  .action-section,
+  .soft-note-box,
+  .money-message-box{
+    padding:16px 13px;
+  }
+
+  .example-box{
+    padding:16px 12px;
+  }
+
+  .summary-message p{
+    font-size:18px;
+  }
+
+}
