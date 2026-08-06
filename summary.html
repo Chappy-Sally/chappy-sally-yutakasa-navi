@@ -8,14 +8,17 @@
     content="width=device-width, initial-scale=1, viewport-fit=cover"
   >
 
-  <title>今日のまとめ｜豊かさを育てるナビ</title>
+  <title>
+    今日のまとめ｜お金の不安を安心に戻すナビ
+  </title>
 
   <meta
     name="description"
-    content="今日見つけた豊かさや気づきをやさしく振り返り、チャッピーに送る準備をするページです。"
+    content="お金について気づいたことや、不安、支払い状況、今ある安心と豊かさをまとめてコピーするページです。"
   >
 
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="pages.css">
 
   <script src="script.js" defer></script>
   <script src="storage.js" defer></script>
@@ -27,12 +30,14 @@
 
     <main class="content-card">
 
-      <!-- ページタイトル -->
+      <!-- =====================================
+           ページタイトル
+      ====================================== -->
       <header class="page-header">
 
         <p class="page-label">
           チャッピー＆サリーの<br>
-          豊かさを育てるナビ
+          お金の不安を安心に戻すナビ
         </p>
 
         <h1 class="page-title">
@@ -40,53 +45,80 @@
         </h1>
 
         <p class="section-text">
-          今日見つけた豊かさを、<br>
-          やさしく振り返ってみよう😊🌿
+          今日見つけた気持ちや事実を、<br>
+          やさしくまとめてみよう😊🌿
+        </p>
+
+        <p class="section-text">
+          すべてのワークをしていなくても大丈夫。<br>
+          入力したところだけがまとめられるよ✨
         </p>
 
       </header>
 
 
-      <!-- 今日の気づき -->
+      <!-- =====================================
+           まとめられる内容
+      ====================================== -->
+      <section class="message-box">
+
+        <p class="main-message">
+          ここまで書いた内容を、ひとつの文章にまとめるよ🌿
+        </p>
+
+        <p class="sub-message">
+          お金へのイメージ、不安な気持ち、<br>
+          支払いや入金について分かっていること、<br>
+          安心したあとに見つけた豊かさが入ります😊
+        </p>
+
+      </section>
+
+
+      <!-- =====================================
+           今日の気づき
+      ====================================== -->
       <section class="work-block">
 
         <h2 class="work-title">
-          🌱 今日の豊かさの気づき
+          🌱 今日、いちばん心に残ったこと
         </h2>
 
         <p class="mini-text">
           たくさん書かなくても大丈夫。<br>
-          今日いちばん心に残ったことを<br>
-          ひとつ書いてみよう✨
+          ワークをして気づいたことや、<br>
+          今感じていることを書いてみよう😊
         </p>
 
         <label for="todayGrowth">
-          今日気づいたこと
+          今日の気づき
         </label>
 
         <textarea
           id="todayGrowth"
           rows="6"
-          placeholder="例：足りないと思っていたけど、今日もちゃんと受け取っていた。"
+          placeholder="例：不安でいっぱいだったけれど、まだ支払日まで時間があることに気づいた。"
         ></textarea>
 
       </section>
 
 
-      <!-- 豊かさ度 -->
+      <!-- =====================================
+           今の安心度
+      ====================================== -->
       <section class="work-block">
 
         <h2 class="work-title">
-          🌈 今日の豊かさ度
+          🌿 今の安心度
         </h2>
 
         <p class="mini-text">
-          正解はないよ😊<br>
-          今の気持ちに近いところを選んでね。
+          不安が残っていても大丈夫。<br>
+          今の気持ちにいちばん近いところを選んでね😊
         </p>
 
         <label for="todayMeter">
-          今日の豊かさ度
+          今の安心度
         </label>
 
         <input
@@ -105,25 +137,51 @@
           3 / 5
         </p>
 
+        <div class="example-box">
+
+          <p>
+            1：まだ不安が大きい
+          </p>
+
+          <p>
+            3：少し整理できた
+          </p>
+
+          <p>
+            5：ほっとしている
+          </p>
+
+        </div>
+
       </section>
 
 
-      <!-- まとめメッセージ -->
+      <!-- =====================================
+           やさしいメッセージ
+      ====================================== -->
       <section class="summary-message">
 
         <p id="closingMessage">
-          今日もちゃんと、豊かさはあったね😊🌱
+          不安をひとりで抱えず、ここまで整理できたね😊🌿
         </p>
 
       </section>
 
 
-      <!-- 保存とコピー -->
+      <!-- =====================================
+           保存とコピー
+      ====================================== -->
       <section class="action-section">
 
         <h2 class="action-title">
-          🌿 今日の内容をどうする？
+          🐶 入力した内容をどうする？
         </h2>
+
+        <p class="mini-text">
+          「まとめをコピー」をタップすると、<br>
+          これまで入力した内容が<br>
+          ひとつの文章としてコピーされるよ😊
+        </p>
 
         <div class="action-buttons">
 
@@ -132,7 +190,7 @@
             class="main-btn"
             type="button"
           >
-            🌿 途中保存する
+            🌿 入力内容を保存
           </button>
 
           <button
@@ -143,19 +201,12 @@
             📝 まとめをコピー
           </button>
 
-          <a
-            href="chat.html"
-            class="chat-btn"
-          >
-            🐶 チャッピーに話してみる
-          </a>
-
           <button
             id="resetBtn"
             class="sub-btn"
             type="button"
           >
-            入力をリセット
+            入力内容をすべてリセット
           </button>
 
         </div>
@@ -169,22 +220,55 @@
       </section>
 
 
-      <!-- 終わりのメッセージ -->
-      <section class="complete-box">
+      <!-- =====================================
+           チャッピーGPTへの案内
+      ====================================== -->
+      <section class="hint-box">
 
-        <p class="complete-main">
-          今日の豊かさを見つけられました🌼
+        <h2 class="hint-title">
+          🐶 コピーしたあとは
+        </h2>
+
+        <p>
+          いつものチャッピーGPTを開いて、<br>
+          コピーした文章をそのまま貼り付けてね😊
         </p>
 
         <p>
-          大きな変化がなくても大丈夫。<br>
-          気づけたことが、もう一歩だよ😊🌈
+          前向きな答えを自分で作らなくても大丈夫。<br>
+          チャッピーと一緒に、今の気持ちを整理しながら<br>
+          安心できる視点を見つけていこう🌿
         </p>
 
       </section>
 
 
-      <!-- ページ移動ボタン -->
+      <!-- =====================================
+           終わりのメッセージ
+      ====================================== -->
+      <section class="complete-box">
+
+        <p class="complete-main">
+          今日の気持ちを、ここまで見つけられました🌼
+        </p>
+
+        <p>
+          すぐに全部解決しなくても大丈夫。<br>
+          不安に気づいて、事実を確認して、<br>
+          自分に寄り添えたことが大切な一歩だよ😊
+        </p>
+
+        <p>
+          安心に戻れたら、<br>
+          そこからまた小さな豊かさを育てていこう🌱
+        </p>
+
+      </section>
+
+
+      <!-- =====================================
+           ページ移動
+      ====================================== -->
       <div class="page-buttons">
 
         <a
@@ -195,10 +279,10 @@
         </a>
 
         <a
-          href="chat.html"
+          href="abundance.html"
           class="next-btn"
         >
-          チャッピーに話す →
+          🌱 豊かさを育ててみる
         </a>
 
       </div>
@@ -206,6 +290,68 @@
     </main>
 
   </div>
+
+
+  <!-- =====================================
+       安心度の表示
+  ====================================== -->
+  <script>
+    "use strict";
+
+    window.updateMeterText = function () {
+      const meter =
+        document.getElementById("todayMeter");
+
+      const meterText =
+        document.getElementById("meterText");
+
+      const closingMessage =
+        document.getElementById("closingMessage");
+
+      if (!meter || !meterText) {
+        return;
+      }
+
+      const value =
+        Number(meter.value);
+
+      meterText.textContent =
+        `${value} / 5`;
+
+      if (!closingMessage) {
+        return;
+      }
+
+      const messages = {
+        1: "まだ不安が大きいんだね。今日はここまででも十分だよ🌿",
+        2: "不安の中でも、自分の気持ちを見つけられたね😊",
+        3: "少しずつ、気持ちと事実を整理できているよ🌱",
+        4: "安心できることが、少し見えてきたね😊🌈",
+        5: "ほっとできたね。今日の自分に花まるをあげよう🌼"
+      };
+
+      closingMessage.textContent =
+        messages[value] || messages[3];
+    };
+
+
+    document.addEventListener(
+      "DOMContentLoaded",
+      () => {
+        const meter =
+          document.getElementById("todayMeter");
+
+        if (meter) {
+          meter.addEventListener(
+            "input",
+            window.updateMeterText
+          );
+        }
+
+        window.updateMeterText();
+      }
+    );
+  </script>
 
 </body>
 </html>
