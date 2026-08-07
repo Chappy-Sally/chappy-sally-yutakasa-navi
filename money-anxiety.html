@@ -14,13 +14,86 @@
 
   <meta
     name="description"
-    content="お金の不安や支払いについて、支払日、支払額、使えるお金、入金予定を整理し、安心に戻るためのページです。"
+    content="お金の不安をチェックしながらやさしく整理し、必要な場合だけ支払日や金額も確認できるページです。"
   >
 
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="pages.css">
 
   <script src="storage.js" defer></script>
+
+  <style>
+    .check-list {
+      display: grid;
+      gap: 0;
+      margin-top: 14px;
+      padding: 8px 14px;
+      border: 2px solid #f0d8c3;
+      border-radius: 18px;
+      background: #fffaf6;
+    }
+
+    .check-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      width: 100%;
+      margin: 0 !important;
+      padding: 3px 2px !important;
+      min-height: 0 !important;
+      color: #6b4423;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.25;
+      cursor: pointer;
+    }
+
+    .check-item input {
+      width: 20px;
+      height: 20px;
+      margin: 0 !important;
+      flex-shrink: 0;
+      accent-color: #e79b65;
+    }
+
+    .check-item:has(input:checked) {
+      color: #c06e38;
+    }
+
+    .detail-toggle {
+      width: 100%;
+      margin-top: 18px;
+      padding: 14px 16px;
+      border: none;
+      border-radius: 16px;
+      background: #f7dfcb;
+      color: #6b4423;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .detail-area {
+      display: none;
+      margin-top: 18px;
+    }
+
+    .detail-area.is-open {
+      display: block;
+    }
+
+    .optional-area {
+      margin-top: 24px;
+    }
+
+    .optional-note {
+      margin-top: 8px;
+      text-align: center;
+      font-size: 14px;
+      line-height: 1.6;
+      color: #80634d;
+    }
+  </style>
 </head>
 
 <body>
@@ -43,21 +116,21 @@
         </h1>
 
         <p class="section-text">
-          お金のことが不安になると、<br>
+          お金のことが気になる時は、<br>
           まだ起きていないことまで<br>
-          怖く見えることがあるよね🌿
+          大きく見えてしまうこともあるよね🌿
         </p>
 
         <p class="section-text">
-          今すぐ答えを出さなくても大丈夫。<br>
-          まずは気持ちと事実を、<br>
-          ひとつずつ整理してみよう😊
+          全部を考えなくて大丈夫。<br>
+          今の気持ちに近いものから<br>
+          タップしてみよう😊
         </p>
 
       </header>
 
 
-      <!-- 深呼吸への案内 -->
+      <!-- 深呼吸 -->
       <section class="message-box">
 
         <p class="main-message">
@@ -65,8 +138,8 @@
         </p>
 
         <p class="sub-message">
-          焦ったまま計算しなくてもいいよ。<br>
-          少し落ち着いてから、一緒に見ていこう😊
+          今すぐ答えを出さなくても大丈夫。<br>
+          少し落ち着いてから見てもいいよ😊
         </p>
 
         <div class="page-buttons">
@@ -83,293 +156,438 @@
       </section>
 
 
-      <!-- 今の不安 -->
+      <!-- ① 今なにが不安？ -->
       <section class="work-block">
 
         <h2 class="work-title">
-          ① 今、何が不安？
+          ① 今、何が気になる？
         </h2>
 
         <p class="mini-text">
-          うまくまとめなくても大丈夫。<br>
-          今浮かんでいることを、そのまま書いてみよう。
+          当てはまるものをタップしてね。<br>
+          いくつ選んでも大丈夫😊
         </p>
 
-        <label for="anxietyFeeling">
-          今、お金のことで不安なこと
-        </label>
+        <div class="check-list">
 
-        <textarea
-          id="anxietyFeeling"
-          rows="5"
-          placeholder="例：支払日が近づくと、足りなくなる気がして不安になる。"
-        ></textarea>
+          <label class="check-item">
+            <input
+              type="checkbox"
+              name="anxietyReason"
+              value="支払日が近い"
+            >
+            <span>💳 支払日が近い</span>
+          </label>
 
+          <label class="check-item">
+            <input
+              type="checkbox"
+              name="anxietyReason"
+              value="お金が足りない気がする"
+            >
+            <span>💭 お金が足りない気がする</span>
+          </label>
 
-        <label for="anxietyWorstFear">
-          このままだと、どうなると思っている？
-        </label>
+          <label class="check-item">
+            <input
+              type="checkbox"
+              name="anxietyReason"
+              value="入ってくる予定が分からない"
+            >
+            <span>📅 入ってくる予定が分からない</span>
+          </label>
 
-        <textarea
-          id="anxietyWorstFear"
-          rows="5"
-          placeholder="例：払えないかもしれない。督促が来るかもしれない。生活できなくなるかもしれない。"
-        ></textarea>
+          <label class="check-item">
+            <input
+              type="checkbox"
+              name="anxietyReason"
+              value="使いすぎた気がする"
+            >
+            <span>🛍️ 使いすぎた気がする</span>
+          </label>
 
-      </section>
+          <label class="check-item">
+            <input
+              type="checkbox"
+              name="anxietyReason"
+              value="今後の生活が心配"
+            >
+            <span>🏠 今後の生活が心配</span>
+          </label>
 
+          <label class="check-item">
+            <input
+              type="checkbox"
+              name="anxietyReason"
+              value="貯金が減るのが怖い"
+            >
+            <span>💰 貯金が減るのが怖い</span>
+          </label>
 
-      <!-- 支払いの把握 -->
-      <section class="work-block">
+          <label class="check-item">
+            <input
+              type="checkbox"
+              name="anxietyReason"
+              value="理由は分からないけど不安"
+            >
+            <span>😟 理由は分からないけど不安</span>
+          </label>
 
-        <h2 class="work-title">
-          ② 支払いを確認してみよう
-        </h2>
-
-        <p class="mini-text">
-          不安の大きさではなく、<br>
-          今分かっている事実を確認してみよう🌿
-        </p>
-
-        <label for="paymentName">
-          何の支払い？
-        </label>
+        </div>
 
         <input
-          type="text"
-          id="paymentName"
-          placeholder="例：家賃、カード、電気代、保険料"
+          type="hidden"
+          id="anxietyReasonChecks"
+          value=""
         >
 
 
-        <label for="paymentDate">
-          支払日はいつ？
-        </label>
+        <div class="optional-area">
 
-        <input
-          type="date"
-          id="paymentDate"
-        >
+          <label for="anxietyOther">
+            ほかに気になることがあれば、ひとこと
+          </label>
 
+          <input
+            type="text"
+            id="anxietyOther"
+            placeholder="例：来月の支払いまで考えると心配"
+          >
 
-        <label for="paymentAmount">
-          支払額はいくら？
-        </label>
-
-        <input
-          type="text"
-          id="paymentAmount"
-          inputmode="numeric"
-          placeholder="例：30000円"
-        >
-
-
-        <label for="otherPayments">
-          ほかに気になっている支払い
-        </label>
-
-        <textarea
-          id="otherPayments"
-          rows="4"
-          placeholder="例：25日にカード代、月末に電気代がある。"
-        ></textarea>
-
-      </section>
-
-
-      <!-- 現在のお金 -->
-      <section class="work-block">
-
-        <h2 class="work-title">
-          ③ 今、使えるお金を確認しよう
-        </h2>
-
-        <p class="mini-text">
-          正確に分からない時は、<br>
-          分かる範囲だけで大丈夫だよ😊
-        </p>
-
-        <label for="availableMoney">
-          今、支払いに使えるお金
-        </label>
-
-        <input
-          type="text"
-          id="availableMoney"
-          inputmode="numeric"
-          placeholder="例：20000円"
-        >
-
-
-        <label for="cashOnHand">
-          手元に残しておきたい生活費
-        </label>
-
-        <input
-          type="text"
-          id="cashOnHand"
-          inputmode="numeric"
-          placeholder="例：10000円"
-        >
-
-
-        <label for="moneyUnknown">
-          まだ確認できていないこと
-        </label>
-
-        <textarea
-          id="moneyUnknown"
-          rows="4"
-          placeholder="例：口座残高をまだ見ていない。カードの確定額が分からない。"
-        ></textarea>
-
-      </section>
-
-
-      <!-- 入金予定 -->
-      <section class="work-block">
-
-        <h2 class="work-title">
-          ④ 入ってくる予定のお金はある？
-        </h2>
-
-        <p class="mini-text">
-          給料、振込、返金、売上など、<br>
-          今分かっている予定を書いてみよう🌱
-        </p>
-
-        <label for="incomeSource">
-          何のお金が入る予定？
-        </label>
-
-        <input
-          type="text"
-          id="incomeSource"
-          placeholder="例：給料、売上、返金、家族からの振込"
-        >
-
-
-        <label for="incomeDate">
-          入金予定日はいつ？
-        </label>
-
-        <input
-          type="date"
-          id="incomeDate"
-        >
-
-
-        <label for="incomeAmount">
-          入金予定額はいくら？
-        </label>
-
-        <input
-          type="text"
-          id="incomeAmount"
-          inputmode="numeric"
-          placeholder="例：50000円"
-        >
-
-
-        <label for="otherIncome">
-          ほかの入金予定や可能性
-        </label>
-
-        <textarea
-          id="otherIncome"
-          rows="4"
-          placeholder="例：商品の売上が入るかもしれない。返金の確認中。"
-        ></textarea>
-
-      </section>
-
-
-      <!-- 不安と事実を分ける -->
-      <section class="work-block">
-
-        <h2 class="work-title">
-          ⑤ 不安と、今分かっている事実
-        </h2>
-
-        <p class="mini-text">
-          不安を否定しなくて大丈夫。<br>
-          不安とは別に、今分かっていることも見てみよう😊
-        </p>
-
-        <label for="anxietyThought">
-          不安が言っていること
-        </label>
-
-        <textarea
-          id="anxietyThought"
-          rows="4"
-          placeholder="例：絶対に払えない。もうどうにもならない。"
-        ></textarea>
-
-
-        <label for="knownFacts">
-          今、実際に分かっている事実
-        </label>
-
-        <textarea
-          id="knownFacts"
-          rows="5"
-          placeholder="例：まだ支払日まで10日ある。20日に入金予定がある。支払先には相談できる。"
-        ></textarea>
-
-      </section>
-
-
-      <!-- 今できること -->
-      <section class="work-block">
-
-        <h2 class="work-title">
-          ⑥ 今できそうな小さなこと
-        </h2>
-
-        <p class="mini-text">
-          全部を解決しなくても大丈夫。<br>
-          今日できる小さな確認を、ひとつ選んでみよう🌿
-        </p>
-
-        <div class="example-box">
-
-          <p>
-            口座残高を確認する
-          </p>
-
-          <p>
-            請求額を確認する
-          </p>
-
-          <p>
-            入金日を確認する
-          </p>
-
-          <p>
-            支払先に相談できるか調べる
-          </p>
-
-          <p>
-            今日は確認せず、まず休む
+          <p class="optional-note">
+            書かなくても大丈夫だよ😊
           </p>
 
         </div>
 
-        <label for="smallMoneyAction">
-          今の私にできそうなこと
-        </label>
+      </section>
 
-        <textarea
-          id="smallMoneyAction"
-          rows="4"
-          placeholder="例：今日はカードの確定額だけ確認する。"
-        ></textarea>
+
+      <!-- ② 今の気持ち -->
+      <section class="work-block">
+
+        <h2 class="work-title">
+          ② 今、どんな気持ち？
+        </h2>
+
+        <p class="mini-text">
+          いちばん近いものを選んでも、<br>
+          複数選んでも大丈夫🌿
+        </p>
+
+        <div class="check-list">
+
+          <label class="check-item">
+            <input
+              type="checkbox"
+              name="anxietyMood"
+              value="ちょっと気になる"
+            >
+            <span>🙂 ちょっと気になる</span>
+          </label>
+
+          <label class="check-item">
+            <input
+              type="checkbox"
+              name="anxietyMood"
+              value="そわそわする"
+            >
+            <span>😅 そわそわする</span>
+          </label>
+
+          <label class="check-item">
+            <input
+              type="checkbox"
+              name="anxietyMood"
+              value="焦っている"
+            >
+            <span>😣 焦っている</span>
+          </label>
+
+          <label class="check-item">
+            <input
+              type="checkbox"
+              name="anxietyMood"
+              value="怖い"
+            >
+            <span>😨 怖い</span>
+          </label>
+
+          <label class="check-item">
+            <input
+              type="checkbox"
+              name="anxietyMood"
+              value="頭がいっぱい"
+            >
+            <span>🌀 頭がいっぱい</span>
+          </label>
+
+          <label class="check-item">
+            <input
+              type="checkbox"
+              name="anxietyMood"
+              value="よく分からない"
+            >
+            <span>🤔 よく分からない</span>
+          </label>
+
+        </div>
+
+        <input
+          type="hidden"
+          id="anxietyMoodChecks"
+          value=""
+        >
 
       </section>
 
 
-      <!-- チャッピーGPTへ -->
+      <!-- ここまででもOK -->
+      <section class="complete-box">
+
+        <p class="complete-main">
+          ここまででも大丈夫😊🌿
+        </p>
+
+        <p>
+          今、何に不安を感じているのか<br>
+          少し見えただけでも花まるだよ🌼
+        </p>
+
+      </section>
+
+
+      <!-- 詳細入力 -->
+      <section class="work-block">
+
+        <h2 class="work-title">
+          💡 もう少し現実を整理してみる？
+        </h2>
+
+        <p class="mini-text">
+          支払日や金額を確認すると、<br>
+          「思っていたより大丈夫だった」と<br>
+          気づくこともあるよ😊
+        </p>
+
+        <button
+          id="detailToggle"
+          class="detail-toggle"
+          type="button"
+        >
+          💰 支払日や金額も整理してみる
+        </button>
+
+        <div
+          id="detailArea"
+          class="detail-area"
+        >
+
+          <label for="paymentName">
+            何の支払い？
+          </label>
+
+          <input
+            type="text"
+            id="paymentName"
+            placeholder="例：家賃、カード、電気代"
+          >
+
+
+          <label for="paymentDate">
+            支払日はいつ？
+          </label>
+
+          <input
+            type="date"
+            id="paymentDate"
+          >
+
+
+          <label for="paymentAmount">
+            支払額はいくら？
+          </label>
+
+          <input
+            type="text"
+            id="paymentAmount"
+            inputmode="numeric"
+            placeholder="例：30000円"
+          >
+
+
+          <label for="availableMoney">
+            今、支払いに使えそうなお金
+          </label>
+
+          <input
+            type="text"
+            id="availableMoney"
+            inputmode="numeric"
+            placeholder="例：20000円"
+          >
+
+
+          <label for="incomeSource">
+            入ってくる予定のお金
+          </label>
+
+          <input
+            type="text"
+            id="incomeSource"
+            placeholder="例：給料、売上、返金"
+          >
+
+
+          <label for="incomeDate">
+            入金予定日はいつ？
+          </label>
+
+          <input
+            type="date"
+            id="incomeDate"
+          >
+
+
+          <label for="incomeAmount">
+            入金予定額はいくら？
+          </label>
+
+          <input
+            type="text"
+            id="incomeAmount"
+            inputmode="numeric"
+            placeholder="例：50000円"
+          >
+
+
+          <div class="optional-area">
+
+            <label for="moneyRealityOther">
+              ほかに確認しておきたいこと
+            </label>
+
+            <input
+              type="text"
+              id="moneyRealityOther"
+              placeholder="例：カードの確定額をまだ確認していない"
+            >
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- ③ 今できそうなこと -->
+      <section class="work-block">
+
+        <h2 class="work-title">
+          ③ 今できそうな小さなこと
+        </h2>
+
+        <p class="mini-text">
+          全部解決しなくても大丈夫。<br>
+          今できそうなものを選んでみよう🌿
+        </p>
+
+        <div class="check-list">
+
+          <label class="check-item">
+            <input
+              type="checkbox"
+              name="moneyAction"
+              value="口座残高を確認する"
+            >
+            <span>🏦 口座残高を確認する</span>
+          </label>
+
+          <label class="check-item">
+            <input
+              type="checkbox"
+              name="moneyAction"
+              value="請求額を確認する"
+            >
+            <span>🧾 請求額を確認する</span>
+          </label>
+
+          <label class="check-item">
+            <input
+              type="checkbox"
+              name="moneyAction"
+              value="入金日を確認する"
+            >
+            <span>📅 入金日を確認する</span>
+          </label>
+
+          <label class="check-item">
+            <input
+              type="checkbox"
+              name="moneyAction"
+              value="支払先に相談する"
+            >
+            <span>📞 支払先に相談する</span>
+          </label>
+
+          <label class="check-item">
+            <input
+              type="checkbox"
+              name="moneyAction"
+              value="家族や信頼できる人に話す"
+            >
+            <span>🤝 誰かに話してみる</span>
+          </label>
+
+          <label class="check-item">
+            <input
+              type="checkbox"
+              name="moneyAction"
+              value="今日はまず休む"
+            >
+            <span>☕ 今日はまず休む</span>
+          </label>
+
+          <label class="check-item">
+            <input
+              type="checkbox"
+              name="moneyAction"
+              value="チャッピーに話してみる"
+            >
+            <span>🐶 チャッピーに話してみる</span>
+          </label>
+
+        </div>
+
+        <input
+          type="hidden"
+          id="moneyActionChecks"
+          value=""
+        >
+
+
+        <div class="optional-area">
+
+          <label for="moneyActionOther">
+            ほかにできそうなことがあれば
+          </label>
+
+          <input
+            type="text"
+            id="moneyActionOther"
+            placeholder="例：今日はカードの金額だけ確認する"
+          >
+
+          <p class="optional-note">
+            何も選ばず「今日は休む」でも大丈夫😊
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <!-- チャッピーGPT -->
       <section class="hint-box">
 
         <h2 class="hint-title">
@@ -378,39 +596,43 @@
 
         <p>
           自分だけで前向きな答えを<br>
-          無理に作らなくても大丈夫。
+          作らなくても大丈夫。
         </p>
 
         <p>
-          入力した内容をコピーして、<br>
-          チャッピーGPTに貼り付けてみよう。
+          最後にまとめをコピーして、<br>
+          チャッピーGPTに貼り付けてみてね😊
         </p>
 
         <p>
-          不安と事実を一緒に見ながら、<br>
-          今のあなたが安心できる視点を探していくよ🌿
+          今の気持ちと現実を一緒に見ながら、<br>
+          安心できる視点を探していこう🌿
         </p>
 
       </section>
 
 
-      <!-- 終わりのメッセージ -->
+      <!-- 終わり -->
       <section class="complete-box">
 
         <p class="complete-main">
-          お金の不安を、ひとりで抱えずに整理できました🌿
+          お金の不安を、やさしく整理できました🌿
         </p>
 
         <p>
-          まだ不安が残っていても大丈夫。<br>
-          分からなかったことが少し見えたら、<br>
-          それも安心へ戻る一歩だよ😊
+          まだ不安が残っていても大丈夫。
+        </p>
+
+        <p>
+          「今、何が怖かったのか」や<br>
+          「今できること」が少し見えたら、<br>
+          それも安心に戻る一歩だよ😊
         </p>
 
       </section>
 
 
-      <!-- ページ移動ボタン -->
+      <!-- ページ移動 -->
       <div class="page-buttons">
 
         <a
@@ -432,6 +654,159 @@
     </main>
 
   </div>
+
+
+  <script>
+    "use strict";
+
+    document.addEventListener(
+      "DOMContentLoaded",
+      () => {
+
+        setupCheckGroup(
+          "anxietyReason",
+          "anxietyReasonChecks"
+        );
+
+        setupCheckGroup(
+          "anxietyMood",
+          "anxietyMoodChecks"
+        );
+
+        setupCheckGroup(
+          "moneyAction",
+          "moneyActionChecks"
+        );
+
+
+        const detailToggle =
+          document.getElementById(
+            "detailToggle"
+          );
+
+        const detailArea =
+          document.getElementById(
+            "detailArea"
+          );
+
+
+        if (
+          detailToggle &&
+          detailArea
+        ) {
+          detailToggle.addEventListener(
+            "click",
+            () => {
+              detailArea.classList.toggle(
+                "is-open"
+              );
+
+              const isOpen =
+                detailArea.classList.contains(
+                  "is-open"
+                );
+
+              detailToggle.textContent =
+                isOpen
+                  ? "🌿 詳細を閉じる"
+                  : "💰 支払日や金額も整理してみる";
+            }
+          );
+        }
+
+      }
+    );
+
+
+    function setupCheckGroup(
+      checkboxName,
+      hiddenFieldId
+    ) {
+      const checkboxes =
+        document.querySelectorAll(
+          `input[name="${checkboxName}"]`
+        );
+
+      const savedField =
+        document.getElementById(
+          hiddenFieldId
+        );
+
+
+      if (!savedField) {
+        return;
+      }
+
+
+      function restoreChecks() {
+        const savedValues =
+          savedField.value
+            .split("、")
+            .map(
+              value => value.trim()
+            )
+            .filter(Boolean);
+
+
+        checkboxes.forEach(
+          checkbox => {
+            checkbox.checked =
+              savedValues.includes(
+                checkbox.value
+              );
+          }
+        );
+      }
+
+
+      function updateSavedField() {
+        const selectedValues =
+          Array.from(checkboxes)
+            .filter(
+              checkbox =>
+                checkbox.checked
+            )
+            .map(
+              checkbox =>
+                checkbox.value
+            );
+
+
+        savedField.value =
+          selectedValues.join("、");
+
+
+        savedField.dispatchEvent(
+          new Event(
+            "input",
+            {
+              bubbles: true
+            }
+          )
+        );
+
+
+        if (
+          typeof window.saveData === "function"
+        ) {
+          window.saveData(false);
+        }
+      }
+
+
+      checkboxes.forEach(
+        checkbox => {
+          checkbox.addEventListener(
+            "change",
+            updateSavedField
+          );
+        }
+      );
+
+
+      restoreChecks();
+    }
+  </script>
 
 </body>
 </html>
