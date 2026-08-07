@@ -16,8 +16,8 @@ const STORAGE_KEY =
 const savedFieldIds = [
 
   /* お金ってなんだろう？ */
-  "moneyChangedInto",
-  "moneyReceivedFeeling",
+  "moneyFeelingChecks",
+  "moneyFeelingOther",
 
   /* お金って、あなたにとってどんな存在？ */
   "moneyFirstImage",
