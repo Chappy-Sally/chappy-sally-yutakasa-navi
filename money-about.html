@@ -14,13 +14,70 @@
 
   <meta
     name="description"
-    content="お金を怖いものや減っていくものだけではなく、暮らしを支え、さまざまな豊かさに姿を変えるものとしてやさしく見つめるページです。"
+    content="お金の本来の役割をやさしく知り、今のお金への気持ちに気づくページです。"
   >
 
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="pages.css">
 
   <script src="storage.js" defer></script>
+
+  <style>
+    .money-feeling-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .money-feeling-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      width: 100%;
+      padding: 15px 16px;
+      border: 2px solid #f0d8c3;
+      border-radius: 16px;
+      background: #fffaf6;
+      color: #6b4423;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.5;
+      cursor: pointer;
+      transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+    }
+
+    .money-feeling-item:active {
+      transform: scale(0.98);
+    }
+
+    .money-feeling-item input {
+      width: 22px;
+      height: 22px;
+      margin: 0;
+      flex-shrink: 0;
+      accent-color: #e79b65;
+    }
+
+    .money-feeling-item:has(input:checked) {
+      border-color: #e79b65;
+      background: #fff0e4;
+    }
+
+    .optional-area {
+      margin-top: 28px;
+    }
+
+    .optional-note {
+      margin-top: 10px;
+      text-align: center;
+      font-size: 14px;
+      line-height: 1.7;
+      color: #80634d;
+    }
+  </style>
 </head>
 
 <body>
@@ -48,9 +105,9 @@
         </p>
 
         <p class="section-text">
-          まずは少しだけ、<br>
-          「お金って何だろう？」と<br>
-          やさしく見てみよう😊
+          ここでは入力をがんばらずに、<br>
+          お金が本来どんなものなのか<br>
+          チャッピー＆サリーと見てみよう😊
         </p>
 
       </header>
@@ -87,7 +144,7 @@
 
           <p>
             電気や水道になって、<br>
-            安心して暮らせる場所を支えてくれる🏠
+            安心できる暮らしを支えてくれる🏠
           </p>
 
           <p>
@@ -100,43 +157,12 @@
             楽しさやしあわせを届けてくれる🤭
           </p>
 
+          <p>
+            誰かの仕事やサービスを、<br>
+            受け取ることもできる✨
+          </p>
+
         </div>
-
-      </section>
-
-
-      <!-- やさしいワーク -->
-      <section class="work-block">
-
-        <h2 class="work-title">
-          ✨ 最近、お金は何に姿を変えてくれた？
-        </h2>
-
-        <p class="mini-text">
-          大きなものでなくて大丈夫。<br>
-          今日食べたものや、使った日用品でもいいよ😊
-        </p>
-
-        <label for="moneyChangedInto">
-          お金が姿を変えて届けてくれたもの
-        </label>
-
-        <textarea
-          id="moneyChangedInto"
-          rows="5"
-          placeholder="例：温かいごはん、飲み物、スマホを使える便利さ、好きなおやつ"
-        ></textarea>
-
-
-        <label for="moneyReceivedFeeling">
-          それを受け取って、どんな気持ちになった？
-        </label>
-
-        <textarea
-          id="moneyReceivedFeeling"
-          rows="4"
-          placeholder="例：助かった。安心した。うれしかった。おいしかった。"
-        ></textarea>
 
       </section>
 
@@ -145,23 +171,141 @@
       <section class="hint-box">
 
         <h2 class="hint-title">
-          💡 こんな見方もできるかも
+          💡 使ったお金は、消えただけじゃない
         </h2>
 
         <p>
-          お金は、ただ減っていくものではなく、<br>
-          必要なものと交換できる道具。
+          お金を使うと、<br>
+          「減っちゃった」と感じることもあるよね。
         </p>
 
         <p>
-          お金は、安心や楽しさを<br>
-          広げるお手伝いをしてくれるもの。
+          でも、その代わりに食べ物や安心、<br>
+          便利さや楽しさを受け取っているんだよ😊
         </p>
 
         <p>
-          お金は、誰かの仕事ややさしさを<br>
-          受け取るための交換券でもある。
+          お金は、必要なものや豊かさと交換できる<br>
+          暮らしの道具でもあるんだね🌈
         </p>
+
+      </section>
+
+
+      <!-- お金への気持ち -->
+      <section class="work-block">
+
+        <h2 class="work-title">
+          💭 今、お金にどんな気持ちがある？
+        </h2>
+
+        <p class="mini-text">
+          今の気持ちに近いものをタップしてね。<br>
+          ひとつでも、いくつ選んでも大丈夫😊
+        </p>
+
+        <div class="money-feeling-list">
+
+          <label class="money-feeling-item">
+            <input
+              type="checkbox"
+              name="moneyFeeling"
+              value="好き"
+            >
+            <span>😊 好き！</span>
+          </label>
+
+          <label class="money-feeling-item">
+            <input
+              type="checkbox"
+              name="moneyFeeling"
+              value="あるとうれしい"
+            >
+            <span>✨ あるとうれしい！</span>
+          </label>
+
+          <label class="money-feeling-item">
+            <input
+              type="checkbox"
+              name="moneyFeeling"
+              value="あると安心する"
+            >
+            <span>🌿 あると安心する</span>
+          </label>
+
+          <label class="money-feeling-item">
+            <input
+              type="checkbox"
+              name="moneyFeeling"
+              value="ちょっと苦手"
+            >
+            <span>😅 ちょっと苦手</span>
+          </label>
+
+          <label class="money-feeling-item">
+            <input
+              type="checkbox"
+              name="moneyFeeling"
+              value="嫌い"
+            >
+            <span>😣 嫌い！</span>
+          </label>
+
+          <label class="money-feeling-item">
+            <input
+              type="checkbox"
+              name="moneyFeeling"
+              value="怖い"
+            >
+            <span>😨 怖い！</span>
+          </label>
+
+          <label class="money-feeling-item">
+            <input
+              type="checkbox"
+              name="moneyFeeling"
+              value="心配になる"
+            >
+            <span>💭 心配になる</span>
+          </label>
+
+          <label class="money-feeling-item">
+            <input
+              type="checkbox"
+              name="moneyFeeling"
+              value="よく分からない"
+            >
+            <span>🤔 よく分からない</span>
+          </label>
+
+        </div>
+
+        <!-- チェックした内容の保存用 -->
+        <input
+          type="hidden"
+          id="moneyFeelingChecks"
+          value=""
+        >
+
+
+        <!-- ほかにあれば、ひとこと -->
+        <div class="optional-area">
+
+          <label for="moneyFeelingOther">
+            ほかに浮かんだ気持ちがあれば、ひとこと
+          </label>
+
+          <input
+            type="text"
+            id="moneyFeelingOther"
+            placeholder="例：好きだけど、なくなるのは怖い"
+          >
+
+          <p class="optional-note">
+            思いつかなければ、書かなくても大丈夫だよ😊
+          </p>
+
+        </div>
 
       </section>
 
@@ -170,13 +314,21 @@
       <section class="complete-box">
 
         <p class="complete-main">
-          お金を少し違う角度から見られました💰🌿
+          今のお金への気持ちに気づけました💰🌿
         </p>
 
         <p>
-          今すぐお金を好きにならなくても大丈夫。<br>
-          「怖いものだけではないかも」と思えたら、<br>
-          今日はそれで花まるだよ😊
+          好きでも、嫌いでも、怖くても大丈夫。
+        </p>
+
+        <p>
+          「好きだけど心配」のように、<br>
+          いろいろな気持ちが一緒にあってもいいんだよ😊
+        </p>
+
+        <p>
+          今の気持ちを分かってあげられたら、<br>
+          今日はそれだけで花まる🌼
         </p>
 
       </section>
@@ -204,6 +356,91 @@
     </main>
 
   </div>
+
+
+  <!-- チェック内容を保存用の欄へまとめる -->
+  <script>
+    "use strict";
+
+    document.addEventListener(
+      "DOMContentLoaded",
+      () => {
+        const checkboxes =
+          document.querySelectorAll(
+            'input[name="moneyFeeling"]'
+          );
+
+        const savedField =
+          document.getElementById(
+            "moneyFeelingChecks"
+          );
+
+        if (!savedField) {
+          return;
+        }
+
+
+        function restoreChecks() {
+          const savedValues =
+            savedField.value
+              .split("、")
+              .map(value => value.trim())
+              .filter(Boolean);
+
+          checkboxes.forEach(
+            checkbox => {
+              checkbox.checked =
+                savedValues.includes(
+                  checkbox.value
+                );
+            }
+          );
+        }
+
+
+        function updateSavedField() {
+          const selectedValues =
+            Array.from(checkboxes)
+              .filter(
+                checkbox => checkbox.checked
+              )
+              .map(
+                checkbox => checkbox.value
+              );
+
+          savedField.value =
+            selectedValues.join("、");
+
+          savedField.dispatchEvent(
+            new Event(
+              "input",
+              {
+                bubbles: true
+              }
+            )
+          );
+
+          if (
+            typeof window.saveData === "function"
+          ) {
+            window.saveData(false);
+          }
+        }
+
+
+        checkboxes.forEach(
+          checkbox => {
+            checkbox.addEventListener(
+              "change",
+              updateSavedField
+            );
+          }
+        );
+
+        restoreChecks();
+      }
+    );
+  </script>
 
 </body>
 </html>
