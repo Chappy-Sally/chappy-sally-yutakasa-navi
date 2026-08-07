@@ -14,13 +14,64 @@
 
   <meta
     name="description"
-    content="お金の不安を整理して安心に戻ったあと、今あるもの、受け取っているもの、自分が生み出している豊かさに気づくページです。"
+    content="安心に戻ったあと、今すでにある豊かさや今日の小さなしあわせに気づき、やさしく豊かさを育てるページです。"
   >
 
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="pages.css">
 
   <script src="storage.js" defer></script>
+
+  <style>
+    .check-list {
+      display: grid;
+      gap: 0;
+      margin-top: 14px;
+      padding: 8px 14px;
+      border: 2px solid #f0d8c3;
+      border-radius: 18px;
+      background: #fffaf6;
+    }
+
+    .check-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      width: 100%;
+      margin: 0 !important;
+      padding: 3px 2px !important;
+      min-height: 0 !important;
+      color: #6b4423;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.25;
+      cursor: pointer;
+    }
+
+    .check-item input {
+      width: 20px;
+      height: 20px;
+      margin: 0 !important;
+      flex-shrink: 0;
+      accent-color: #e79b65;
+    }
+
+    .check-item:has(input:checked) {
+      color: #c06e38;
+    }
+
+    .optional-area {
+      margin-top: 24px;
+    }
+
+    .optional-note {
+      margin-top: 8px;
+      text-align: center;
+      font-size: 14px;
+      line-height: 1.6;
+      color: #80634d;
+    }
+  </style>
 </head>
 
 <body>
@@ -43,315 +94,306 @@
         </h1>
 
         <p class="section-text">
-          不安を感じている時に、<br>
-          無理に豊かさを探さなくても大丈夫😊
+          豊かさは、大きなお金だけじゃないよ😊
         </p>
 
         <p class="section-text">
-          少し心が落ち着いた時に、<br>
-          今すでにあるものや、<br>
-          今日受け取ったものを見てみよう🌿
+          食べられたこと、休めたこと、<br>
+          笑えたこと、好きなものを楽しめたこと。<br>
+          小さな豊かさも、ちゃんとここにあるよ🌿
         </p>
 
       </header>
 
 
-      <!-- チャッピー＆サリーからのメッセージ -->
+      <!-- メッセージ -->
       <section class="message-box">
 
         <p class="main-message">
-          豊かさは、大きなお金だけじゃないよ😊
+          たくさん見つけなくても大丈夫🌱
         </p>
 
         <p class="sub-message">
-          食べられたこと、休めたこと、<br>
-          誰かと話せたこと、笑えたこと。<br>
-          小さな豊かさも、ちゃんとここにあるよ🌈
+          「あ、これも豊かさだったんだ」って<br>
+          ひとつ気づけたら、それで花まるだよ😊
         </p>
 
       </section>
 
 
-      <!-- 今ある豊かさ -->
+      <!-- ① 今ある豊かさ -->
       <section class="work-block">
 
         <h2 class="work-title">
-          ① 今すでにある豊かさ
+          ① 今すでにある豊かさは？
         </h2>
 
         <p class="mini-text">
-          今持っているもの、助かっていること、<br>
-          今日も受け取っているものを見つけてみよう🌿
+          今の自分にあるものを、<br>
+          気楽にタップしてみよう😊
         </p>
 
-        <label for="arutakasa1">
-          1つめ
+        <div class="check-list">
+
+          <label class="check-item">
+            <input
+              type="checkbox"
+              name="abundanceNow"
+              value="食べられるものがある"
+            >
+            <span>🍚 食べられるものがある</span>
+          </label>
+
+          <label class="check-item">
+            <input
+              type="checkbox"
+              name="abundanceNow"
+              value="飲めるものがある"
+            >
+            <span>🥤 飲めるものがある</span>
+          </label>
+
+          <label class="check-item">
+            <input
+              type="checkbox"
+              name="abundanceNow"
+              value="安心して眠れる場所がある"
+            >
+            <span>🏠 安心して眠れる場所がある</span>
+          </label>
+
+          <label class="check-item">
+            <input
+              type="checkbox"
+              name="abundanceNow"
+              value="便利に使えるものがある"
+            >
+            <span>📱 便利に使えるものがある</span>
+          </label>
+
+          <label class="check-item">
+            <input
+              type="checkbox"
+              name="abundanceNow"
+              value="誰かと話せた"
+            >
+            <span>💬 誰かと話せた</span>
+          </label>
+
+          <label class="check-item">
+            <input
+              type="checkbox"
+              name="abundanceNow"
+              value="少し休めた"
+            >
+            <span>☕ 少し休めた</span>
+          </label>
+
+          <label class="check-item">
+            <input
+              type="checkbox"
+              name="abundanceNow"
+              value="好きなものを楽しめた"
+            >
+            <span>💖 好きなものを楽しめた</span>
+          </label>
+
+          <label class="check-item">
+            <input
+              type="checkbox"
+              name="abundanceNow"
+              value="笑えた"
+            >
+            <span>😆 笑えた</span>
+          </label>
+
+          <label class="check-item">
+            <input
+              type="checkbox"
+              name="abundanceNow"
+              value="今日もここにいる"
+            >
+            <span>🌿 今日もここにいる</span>
+          </label>
+
+        </div>
+
+        <input
+          type="hidden"
+          id="abundanceNowChecks"
+          value=""
+        >
+
+      </section>
+
+
+      <!-- ② 今日のうふふっ -->
+      <section class="work-block">
+
+        <h2 class="work-title">
+          ② 今日の「うふふっ🤭」は？
+        </h2>
+
+        <p class="mini-text">
+          ちょっと嬉しかったこと、<br>
+          おいしかったこと、笑えたこと。<br>
+          ひとことだけで大丈夫だよ✨
+        </p>
+
+        <label for="todayUfufu">
+          今日の「うふふっ🤭」
         </label>
 
         <input
           type="text"
-          id="arutakasa1"
-          placeholder="例：安心して眠れる場所がある"
+          id="todayUfufu"
+          placeholder="例：おやつがおいしかった😋"
         >
 
-
-        <label for="arutakasa2">
-          2つめ
-        </label>
-
-        <input
-          type="text"
-          id="arutakasa2"
-          placeholder="例：飲めるお水や食べられるものがある"
-        >
-
-
-        <label for="arutakasa3">
-          3つめ
-        </label>
-
-        <input
-          type="text"
-          id="arutakasa3"
-          placeholder="例：話を聞いてくれる人がいる"
-        >
+        <p class="optional-note">
+          思いつかなければ、書かなくても大丈夫😊
+        </p>
 
       </section>
 
 
-      <!-- 今日受け取ったもの -->
-      <section class="work-block">
-
-        <h2 class="work-title">
-          ② 今日、受け取った豊かさ
-        </h2>
-
-        <p class="mini-text">
-          お金を払って受け取ったものだけでなく、<br>
-          無料で受け取ったものも探してみよう😊
-        </p>
-
-        <div class="example-box">
-
-          <p>
-            太陽の光や、気持ちのいい風☀️
-          </p>
-
-          <p>
-            誰かからのやさしい言葉🌼
-          </p>
-
-          <p>
-            便利な道具やサービス✨
-          </p>
-
-          <p>
-            おいしい食事や好きなおやつ😋
-          </p>
-
-        </div>
-
-        <label for="receivedAbundance">
-          今日、受け取った豊かさ
-        </label>
-
-        <textarea
-          id="receivedAbundance"
-          rows="5"
-          placeholder="例：おいしいお茶、家族との会話、涼しい部屋、便利なスマホ"
-        ></textarea>
-
-
-        <label for="receivedFeeling">
-          受け取って、どんな気持ちになった？
-        </label>
-
-        <textarea
-          id="receivedFeeling"
-          rows="4"
-          placeholder="例：うれしかった。助かった。ほっとした。しあわせだった。"
-        ></textarea>
-
-      </section>
-
-
-      <!-- 今日のいいこと -->
-      <section class="work-block">
-
-        <h2 class="work-title">
-          ③ 今日あった、ちょっといいこと
-        </h2>
-
-        <p class="mini-text">
-          大きな出来事でなくて大丈夫。<br>
-          少しうれしかったことや、笑えたことを書いてみよう🤭
-        </p>
-
-        <label for="goodThing">
-          今日のちょっといいこと
-        </label>
-
-        <textarea
-          id="goodThing"
-          rows="5"
-          placeholder="例：信号が青だった。お茶がおいしかった。アイデアが浮かんだ。"
-        ></textarea>
-
-      </section>
-
-
-      <!-- 存在給 -->
-      <section class="work-block">
-
-        <h2 class="work-title">
-          ④ 今日の存在給
-        </h2>
-
-        <p class="mini-text">
-          たくさん働いたかではなく、<br>
-          今日あなたがいたことで生まれた豊かさを見てみよう😊
-        </p>
-
-        <div class="example-box existence-example">
-
-          <p>
-            笑顔であいさつした
-          </p>
-
-          <p>
-            誰かの話を聞いた
-          </p>
-
-          <p>
-            自分の体を休ませた
-          </p>
-
-          <p>
-            今日もここにいた
-          </p>
-
-        </div>
-
-        <label for="sonzaikyu">
-          今日の存在給
-        </label>
-
-        <textarea
-          id="sonzaikyu"
-          rows="5"
-          placeholder="例：家族が安心できる場所にいた。ひとつアイデアを生み出した。"
-        ></textarea>
-
-      </section>
-
-
-      <!-- 使ったお金で受け取ったもの -->
-      <section class="work-block">
-
-        <h2 class="work-title">
-          ⑤ お金さんが届けてくれた豊かさ
-        </h2>
-
-        <p class="mini-text">
-          今日お金を使ったなら、<br>
-          何に姿を変えて戻ってきたか見てみよう💰
-        </p>
-
-        <label for="abundanceMoneyReceived">
-          お金さんが届けてくれたもの
-        </label>
-
-        <textarea
-          id="abundanceMoneyReceived"
-          rows="5"
-          placeholder="例：食事、安心、便利さ、楽しさ、癒し、移動できる自由"
-        ></textarea>
-
-        <p class="mini-text">
-          もっと詳しく振り返りたい時は、<br>
-          「使ったお金の受け取りメモ」も使えるよ😊
-        </p>
-
-        <div class="page-buttons">
-
-          <a
-            href="money.html"
-            class="next-btn"
-          >
-            💰 受け取りメモを開く
-          </a>
-
-        </div>
-
-      </section>
-
-
-      <!-- 今日選びたい豊かさ -->
-      <section class="work-block">
-
-        <h2 class="work-title">
-          ⑥ 今日、もうひとつ育てたい豊かさ
-        </h2>
-
-        <p class="mini-text">
-          無理に何かを買わなくても大丈夫。<br>
-          今できる小さなしあわせを選んでみよう🌱
-        </p>
-
-        <div class="example-box">
-
-          <p>
-            お茶をゆっくり味わう
-          </p>
-
-          <p>
-            好きな音楽を聴く
-          </p>
-
-          <p>
-            空や花を眺める
-          </p>
-
-          <p>
-            今日は何もしない時間を作る🤣
-          </p>
-
-        </div>
-
-        <label for="todayAbundanceChoice">
-          今日、育てたい小さな豊かさ
-        </label>
-
-        <textarea
-          id="todayAbundanceChoice"
-          rows="4"
-          placeholder="例：好きなお茶を飲みながら、ゆっくり休む。"
-        ></textarea>
-
-      </section>
-
-
-      <!-- やさしいヒント -->
+      <!-- 存在給メッセージ -->
       <section class="hint-box">
 
         <h2 class="hint-title">
-          💡 豊かさを感じられない日も大丈夫
+          🌼 今日の存在給
         </h2>
 
         <p>
-          不安がまだ強い時は、<br>
-          豊かさを見つけられなくても大丈夫。
+          今日たくさん頑張れなくても大丈夫。
         </p>
 
         <p>
-          「今日は安心に戻るだけ」にしても、<br>
-          それも大切な一歩だよ🌿
+          今日ここにいたこと。<br>
+          休んだこと。笑ったこと。<br>
+          誰かにやさしくしたこと。
         </p>
 
         <p>
-          豊かさは、安心できた心の中で<br>
-          少しずつ育っていくよ🌱
+          それも全部、あなたが今日生み出した<br>
+          豊かさのひとつだよ😊🌿
         </p>
+
+      </section>
+
+
+      <!-- ③ 育てたい豊かさ -->
+      <section class="work-block">
+
+        <h2 class="work-title">
+          ③ 今日、もうひとつ育てたい豊かさは？
+        </h2>
+
+        <p class="mini-text">
+          がんばることじゃなくて大丈夫。<br>
+          今できる小さなしあわせを選んでみよう🌱
+        </p>
+
+        <div class="check-list">
+
+          <label class="check-item">
+            <input
+              type="checkbox"
+              name="abundanceNext"
+              value="お茶をゆっくり飲む"
+            >
+            <span>☕ お茶をゆっくり飲む</span>
+          </label>
+
+          <label class="check-item">
+            <input
+              type="checkbox"
+              name="abundanceNext"
+              value="好きなものを食べる"
+            >
+            <span>😋 好きなものを食べる</span>
+          </label>
+
+          <label class="check-item">
+            <input
+              type="checkbox"
+              name="abundanceNext"
+              value="のんびりする"
+            >
+            <span>🌿 のんびりする</span>
+          </label>
+
+          <label class="check-item">
+            <input
+              type="checkbox"
+              name="abundanceNext"
+              value="好きな音楽を聴く"
+            >
+            <span>🎵 好きな音楽を聴く</span>
+          </label>
+
+          <label class="check-item">
+            <input
+              type="checkbox"
+              name="abundanceNext"
+              value="空や花を眺める"
+            >
+            <span>🌼 空や花を眺める</span>
+          </label>
+
+          <label class="check-item">
+            <input
+              type="checkbox"
+              name="abundanceNext"
+              value="自分をほめる"
+            >
+            <span>👏 自分をほめる</span>
+          </label>
+
+          <label class="check-item">
+            <input
+              type="checkbox"
+              name="abundanceNext"
+              value="今日は何もしない"
+            >
+            <span>🤣 今日は何もしない</span>
+          </label>
+
+          <label class="check-item">
+            <input
+              type="checkbox"
+              name="abundanceNext"
+              value="今日も花まると言う"
+            >
+            <span>🌸 「今日も花まる」と言う</span>
+          </label>
+
+        </div>
+
+        <input
+          type="hidden"
+          id="abundanceNextChecks"
+          value=""
+        >
+
+
+        <div class="optional-area">
+
+          <label for="abundanceOther">
+            ほかに育てたい豊かさがあれば
+          </label>
+
+          <input
+            type="text"
+            id="abundanceOther"
+            placeholder="例：好きな動画をゆっくり見る"
+          >
+
+          <p class="optional-note">
+            これも書かなくて大丈夫だよ😊
+          </p>
+
+        </div>
 
       </section>
 
@@ -364,19 +406,18 @@
         </p>
 
         <p>
-          たくさん見つからなくても大丈夫。<br>
-          ひとつ気づけたら、今日は花まる😊
+          たくさん見つからなくても大丈夫。
         </p>
 
         <p>
-          安心して育てた小さな種が、<br>
-          いつか大きな豊かさになっていくよ🌈
+          小さな「うれしい」や「ほっ」が、<br>
+          豊かさを少しずつ育ててくれるよ😊🌈
         </p>
 
       </section>
 
 
-      <!-- ページ移動ボタン -->
+      <!-- ページ移動 -->
       <div class="page-buttons">
 
         <a
@@ -398,6 +439,126 @@
     </main>
 
   </div>
+
+
+  <!-- チェック内容を保存用の欄へまとめる -->
+  <script>
+    "use strict";
+
+    document.addEventListener(
+      "DOMContentLoaded",
+      () => {
+
+        setupCheckGroup(
+          "abundanceNow",
+          "abundanceNowChecks"
+        );
+
+        setupCheckGroup(
+          "abundanceNext",
+          "abundanceNextChecks"
+        );
+
+      }
+    );
+
+
+    function setupCheckGroup(
+      checkboxName,
+      hiddenFieldId
+    ) {
+
+      const checkboxes =
+        document.querySelectorAll(
+          `input[name="${checkboxName}"]`
+        );
+
+      const savedField =
+        document.getElementById(
+          hiddenFieldId
+        );
+
+
+      if (!savedField) {
+        return;
+      }
+
+
+      function restoreChecks() {
+
+        const savedValues =
+          savedField.value
+            .split("、")
+            .map(
+              value => value.trim()
+            )
+            .filter(Boolean);
+
+
+        checkboxes.forEach(
+          checkbox => {
+
+            checkbox.checked =
+              savedValues.includes(
+                checkbox.value
+              );
+
+          }
+        );
+      }
+
+
+      function updateSavedField() {
+
+        const selectedValues =
+          Array.from(checkboxes)
+            .filter(
+              checkbox =>
+                checkbox.checked
+            )
+            .map(
+              checkbox =>
+                checkbox.value
+            );
+
+
+        savedField.value =
+          selectedValues.join("、");
+
+
+        savedField.dispatchEvent(
+          new Event(
+            "input",
+            {
+              bubbles: true
+            }
+          )
+        );
+
+
+        if (
+          typeof window.saveData === "function"
+        ) {
+          window.saveData(false);
+        }
+      }
+
+
+      checkboxes.forEach(
+        checkbox => {
+
+          checkbox.addEventListener(
+            "change",
+            updateSavedField
+          );
+
+        }
+      );
+
+
+      restoreChecks();
+    }
+  </script>
 
 </body>
 </html>
