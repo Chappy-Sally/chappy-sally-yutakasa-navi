@@ -503,16 +503,20 @@ function addMoneyAboutSection(
   sections,
   data
 ) {
-  const moneyChangedInto =
-    cleanValue(data.moneyChangedInto);
+  const moneyFeelingChecks =
+    cleanValue(
+      data.moneyFeelingChecks
+    );
 
-  const moneyReceivedFeeling =
-    cleanValue(data.moneyReceivedFeeling);
+  const moneyFeelingOther =
+    cleanValue(
+      data.moneyFeelingOther
+    );
 
 
   if (
-    !moneyChangedInto &&
-    !moneyReceivedFeeling
+    !moneyFeelingChecks &&
+    !moneyFeelingOther
   ) {
     return;
   }
@@ -521,16 +525,16 @@ function addMoneyAboutSection(
   const lines = [];
 
 
-  if (moneyChangedInto) {
+  if (moneyFeelingChecks) {
     lines.push(
-      `お金が姿を変えて届けてくれたもの：\n${moneyChangedInto}`
+      `今のお金への気持ち：\n${moneyFeelingChecks}`
     );
   }
 
 
-  if (moneyReceivedFeeling) {
+  if (moneyFeelingOther) {
     lines.push(
-      `受け取って感じたこと：\n${moneyReceivedFeeling}`
+      `ほかに浮かんだ気持ち：\n${moneyFeelingOther}`
     );
   }
 
