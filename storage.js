@@ -20,33 +20,29 @@ const savedFieldIds = [
   "moneyFeelingOther",
 
   /* お金って、あなたにとってどんな存在？ */
-  "moneyFirstImage",
-  "moneyExistence",
-  "moneyRole",
-  "moneyTrueWish",
-  "moneyFutureRelationship",
+  "moneyExistenceChecks",
+  "moneyWishChecks",
+  "moneyFutureChecks",
+  "moneyImageOther",
 
   /* お金の不安を整理する */
-  "anxietyFeeling",
-  "anxietyWorstFear",
+  "anxietyReasonChecks",
+  "anxietyOther",
+  "anxietyMoodChecks",
 
   "paymentName",
   "paymentDate",
   "paymentAmount",
-  "otherPayments",
-
   "availableMoney",
-  "cashOnHand",
-  "moneyUnknown",
 
   "incomeSource",
   "incomeDate",
   "incomeAmount",
-  "otherIncome",
 
-  "anxietyThought",
-  "knownFacts",
-  "smallMoneyAction",
+  "moneyRealityOther",
+
+  "moneyActionChecks",
+  "moneyActionOther",
 
   /* 豊かさを育てる */
   "arutakasa1",
@@ -72,7 +68,7 @@ const savedFieldIds = [
   "moneyFeeling",
   "moneyAgain",
 
-  /* 役割ワーク */
+  /* 勝手に設定していた役割 */
   "roleTarget",
   "roleSet",
   "roleWant",
@@ -86,7 +82,7 @@ const savedFieldIds = [
 
 
 /* ========================================
-   お知らせ表示
+   お知らせ表示用
 ======================================== */
 
 let noticeTimeoutId = null;
@@ -111,6 +107,7 @@ document.addEventListener(
 ======================================== */
 
 function setupStorageButtons() {
+
   const saveBtn =
     document.getElementById("saveBtn");
 
@@ -125,7 +122,8 @@ function setupStorageButtons() {
     saveBtn.addEventListener(
       "click",
       () => {
-        const saved = saveData();
+        const saved =
+          saveData();
 
         if (saved) {
           showNotice(
@@ -159,10 +157,14 @@ function setupStorageButtons() {
 ======================================== */
 
 function setupAutoSave() {
+
   savedFieldIds.forEach(
-    (fieldId) => {
+    fieldId => {
+
       const field =
-        document.getElementById(fieldId);
+        document.getElementById(
+          fieldId
+        );
 
       if (!field) {
         return;
@@ -180,7 +182,9 @@ function setupAutoSave() {
       field.addEventListener(
         eventName,
         () => {
+
           saveData(false);
+
 
           if (
             fieldId === "todayMeter" &&
@@ -188,6 +192,7 @@ function setupAutoSave() {
           ) {
             window.updateMeterText();
           }
+
         }
       );
     }
@@ -200,16 +205,23 @@ function setupAutoSave() {
 ======================================== */
 
 function getStoredData() {
+
   try {
+
     const savedJson =
-      localStorage.getItem(STORAGE_KEY);
+      localStorage.getItem(
+        STORAGE_KEY
+      );
+
 
     if (!savedJson) {
       return {};
     }
 
+
     const parsedData =
       JSON.parse(savedJson);
+
 
     if (
       !parsedData ||
@@ -218,9 +230,11 @@ function getStoredData() {
       return {};
     }
 
+
     return parsedData;
 
   } catch (error) {
+
     console.error(
       "保存データを読み込めませんでした:",
       error
@@ -236,21 +250,29 @@ function getStoredData() {
 ======================================== */
 
 function collectCurrentPageData() {
+
   const currentPageData = {};
 
+
   savedFieldIds.forEach(
-    (fieldId) => {
+    fieldId => {
+
       const field =
-        document.getElementById(fieldId);
+        document.getElementById(
+          fieldId
+        );
+
 
       if (!field) {
         return;
       }
 
+
       currentPageData[fieldId] =
         field.value;
     }
   );
+
 
   return currentPageData;
 }
@@ -261,16 +283,19 @@ function collectCurrentPageData() {
 ======================================== */
 
 function collectAllData() {
+
   const storedData =
     getStoredData();
 
   const currentPageData =
     collectCurrentPageData();
 
+
   return {
     ...storedData,
     ...currentPageData,
-    savedAt: new Date().toISOString()
+    savedAt:
+      new Date().toISOString()
   };
 }
 
@@ -282,28 +307,35 @@ function collectAllData() {
 function saveData(
   showError = true
 ) {
+
   try {
+
     const allData =
       collectAllData();
+
 
     localStorage.setItem(
       STORAGE_KEY,
       JSON.stringify(allData)
     );
 
+
     return true;
 
   } catch (error) {
+
     console.error(
       "保存できませんでした:",
       error
     );
+
 
     if (showError) {
       showNotice(
         "保存できなかったみたい🥺"
       );
     }
+
 
     return false;
   }
@@ -315,17 +347,24 @@ function saveData(
 ======================================== */
 
 function loadSavedData() {
+
   const savedData =
     getStoredData();
 
+
   savedFieldIds.forEach(
-    (fieldId) => {
+    fieldId => {
+
       const field =
-        document.getElementById(fieldId);
+        document.getElementById(
+          fieldId
+        );
+
 
       if (!field) {
         return;
       }
+
 
       if (
         Object.prototype.hasOwnProperty.call(
@@ -336,6 +375,7 @@ function loadSavedData() {
         field.value =
           savedData[fieldId];
       }
+
     }
   );
 
@@ -349,16 +389,20 @@ function loadSavedData() {
 
 
 /* ========================================
-   コピー
+   まとめをコピー
 ======================================== */
 
 async function copySummary() {
+
   saveData(false);
+
 
   const summaryText =
     createSummaryText();
 
+
   if (!summaryText.trim()) {
+
     showNotice(
       "コピーする内容がまだないみたい😊"
     );
@@ -368,44 +412,54 @@ async function copySummary() {
 
 
   try {
+
     if (
       navigator.clipboard &&
       window.isSecureContext
     ) {
+
       await navigator.clipboard.writeText(
         summaryText
       );
 
     } else {
+
       fallbackCopyText(
         summaryText
       );
     }
+
 
     showNotice(
       "入力した内容をコピーしたよ🐶🌿"
     );
 
   } catch (error) {
+
     console.error(
       "コピーできませんでした:",
       error
     );
 
+
     try {
+
       fallbackCopyText(
         summaryText
       );
+
 
       showNotice(
         "入力した内容をコピーしたよ🐶🌿"
       );
 
     } catch (fallbackError) {
+
       console.error(
         "予備のコピーも失敗しました:",
         fallbackError
       );
+
 
       showNotice(
         "コピーできなかったみたい🥺"
@@ -420,6 +474,7 @@ async function copySummary() {
 ======================================== */
 
 function createSummaryText() {
+
   const data =
     collectAllData();
 
@@ -477,21 +532,28 @@ function createSummaryText() {
   addSection(
     sections,
     "今日の気づき",
-    cleanValue(data.todayGrowth)
+    data.todayGrowth
   );
 
 
   if (
-    cleanValue(data.todayMeter)
+    cleanValue(
+      data.todayMeter
+    )
   ) {
+
     sections.push(
-      "【今の安心・豊かさ度】\n" +
-      `${cleanValue(data.todayMeter)} / 5`
+      "【今の安心度】\n" +
+      `${cleanValue(
+        data.todayMeter
+      )} / 5`
     );
   }
 
 
-  return sections.join("\n\n");
+  return sections.join(
+    "\n\n"
+  );
 }
 
 
@@ -503,6 +565,7 @@ function addMoneyAboutSection(
   sections,
   data
 ) {
+
   const moneyFeelingChecks =
     cleanValue(
       data.moneyFeelingChecks
@@ -525,18 +588,18 @@ function addMoneyAboutSection(
   const lines = [];
 
 
-  if (moneyFeelingChecks) {
-    lines.push(
-      `今のお金への気持ち：\n${moneyFeelingChecks}`
-    );
-  }
+  addLine(
+    lines,
+    "今のお金への気持ち",
+    moneyFeelingChecks
+  );
 
 
-  if (moneyFeelingOther) {
-    lines.push(
-      `ほかに浮かんだ気持ち：\n${moneyFeelingOther}`
-    );
-  }
+  addLine(
+    lines,
+    "ほかに浮かんだ気持ち",
+    moneyFeelingOther
+  );
 
 
   sections.push(
@@ -554,30 +617,33 @@ function addMoneyImageSection(
   sections,
   data
 ) {
-  const moneyFirstImage =
-    cleanValue(data.moneyFirstImage);
 
-  const moneyExistence =
-    cleanValue(data.moneyExistence);
-
-  const moneyRole =
-    cleanValue(data.moneyRole);
-
-  const moneyTrueWish =
-    cleanValue(data.moneyTrueWish);
-
-  const moneyFutureRelationship =
+  const moneyExistenceChecks =
     cleanValue(
-      data.moneyFutureRelationship
+      data.moneyExistenceChecks
+    );
+
+  const moneyWishChecks =
+    cleanValue(
+      data.moneyWishChecks
+    );
+
+  const moneyFutureChecks =
+    cleanValue(
+      data.moneyFutureChecks
+    );
+
+  const moneyImageOther =
+    cleanValue(
+      data.moneyImageOther
     );
 
 
   if (
-    !moneyFirstImage &&
-    !moneyExistence &&
-    !moneyRole &&
-    !moneyTrueWish &&
-    !moneyFutureRelationship
+    !moneyExistenceChecks &&
+    !moneyWishChecks &&
+    !moneyFutureChecks &&
+    !moneyImageOther
   ) {
     return;
   }
@@ -586,39 +652,32 @@ function addMoneyImageSection(
   const lines = [];
 
 
-  if (moneyFirstImage) {
-    lines.push(
-      `お金と聞いて浮かぶイメージ：\n${moneyFirstImage}`
-    );
-  }
+  addLine(
+    lines,
+    "今のお金はどんな存在？",
+    moneyExistenceChecks
+  );
 
 
-  if (moneyExistence) {
-    lines.push(
-      `私にとってのお金：\n${moneyExistence}`
-    );
-  }
+  addLine(
+    lines,
+    "本当はお金に何を求めていた？",
+    moneyWishChecks
+  );
 
 
-  if (moneyRole) {
-    lines.push(
-      `お金に任せていた役割：\n${moneyRole}`
-    );
-  }
+  addLine(
+    lines,
+    "これからどんな関係になりたい？",
+    moneyFutureChecks
+  );
 
 
-  if (moneyTrueWish) {
-    lines.push(
-      `本当にほしかったもの：\n${moneyTrueWish}`
-    );
-  }
-
-
-  if (moneyFutureRelationship) {
-    lines.push(
-      `これから望むお金との関係：\n${moneyFutureRelationship}`
-    );
-  }
+  addLine(
+    lines,
+    "ほかに浮かんだこと",
+    moneyImageOther
+  );
 
 
   sections.push(
@@ -636,35 +695,33 @@ function addMoneyAnxietySection(
   sections,
   data
 ) {
+
   const values = [
-    data.anxietyFeeling,
-    data.anxietyWorstFear,
+
+    data.anxietyReasonChecks,
+    data.anxietyOther,
+    data.anxietyMoodChecks,
 
     data.paymentName,
     data.paymentDate,
     data.paymentAmount,
-    data.otherPayments,
-
     data.availableMoney,
-    data.cashOnHand,
-    data.moneyUnknown,
 
     data.incomeSource,
     data.incomeDate,
     data.incomeAmount,
-    data.otherIncome,
 
-    data.anxietyThought,
-    data.knownFacts,
-    data.smallMoneyAction
+    data.moneyRealityOther,
+
+    data.moneyActionChecks,
+    data.moneyActionOther
+
   ].map(cleanValue);
 
 
-  const hasValue =
-    values.some(Boolean);
-
-
-  if (!hasValue) {
+  if (
+    !values.some(Boolean)
+  ) {
     return;
   }
 
@@ -674,15 +731,22 @@ function addMoneyAnxietySection(
 
   addLine(
     lines,
-    "今、お金のことで不安なこと",
-    data.anxietyFeeling
+    "今、何が気になる？",
+    data.anxietyReasonChecks
   );
 
 
   addLine(
     lines,
-    "このままだとどうなると思っている？",
-    data.anxietyWorstFear
+    "ほかに気になること",
+    data.anxietyOther
+  );
+
+
+  addLine(
+    lines,
+    "今の気持ち",
+    data.anxietyMoodChecks
   );
 
 
@@ -696,7 +760,9 @@ function addMoneyAnxietySection(
   addLine(
     lines,
     "支払日",
-    formatDate(data.paymentDate)
+    formatDate(
+      data.paymentDate
+    )
   );
 
 
@@ -709,35 +775,14 @@ function addMoneyAnxietySection(
 
   addLine(
     lines,
-    "ほかに気になっている支払い",
-    data.otherPayments
-  );
-
-
-  addLine(
-    lines,
-    "今、支払いに使えるお金",
+    "今、支払いに使えそうなお金",
     data.availableMoney
   );
 
 
   addLine(
     lines,
-    "手元に残しておきたい生活費",
-    data.cashOnHand
-  );
-
-
-  addLine(
-    lines,
-    "まだ確認できていないこと",
-    data.moneyUnknown
-  );
-
-
-  addLine(
-    lines,
-    "入る予定のお金",
+    "入ってくる予定のお金",
     data.incomeSource
   );
 
@@ -745,7 +790,9 @@ function addMoneyAnxietySection(
   addLine(
     lines,
     "入金予定日",
-    formatDate(data.incomeDate)
+    formatDate(
+      data.incomeDate
+    )
   );
 
 
@@ -758,52 +805,50 @@ function addMoneyAnxietySection(
 
   addLine(
     lines,
-    "ほかの入金予定や可能性",
-    data.otherIncome
+    "ほかに確認しておきたいこと",
+    data.moneyRealityOther
   );
 
 
   addLine(
     lines,
-    "不安が言っていること",
-    data.anxietyThought
+    "今できそうな小さなこと",
+    data.moneyActionChecks
   );
 
 
   addLine(
     lines,
-    "今、実際に分かっている事実",
-    data.knownFacts
-  );
-
-
-  addLine(
-    lines,
-    "今の私にできそうなこと",
-    data.smallMoneyAction
+    "ほかにできそうなこと",
+    data.moneyActionOther
   );
 
 
   sections.push(
-    "【お金の不安を整理してみたよ】\n" +
+    "【お金の不安をやさしく整理してみたよ】\n" +
     lines.join("\n\n")
   );
 }
 
 
 /* ========================================
-   深呼吸ページ
+   深呼吸
 ======================================== */
 
 function addBreathingSection(
   sections,
   data
 ) {
+
   const nowAnxiety =
-    cleanValue(data.nowAnxiety);
+    cleanValue(
+      data.nowAnxiety
+    );
 
   const nowSafety =
-    cleanValue(data.nowSafety);
+    cleanValue(
+      data.nowSafety
+    );
 
 
   if (
@@ -846,24 +891,43 @@ function addAbundanceSection(
   sections,
   data
 ) {
+
   const existingAbundance = [
-    cleanValue(data.arutakasa1),
-    cleanValue(data.arutakasa2),
-    cleanValue(data.arutakasa3)
+
+    cleanValue(
+      data.arutakasa1
+    ),
+
+    cleanValue(
+      data.arutakasa2
+    ),
+
+    cleanValue(
+      data.arutakasa3
+    )
+
   ].filter(Boolean);
 
 
   const receivedAbundance =
-    cleanValue(data.receivedAbundance);
+    cleanValue(
+      data.receivedAbundance
+    );
 
   const receivedFeeling =
-    cleanValue(data.receivedFeeling);
+    cleanValue(
+      data.receivedFeeling
+    );
 
   const goodThing =
-    cleanValue(data.goodThing);
+    cleanValue(
+      data.goodThing
+    );
 
   const sonzaikyu =
-    cleanValue(data.sonzaikyu);
+    cleanValue(
+      data.sonzaikyu
+    );
 
   const abundanceMoneyReceived =
     cleanValue(
@@ -895,6 +959,7 @@ function addAbundanceSection(
   if (
     existingAbundance.length > 0
   ) {
+
     const abundanceLines =
       existingAbundance
         .map(
@@ -902,6 +967,7 @@ function addAbundanceSection(
             `${index + 1}. ${item}`
         )
         .join("\n");
+
 
     lines.push(
       "今すでにある豊かさ：\n" +
@@ -967,17 +1033,26 @@ function addMoneyReceivedSection(
   sections,
   data
 ) {
+
   const moneyAmount =
-    cleanValue(data.moneyAmount);
+    cleanValue(
+      data.moneyAmount
+    );
 
   const moneyReceived =
-    cleanValue(data.moneyReceived);
+    cleanValue(
+      data.moneyReceived
+    );
 
   const moneyFeeling =
-    cleanValue(data.moneyFeeling);
+    cleanValue(
+      data.moneyFeeling
+    );
 
   const moneyAgain =
-    cleanValue(data.moneyAgain);
+    cleanValue(
+      data.moneyAgain
+    );
 
 
   if (
@@ -1036,20 +1111,31 @@ function addRoleSection(
   sections,
   data
 ) {
+
   const roleTarget =
-    cleanValue(data.roleTarget);
+    cleanValue(
+      data.roleTarget
+    );
 
   const roleSet =
-    cleanValue(data.roleSet);
+    cleanValue(
+      data.roleSet
+    );
 
   const roleWant =
-    cleanValue(data.roleWant);
+    cleanValue(
+      data.roleWant
+    );
 
   const roleFear =
-    cleanValue(data.roleFear);
+    cleanValue(
+      data.roleFear
+    );
 
   const roleCare =
-    cleanValue(data.roleCare);
+    cleanValue(
+      data.roleCare
+    );
 
 
   if (
@@ -1109,7 +1195,7 @@ function addRoleSection(
 
 
 /* ========================================
-   文章へ項目を追加
+   セクションを追加
 ======================================== */
 
 function addSection(
@@ -1117,12 +1203,15 @@ function addSection(
   title,
   value
 ) {
+
   const cleanedValue =
     cleanValue(value);
+
 
   if (!cleanedValue) {
     return;
   }
+
 
   sections.push(
     `【${title}】\n${cleanedValue}`
@@ -1130,17 +1219,24 @@ function addSection(
 }
 
 
+/* ========================================
+   行を追加
+======================================== */
+
 function addLine(
   lines,
   label,
   value
 ) {
+
   const cleanedValue =
     cleanValue(value);
+
 
   if (!cleanedValue) {
     return;
   }
+
 
   lines.push(
     `${label}：\n${cleanedValue}`
@@ -1155,6 +1251,7 @@ function addLine(
 function cleanValue(
   value
 ) {
+
   if (
     value === undefined ||
     value === null
@@ -1162,7 +1259,10 @@ function cleanValue(
     return "";
   }
 
-  return String(value).trim();
+
+  return String(
+    value
+  ).trim();
 }
 
 
@@ -1173,8 +1273,12 @@ function cleanValue(
 function formatDate(
   dateValue
 ) {
+
   const cleanedDate =
-    cleanValue(dateValue);
+    cleanValue(
+      dateValue
+    );
+
 
   if (!cleanedDate) {
     return "";
@@ -1185,19 +1289,27 @@ function formatDate(
     cleanedDate.split("-");
 
 
-  if (dateParts.length !== 3) {
+  if (
+    dateParts.length !== 3
+  ) {
     return cleanedDate;
   }
 
 
   const year =
-    Number(dateParts[0]);
+    Number(
+      dateParts[0]
+    );
 
   const month =
-    Number(dateParts[1]);
+    Number(
+      dateParts[1]
+    );
 
   const day =
-    Number(dateParts[2]);
+    Number(
+      dateParts[2]
+    );
 
 
   if (
@@ -1209,7 +1321,11 @@ function formatDate(
   }
 
 
-  return `${year}年${month}月${day}日`;
+  return (
+    `${year}年` +
+    `${month}月` +
+    `${day}日`
+  );
 }
 
 
@@ -1220,8 +1336,11 @@ function formatDate(
 function fallbackCopyText(
   text
 ) {
+
   const temporaryTextarea =
-    document.createElement("textarea");
+    document.createElement(
+      "textarea"
+    );
 
 
   temporaryTextarea.value =
@@ -1263,7 +1382,9 @@ function fallbackCopyText(
 
 
   const copied =
-    document.execCommand("copy");
+    document.execCommand(
+      "copy"
+    );
 
 
   document.body.removeChild(
@@ -1284,6 +1405,7 @@ function fallbackCopyText(
 ======================================== */
 
 function resetAllData() {
+
   const shouldReset =
     window.confirm(
       "入力した内容をすべて消してもいい？"
@@ -1301,9 +1423,13 @@ function resetAllData() {
 
 
   savedFieldIds.forEach(
-    (fieldId) => {
+    fieldId => {
+
       const field =
-        document.getElementById(fieldId);
+        document.getElementById(
+          fieldId
+        );
+
 
       if (!field) {
         return;
@@ -1313,11 +1439,14 @@ function resetAllData() {
       if (
         field.type === "range"
       ) {
+
         field.value = "3";
 
       } else {
+
         field.value = "";
       }
+
     }
   );
 
@@ -1349,6 +1478,7 @@ function resetAllData() {
 function showNotice(
   message
 ) {
+
   const noticeMessage =
     document.getElementById(
       "noticeMessage"
@@ -1363,6 +1493,7 @@ function showNotice(
   if (
     noticeTimeoutId !== null
   ) {
+
     clearTimeout(
       noticeTimeoutId
     );
@@ -1376,10 +1507,13 @@ function showNotice(
   noticeTimeoutId =
     window.setTimeout(
       () => {
+
         noticeMessage.textContent =
           "";
 
-        noticeTimeoutId = null;
+        noticeTimeoutId =
+          null;
+
       },
       3500
     );
@@ -1387,7 +1521,7 @@ function showNotice(
 
 
 /* ========================================
-   他のファイルから使える関数
+   他ファイルから使える関数
 ======================================== */
 
 window.saveData =
