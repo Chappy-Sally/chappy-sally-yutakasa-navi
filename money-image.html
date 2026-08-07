@@ -14,13 +14,70 @@
 
   <meta
     name="description"
-    content="お金に対して持っているイメージや、お金に求めていた役割に気づき、自分が望む関係をやさしく見つけるワークです。"
+    content="お金が自分にとってどんな存在なのか、本当に求めていたものや、これから望む関係をチェックしながらやさしく見つけるページです。"
   >
 
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="pages.css">
 
   <script src="storage.js" defer></script>
+
+  <style>
+    .check-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .check-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      width: 100%;
+      padding: 15px 16px;
+      border: 2px solid #f0d8c3;
+      border-radius: 16px;
+      background: #fffaf6;
+      color: #6b4423;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.5;
+      cursor: pointer;
+      transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+    }
+
+    .check-item:active {
+      transform: scale(0.98);
+    }
+
+    .check-item input {
+      width: 22px;
+      height: 22px;
+      margin: 0;
+      flex-shrink: 0;
+      accent-color: #e79b65;
+    }
+
+    .check-item:has(input:checked) {
+      border-color: #e79b65;
+      background: #fff0e4;
+    }
+
+    .optional-area {
+      margin-top: 28px;
+    }
+
+    .optional-note {
+      margin-top: 10px;
+      text-align: center;
+      font-size: 14px;
+      line-height: 1.7;
+      color: #80634d;
+    }
+  </style>
 </head>
 
 <body>
@@ -49,12 +106,12 @@
         <p class="section-text">
           安心させてくれるもの？<br>
           なくなるのが怖いもの？<br>
-          自由にしてくれるもの？
+          自由を広げてくれるもの？
         </p>
 
         <p class="section-text">
           正しい答えを探さずに、<br>
-          今の気持ちをやさしく見てみよう😊
+          今の気持ちに近いものを選んでみよう😊
         </p>
 
       </header>
@@ -64,159 +121,375 @@
       <section class="message-box">
 
         <p class="main-message">
-          お金そのものが怖いのではなく、
+          お金に、いろいろな役割を任せていることもあるよ。
         </p>
 
         <p class="sub-message">
-          お金がなくなったら起きると思っていることや、<br>
-          お金に任せていた役割が<br>
-          不安につながっていることもあるよ🌿
+          安心させてほしい。<br>
+          自由にしてほしい。<br>
+          私の価値を証明してほしい。
+        </p>
+
+        <p class="sub-message">
+          どんな気持ちがあっても、<br>
+          良い・悪いをつけなくて大丈夫だよ🌿
         </p>
 
       </section>
 
 
-      <!-- お金のイメージ -->
+      <!-- 今のお金はどんな存在？ -->
       <section class="work-block">
 
         <h2 class="work-title">
-          ① お金と聞いて、何を思い浮かべる？
+          ① 今のお金は、どんな存在？
         </h2>
 
         <p class="mini-text">
-          好き・嫌いを決めなくても大丈夫。<br>
-          最初に浮かんだ言葉を書いてみよう😊
+          今の気持ちに近いものをタップしてね。<br>
+          いくつ選んでも大丈夫😊
         </p>
 
-        <label for="moneyFirstImage">
-          お金と聞いて浮かぶ言葉やイメージ
-        </label>
+        <div class="check-list">
 
-        <textarea
-          id="moneyFirstImage"
-          rows="5"
-          placeholder="例：安心、心配、なくなる、自由、我慢、うれしい、足りない"
-        ></textarea>
+          <label class="check-item">
+            <input
+              type="checkbox"
+              name="moneyExistence"
+              value="安心をくれるもの"
+            >
+            <span>🌿 安心をくれるもの</span>
+          </label>
 
-      </section>
+          <label class="check-item">
+            <input
+              type="checkbox"
+              name="moneyExistence"
+              value="自由をくれるもの"
+            >
+            <span>🕊️ 自由をくれるもの</span>
+          </label>
 
+          <label class="check-item">
+            <input
+              type="checkbox"
+              name="moneyExistence"
+              value="楽しみを広げてくれるもの"
+            >
+            <span>✨ 楽しみを広げてくれるもの</span>
+          </label>
 
-      <!-- お金はどんな存在か -->
-      <section class="work-block">
+          <label class="check-item">
+            <input
+              type="checkbox"
+              name="moneyExistence"
+              value="家族や暮らしを守ってくれるもの"
+            >
+            <span>🏠 家族や暮らしを守ってくれるもの</span>
+          </label>
 
-        <h2 class="work-title">
-          ② 私にとって、お金はどんな存在？
-        </h2>
+          <label class="check-item">
+            <input
+              type="checkbox"
+              name="moneyExistence"
+              value="なくなるのが怖いもの"
+            >
+            <span>😨 なくなるのが怖いもの</span>
+          </label>
 
-        <p class="mini-text">
-          今のお金との関係に近いものを、<br>
-          自由に書いてみよう🌱
-        </p>
+          <label class="check-item">
+            <input
+              type="checkbox"
+              name="moneyExistence"
+              value="頑張らないともらえないもの"
+            >
+            <span>💪 頑張らないともらえないもの</span>
+          </label>
 
-        <label for="moneyExistence">
-          私にとってのお金
-        </label>
+          <label class="check-item">
+            <input
+              type="checkbox"
+              name="moneyExistence"
+              value="我慢しないと手に入らないもの"
+            >
+            <span>😣 我慢しないと手に入らないもの</span>
+          </label>
 
-        <textarea
-          id="moneyExistence"
-          rows="5"
-          placeholder="例：私を安心させてくれるもの。なくなると怖いもの。自由にしてくれるもの。"
-        ></textarea>
+          <label class="check-item">
+            <input
+              type="checkbox"
+              name="moneyExistence"
+              value="私の価値を証明するもの"
+            >
+            <span>🏅 私の価値を証明するもの</span>
+          </label>
 
-      </section>
+          <label class="check-item">
+            <input
+              type="checkbox"
+              name="moneyExistence"
+              value="使うと罪悪感があるもの"
+            >
+            <span>💭 使うと罪悪感があるもの</span>
+          </label>
 
+          <label class="check-item">
+            <input
+              type="checkbox"
+              name="moneyExistence"
+              value="振り回されるもの"
+            >
+            <span>🌀 振り回されるもの</span>
+          </label>
 
-      <!-- お金に任せていた役割 -->
-      <section class="work-block">
-
-        <h2 class="work-title">
-          ③ お金に、どんな役割を任せていた？
-        </h2>
-
-        <p class="mini-text">
-          お金があれば、どうなれると思っていたのかな？<br>
-          思いつくものだけで大丈夫だよ😊
-        </p>
-
-        <div class="example-box">
-
-          <p>
-            お金があれば安心できる
-          </p>
-
-          <p>
-            お金があれば自由になれる
-          </p>
-
-          <p>
-            お金があれば認めてもらえる
-          </p>
-
-          <p>
-            お金があれば嫌なことをしなくて済む
-          </p>
+          <label class="check-item">
+            <input
+              type="checkbox"
+              name="moneyExistence"
+              value="よく分からない存在"
+            >
+            <span>🤔 よく分からない存在</span>
+          </label>
 
         </div>
 
-        <label for="moneyRole">
-          私がお金に任せていた役割
-        </label>
-
-        <textarea
-          id="moneyRole"
-          rows="5"
-          placeholder="例：私を安心させてくれる役割。私の価値を証明してくれる役割。"
-        ></textarea>
+        <input
+          type="hidden"
+          id="moneyExistenceChecks"
+          value=""
+        >
 
       </section>
 
 
-      <!-- 本当に欲しかったもの -->
+      <!-- 本当は何を求めていた？ -->
       <section class="work-block">
 
         <h2 class="work-title">
-          ④ 本当は、何がほしかった？
+          ② 本当は、お金に何を求めていた？
         </h2>
 
         <p class="mini-text">
           お金そのものの奥にある、<br>
-          本当にほしかった気持ちを見てみよう🌿
+          本当に感じたかったことを選んでみよう🌿
         </p>
 
-        <label for="moneyTrueWish">
-          本当にほしかったもの・感じたかったこと
-        </label>
+        <div class="check-list">
 
-        <textarea
-          id="moneyTrueWish"
-          rows="5"
-          placeholder="例：何の心配もせず安心したかった。自由に選びたかった。ゆっくり休みたかった。"
-        ></textarea>
+          <label class="check-item">
+            <input
+              type="checkbox"
+              name="moneyWish"
+              value="安心したかった"
+            >
+            <span>🌿 安心したかった</span>
+          </label>
+
+          <label class="check-item">
+            <input
+              type="checkbox"
+              name="moneyWish"
+              value="自由になりたかった"
+            >
+            <span>🕊️ 自由になりたかった</span>
+          </label>
+
+          <label class="check-item">
+            <input
+              type="checkbox"
+              name="moneyWish"
+              value="好きなものを選びたかった"
+            >
+            <span>💖 好きなものを選びたかった</span>
+          </label>
+
+          <label class="check-item">
+            <input
+              type="checkbox"
+              name="moneyWish"
+              value="ゆっくり休みたかった"
+            >
+            <span>☕ ゆっくり休みたかった</span>
+          </label>
+
+          <label class="check-item">
+            <input
+              type="checkbox"
+              name="moneyWish"
+              value="将来の心配をなくしたかった"
+            >
+            <span>🌈 将来の心配をなくしたかった</span>
+          </label>
+
+          <label class="check-item">
+            <input
+              type="checkbox"
+              name="moneyWish"
+              value="家族を守りたかった"
+            >
+            <span>🏠 家族を守りたかった</span>
+          </label>
+
+          <label class="check-item">
+            <input
+              type="checkbox"
+              name="moneyWish"
+              value="誰かに認めてほしかった"
+            >
+            <span>🌼 誰かに認めてほしかった</span>
+          </label>
+
+          <label class="check-item">
+            <input
+              type="checkbox"
+              name="moneyWish"
+              value="安心して楽しみたかった"
+            >
+            <span>🤭 安心して楽しみたかった</span>
+          </label>
+
+          <label class="check-item">
+            <input
+              type="checkbox"
+              name="moneyWish"
+              value="嫌なことをしなくて済むようになりたかった"
+            >
+            <span>🌱 嫌なことをしなくて済むようになりたかった</span>
+          </label>
+
+          <label class="check-item">
+            <input
+              type="checkbox"
+              name="moneyWish"
+              value="まだよく分からない"
+            >
+            <span>🤔 まだよく分からない</span>
+          </label>
+
+        </div>
+
+        <input
+          type="hidden"
+          id="moneyWishChecks"
+          value=""
+        >
 
       </section>
 
 
-      <!-- これからの関係 -->
+      <!-- これからどんな関係になりたい？ -->
       <section class="work-block">
 
         <h2 class="work-title">
-          ⑤ これから、お金とどんな関係になりたい？
+          ③ これから、お金とどんな関係になりたい？
         </h2>
 
         <p class="mini-text">
           立派な答えでなくて大丈夫。<br>
-          「少し仲良くなれたらいいな」でも花まるだよ🤭
+          「少し仲良くなりたい」でも花まるだよ🤭
         </p>
 
-        <label for="moneyFutureRelationship">
-          私が望む、お金との関係
-        </label>
+        <div class="check-list">
 
-        <textarea
-          id="moneyFutureRelationship"
-          rows="5"
-          placeholder="例：怖がるだけでなく、安心して受け取り、必要な時に気持ちよく使える関係。"
-        ></textarea>
+          <label class="check-item">
+            <input
+              type="checkbox"
+              name="moneyFuture"
+              value="安心して受け取りたい"
+            >
+            <span>🌿 安心して受け取りたい</span>
+          </label>
+
+          <label class="check-item">
+            <input
+              type="checkbox"
+              name="moneyFuture"
+              value="気持ちよく使いたい"
+            >
+            <span>💰 気持ちよく使いたい</span>
+          </label>
+
+          <label class="check-item">
+            <input
+              type="checkbox"
+              name="moneyFuture"
+              value="怖がりすぎずに付き合いたい"
+            >
+            <span>😊 怖がりすぎずに付き合いたい</span>
+          </label>
+
+          <label class="check-item">
+            <input
+              type="checkbox"
+              name="moneyFuture"
+              value="必要な時に頼れる関係になりたい"
+            >
+            <span>🤝 必要な時に頼れる関係になりたい</span>
+          </label>
+
+          <label class="check-item">
+            <input
+              type="checkbox"
+              name="moneyFuture"
+              value="楽しみを広げる相棒になってほしい"
+            >
+            <span>🌈 楽しみを広げる相棒になってほしい</span>
+          </label>
+
+          <label class="check-item">
+            <input
+              type="checkbox"
+              name="moneyFuture"
+              value="受け取ることも使うことも楽しみたい"
+            >
+            <span>✨ 受け取ることも使うことも楽しみたい</span>
+          </label>
+
+          <label class="check-item">
+            <input
+              type="checkbox"
+              name="moneyFuture"
+              value="お金と仲良くなりたい"
+            >
+            <span>💕 お金と仲良くなりたい</span>
+          </label>
+
+          <label class="check-item">
+            <input
+              type="checkbox"
+              name="moneyFuture"
+              value="まだ分からない"
+            >
+            <span>🤔 まだ分からない</span>
+          </label>
+
+        </div>
+
+        <input
+          type="hidden"
+          id="moneyFutureChecks"
+          value=""
+        >
+
+
+        <!-- ほかにあればひとこと -->
+        <div class="optional-area">
+
+          <label for="moneyImageOther">
+            ほかに浮かんだことがあれば、ひとこと
+          </label>
+
+          <input
+            type="text"
+            id="moneyImageOther"
+            placeholder="例：お金のことを考えても、安心していられるようになりたい"
+          >
+
+          <p class="optional-note">
+            思いつかなければ、書かなくても大丈夫だよ😊
+          </p>
+
+        </div>
 
       </section>
 
@@ -225,22 +498,22 @@
       <section class="hint-box">
 
         <h2 class="hint-title">
-          💡 まだ答えが分からなくても大丈夫
+          💡 反対の気持ちを選んでも大丈夫
         </h2>
 
         <p>
-          今までのお金との関係に、<br>
-          良い・悪いをつけなくて大丈夫。
+          「お金は安心をくれるもの」だけど、<br>
+          「なくなるのが怖いもの」でもある。
         </p>
 
         <p>
-          不安になったのにも、<br>
-         自分を守ろうとした理由があったのかもしれないよ。
+          そんなふうに、いくつもの気持ちが<br>
+          一緒にあっても大丈夫だよ🌿
         </p>
 
         <p>
-          まず気づくだけでも、<br>
-          お金との新しい関係は始まっているよ🌱
+          今のお金との関係に気づくだけでも、<br>
+          新しい関係は少しずつ始まっているよ🌱
         </p>
 
       </section>
@@ -254,9 +527,13 @@
         </p>
 
         <p>
-          無理にお金を好きにならなくても大丈夫。<br>
-          まずは自分が何を感じていたのか、<br>
-          分かってあげられたら花まるだよ😊
+          今までのお金との関係を、<br>
+          責めたり直したりしなくても大丈夫。
+        </p>
+
+        <p>
+          本当は何を求めていたのか分かってあげたら、<br>
+          今日はそれだけで花まるだよ😊🌼
         </p>
 
       </section>
@@ -285,5 +562,121 @@
 
   </div>
 
+
+  <!-- チェック内容を保存用の欄へまとめる -->
+  <script>
+    "use strict";
+
+    document.addEventListener(
+      "DOMContentLoaded",
+      () => {
+        setupCheckGroup(
+          "moneyExistence",
+          "moneyExistenceChecks"
+        );
+
+        setupCheckGroup(
+          "moneyWish",
+          "moneyWishChecks"
+        );
+
+        setupCheckGroup(
+          "moneyFuture",
+          "moneyFutureChecks"
+        );
+      }
+    );
+
+
+    function setupCheckGroup(
+      checkboxName,
+      hiddenFieldId
+    ) {
+      const checkboxes =
+        document.querySelectorAll(
+          `input[name="${checkboxName}"]`
+        );
+
+      const savedField =
+        document.getElementById(
+          hiddenFieldId
+        );
+
+
+      if (!savedField) {
+        return;
+      }
+
+
+      function restoreChecks() {
+        const savedValues =
+          savedField.value
+            .split("、")
+            .map(
+              value => value.trim()
+            )
+            .filter(Boolean);
+
+
+        checkboxes.forEach(
+          checkbox => {
+            checkbox.checked =
+              savedValues.includes(
+                checkbox.value
+              );
+          }
+        );
+      }
+
+
+      function updateSavedField() {
+        const selectedValues =
+          Array.from(checkboxes)
+            .filter(
+              checkbox =>
+                checkbox.checked
+            )
+            .map(
+              checkbox =>
+                checkbox.value
+            );
+
+
+        savedField.value =
+          selectedValues.join("、");
+
+
+        savedField.dispatchEvent(
+          new Event(
+            "input",
+            {
+              bubbles: true
+            }
+          )
+        );
+
+
+        if (
+          typeof window.saveData === "function"
+        ) {
+          window.saveData(false);
+        }
+      }
+
+
+      checkboxes.forEach(
+        checkbox => {
+          checkbox.addEventListener(
+            "change",
+            updateSavedField
+          );
+        }
+      );
+
+
+      restoreChecks();
+    }
+  </script>
+
 </body>
-</html>
+  </html>
