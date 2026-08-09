@@ -24,7 +24,7 @@
 
   <style>
     .money-feeling-list,
-    .money-wish-list {
+    .money-goal-list {
       display: grid;
       gap: 0;
       margin-top: 14px;
@@ -35,7 +35,7 @@
     }
 
     .money-feeling-item,
-    .money-wish-item {
+    .money-goal-item {
       display: flex;
       align-items: center;
       gap: 8px;
@@ -51,12 +51,12 @@
     }
 
     .money-feeling-item:active,
-    .money-wish-item:active {
+    .money-goal-item:active {
       opacity: 0.7;
     }
 
     .money-feeling-item input,
-    .money-wish-item input {
+    .money-goal-item input {
       width: 20px;
       height: 20px;
       margin: 0 !important;
@@ -65,7 +65,7 @@
     }
 
     .money-feeling-item:has(input:checked),
-    .money-wish-item:has(input:checked) {
+    .money-goal-item:has(input:checked) {
       color: #c06e38;
     }
 
@@ -356,84 +356,84 @@
           ポチポチ選んでみよう✨
         </p>
 
-        <div class="money-wish-list">
+        <div class="money-goal-list">
 
-          <label class="money-wish-item">
+          <label class="money-goal-item">
             <input
               type="checkbox"
-              name="moneyWish"
+              name="moneyGoal"
               value="安心して暮らしたい"
             >
             <span>🌸 安心して暮らしたい</span>
           </label>
 
-          <label class="money-wish-item">
+          <label class="money-goal-item">
             <input
               type="checkbox"
-              name="moneyWish"
+              name="moneyGoal"
               value="自由に時間を使いたい"
             >
             <span>🌸 自由に時間を使いたい</span>
           </label>
 
-          <label class="money-wish-item">
+          <label class="money-goal-item">
             <input
               type="checkbox"
-              name="moneyWish"
+              name="moneyGoal"
               value="家族との時間を増やしたい"
             >
             <span>🌸 家族との時間を増やしたい</span>
           </label>
 
-          <label class="money-wish-item">
+          <label class="money-goal-item">
             <input
               type="checkbox"
-              name="moneyWish"
+              name="moneyGoal"
               value="好きなことを仕事にしたい"
             >
             <span>🌸 好きなことを仕事にしたい</span>
           </label>
 
-          <label class="money-wish-item">
+          <label class="money-goal-item">
             <input
               type="checkbox"
-              name="moneyWish"
+              name="moneyGoal"
               value="旅行を楽しみたい"
             >
             <span>🌸 旅行を楽しみたい</span>
           </label>
 
-          <label class="money-wish-item">
+          <label class="money-goal-item">
             <input
               type="checkbox"
-              name="moneyWish"
+              name="moneyGoal"
               value="美味しいものを安心して食べたい"
             >
             <span>🌸 美味しいものを安心して食べたい</span>
           </label>
 
-          <label class="money-wish-item">
+          <label class="money-goal-item">
             <input
               type="checkbox"
-              name="moneyWish"
+              name="moneyGoal"
               value="誰かにプレゼントしたい"
             >
             <span>🌸 誰かにプレゼントしたい</span>
           </label>
 
-          <label class="money-wish-item">
+          <label class="money-goal-item">
             <input
               type="checkbox"
-              name="moneyWish"
+              name="moneyGoal"
               value="健康のために使いたい"
             >
             <span>🌸 健康のために使いたい</span>
           </label>
 
-          <label class="money-wish-item">
+          <label class="money-goal-item">
             <input
               type="checkbox"
-              name="moneyWish"
+              name="moneyGoal"
               value="富士山を眺めながら暮らしたい"
             >
             <span>🗻 富士山を眺めながら暮らしたい</span>
@@ -443,19 +443,19 @@
 
         <input
           type="hidden"
-          id="moneyWishChecks"
+          id="moneyGoalChecks"
           value=""
         >
 
         <div class="optional-area">
 
-          <label for="moneyWishOther">
+          <label for="moneyGoalOther">
             🌸 その他
           </label>
 
           <input
             type="text"
-            id="moneyWishOther"
+            id="moneyGoalOther"
             placeholder="例：好きな時に好きな場所へ行けるようになりたい"
           >
 
@@ -566,8 +566,8 @@
         );
 
         setupCheckGroup(
-          "moneyWish",
-          "moneyWishChecks"
+          "moneyGoal",
+          "moneyGoalChecks"
         );
 
       }
