@@ -14,7 +14,7 @@
 
   <meta
     name="description"
-    content="お金の本来の役割をやさしく知り、今のお金への気持ちに気づくページです。"
+    content="お金の本来の役割をやさしく知り、今のお金への気持ちや、その先にある本当の幸せに気づくページです。"
   >
 
   <link rel="stylesheet" href="style.css">
@@ -23,46 +23,51 @@
   <script src="storage.js" defer></script>
 
   <style>
- .money-feeling-list {
-    display: grid;
-    gap: 0;
-    margin-top: 14px;
-    padding: 8px 14px;
-    border: 2px solid #f0d8c3;
-    border-radius: 18px;
-    background: #fffaf6;
-  }
+    .money-feeling-list,
+    .money-wish-list {
+      display: grid;
+      gap: 0;
+      margin-top: 14px;
+      padding: 8px 14px;
+      border: 2px solid #f0d8c3;
+      border-radius: 18px;
+      background: #fffaf6;
+    }
 
-  .money-feeling-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    width: 100%;
-    margin: 0 !important;
-    padding: 2px 2px !important;
-    min-height: 0 !important;
-    color: #6b4423;
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 1.2;
-    cursor: pointer;
-  }
+    .money-feeling-item,
+    .money-wish-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      width: 100%;
+      margin: 0 !important;
+      padding: 2px 2px !important;
+      min-height: 0 !important;
+      color: #6b4423;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.2;
+      cursor: pointer;
+    }
 
-  .money-feeling-item:active {
-    opacity: 0.7;
-  }
+    .money-feeling-item:active,
+    .money-wish-item:active {
+      opacity: 0.7;
+    }
 
-  .money-feeling-item input {
-    width: 20px;
-    height: 20px;
-    margin: 0 !important;
-    flex-shrink: 0;
-    accent-color: #e79b65;
-  }
+    .money-feeling-item input,
+    .money-wish-item input {
+      width: 20px;
+      height: 20px;
+      margin: 0 !important;
+      flex-shrink: 0;
+      accent-color: #e79b65;
+    }
 
-  .money-feeling-item:has(input:checked) {
-    color: #c06e38;
-  }
+    .money-feeling-item:has(input:checked),
+    .money-wish-item:has(input:checked) {
+      color: #c06e38;
+    }
 
     .optional-area {
       margin-top: 28px;
@@ -74,6 +79,35 @@
       font-size: 14px;
       line-height: 1.7;
       color: #80634d;
+    }
+
+    .happiness-input-wrap {
+      margin-top: 18px;
+    }
+
+    .happiness-label {
+      display: block;
+      margin-bottom: 10px;
+      text-align: center;
+      font-size: 17px;
+      font-weight: 700;
+      color: #6b4423;
+    }
+
+    .happiness-input {
+      width: 100%;
+      padding: 14px 16px;
+      border: 2px solid #f0d8c3;
+      border-radius: 16px;
+      background: #fffdfb;
+      font-size: 16px;
+      color: #6b4423;
+      box-sizing: border-box;
+    }
+
+    .happiness-input:focus {
+      outline: none;
+      border-color: #e79b65;
     }
   </style>
 </head>
@@ -190,11 +224,11 @@
       </section>
 
 
-      <!-- お金への気持ち -->
+      <!-- ① お金への気持ち -->
       <section class="work-block">
 
         <h2 class="work-title">
-          💭 今、お金にどんな気持ちがある？
+          ① 💭 今、お金にどんな気持ちがある？
         </h2>
 
         <p class="mini-text">
@@ -278,15 +312,12 @@
 
         </div>
 
-        <!-- チェックした内容の保存用 -->
         <input
           type="hidden"
           id="moneyFeelingChecks"
           value=""
         >
 
-
-        <!-- ほかにあれば、ひとこと -->
         <div class="optional-area">
 
           <label for="moneyFeelingOther">
@@ -308,24 +339,189 @@
       </section>
 
 
+      <!-- ② お金で何を手に入れたい？ -->
+      <section class="work-block">
+
+        <h2 class="work-title">
+          ② 🌈 あなたは、お金で何を手に入れたいですか？
+        </h2>
+
+        <p class="mini-text">
+          お金そのものが欲しいというより、<br>
+          その先にある幸せが欲しいのかもしれないね😊🌿
+        </p>
+
+        <p class="mini-text">
+          今の気持ちに近いものを<br>
+          ポチポチ選んでみよう✨
+        </p>
+
+        <div class="money-wish-list">
+
+          <label class="money-wish-item">
+            <input
+              type="checkbox"
+              name="moneyWish"
+              value="安心して暮らしたい"
+            >
+            <span>🌸 安心して暮らしたい</span>
+          </label>
+
+          <label class="money-wish-item">
+            <input
+              type="checkbox"
+              name="moneyWish"
+              value="自由に時間を使いたい"
+            >
+            <span>🌸 自由に時間を使いたい</span>
+          </label>
+
+          <label class="money-wish-item">
+            <input
+              type="checkbox"
+              name="moneyWish"
+              value="家族との時間を増やしたい"
+            >
+            <span>🌸 家族との時間を増やしたい</span>
+          </label>
+
+          <label class="money-wish-item">
+            <input
+              type="checkbox"
+              name="moneyWish"
+              value="好きなことを仕事にしたい"
+            >
+            <span>🌸 好きなことを仕事にしたい</span>
+          </label>
+
+          <label class="money-wish-item">
+            <input
+              type="checkbox"
+              name="moneyWish"
+              value="旅行を楽しみたい"
+            >
+            <span>🌸 旅行を楽しみたい</span>
+          </label>
+
+          <label class="money-wish-item">
+            <input
+              type="checkbox"
+              name="moneyWish"
+              value="美味しいものを安心して食べたい"
+            >
+            <span>🌸 美味しいものを安心して食べたい</span>
+          </label>
+
+          <label class="money-wish-item">
+            <input
+              type="checkbox"
+              name="moneyWish"
+              value="誰かにプレゼントしたい"
+            >
+            <span>🌸 誰かにプレゼントしたい</span>
+          </label>
+
+          <label class="money-wish-item">
+            <input
+              type="checkbox"
+              name="moneyWish"
+              value="健康のために使いたい"
+            >
+            <span>🌸 健康のために使いたい</span>
+          </label>
+
+          <label class="money-wish-item">
+            <input
+              type="checkbox"
+              name="moneyWish"
+              value="富士山を眺めながら暮らしたい"
+            >
+            <span>🗻 富士山を眺めながら暮らしたい</span>
+          </label>
+
+        </div>
+
+        <input
+          type="hidden"
+          id="moneyWishChecks"
+          value=""
+        >
+
+        <div class="optional-area">
+
+          <label for="moneyWishOther">
+            🌸 その他
+          </label>
+
+          <input
+            type="text"
+            id="moneyWishOther"
+            placeholder="例：好きな時に好きな場所へ行けるようになりたい"
+          >
+
+          <p class="optional-note">
+            ほかに浮かんだ幸せがあれば自由に書いてね😊
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <!-- ③ 私にとっての幸せ -->
+      <section class="work-block">
+
+        <h2 class="work-title">
+          ③ 💕 私にとっての幸せは？
+        </h2>
+
+        <p class="mini-text">
+          ここまで見てみて、<br>
+          今のあなたが「これかも🤭」と思う幸せを<br>
+          一言にしてみよう🌿
+        </p>
+
+        <div class="happiness-input-wrap">
+
+          <label
+            for="myHappiness"
+            class="happiness-label"
+          >
+            私にとっての幸せは…
+          </label>
+
+          <input
+            type="text"
+            id="myHappiness"
+            class="happiness-input"
+            placeholder="例：安心して自由に楽しく暮らすこと"
+          >
+
+          <p class="optional-note">
+            「私にとっての幸せは〇〇です😊」<br>
+            そんな感じで気楽に書いてみてね。
+          </p>
+
+        </div>
+
+      </section>
+
+
       <!-- 終わりのメッセージ -->
       <section class="complete-box">
 
         <p class="complete-main">
-          今のお金への気持ちに気づけました💰🌿
+          お金の先にある幸せが、少し見えてきました🌈
         </p>
 
         <p>
-          好きでも、嫌いでも、怖くても大丈夫。
+          お金はゴールじゃなくて、<br>
+          あなたの安心や自由、楽しさを支えてくれる<br>
+          ひとつの道具なのかもしれないね😊
         </p>
 
         <p>
-          「好きだけど心配」のように、<br>
-          いろいろな気持ちが一緒にあってもいいんだよ😊
-        </p>
-
-        <p>
-          今の気持ちを分かってあげられたら、<br>
+          「私は本当はどうなりたい？」に気づけたら、<br>
           今日はそれだけで花まる🌼
         </p>
 
@@ -363,81 +559,110 @@
     document.addEventListener(
       "DOMContentLoaded",
       () => {
-        const checkboxes =
-          document.querySelectorAll(
-            'input[name="moneyFeeling"]'
-          );
 
-        const savedField =
-          document.getElementById(
-            "moneyFeelingChecks"
-          );
+        setupCheckGroup(
+          "moneyFeeling",
+          "moneyFeelingChecks"
+        );
 
-        if (!savedField) {
-          return;
-        }
+        setupCheckGroup(
+          "moneyWish",
+          "moneyWishChecks"
+        );
 
-
-        function restoreChecks() {
-          const savedValues =
-            savedField.value
-              .split("、")
-              .map(value => value.trim())
-              .filter(Boolean);
-
-          checkboxes.forEach(
-            checkbox => {
-              checkbox.checked =
-                savedValues.includes(
-                  checkbox.value
-                );
-            }
-          );
-        }
+      }
+    );
 
 
-        function updateSavedField() {
-          const selectedValues =
-            Array.from(checkboxes)
-              .filter(
-                checkbox => checkbox.checked
-              )
-              .map(
-                checkbox => checkbox.value
-              );
+    function setupCheckGroup(
+      checkboxName,
+      hiddenFieldId
+    ) {
 
-          savedField.value =
-            selectedValues.join("、");
+      const checkboxes =
+        document.querySelectorAll(
+          `input[name="${checkboxName}"]`
+        );
 
-          savedField.dispatchEvent(
-            new Event(
-              "input",
-              {
-                bubbles: true
-              }
+      const savedField =
+        document.getElementById(
+          hiddenFieldId
+        );
+
+      if (!savedField) {
+        return;
+      }
+
+
+      function restoreChecks() {
+
+        const savedValues =
+          savedField.value
+            .split("、")
+            .map(
+              value => value.trim()
             )
-          );
-
-          if (
-            typeof window.saveData === "function"
-          ) {
-            window.saveData(false);
-          }
-        }
-
+            .filter(Boolean);
 
         checkboxes.forEach(
           checkbox => {
-            checkbox.addEventListener(
-              "change",
-              updateSavedField
-            );
+
+            checkbox.checked =
+              savedValues.includes(
+                checkbox.value
+              );
+
           }
         );
-
-        restoreChecks();
       }
-    );
+
+
+      function updateSavedField() {
+
+        const selectedValues =
+          Array.from(checkboxes)
+            .filter(
+              checkbox =>
+                checkbox.checked
+            )
+            .map(
+              checkbox =>
+                checkbox.value
+            );
+
+        savedField.value =
+          selectedValues.join("、");
+
+        savedField.dispatchEvent(
+          new Event(
+            "input",
+            {
+              bubbles: true
+            }
+          )
+        );
+
+        if (
+          typeof window.saveData === "function"
+        ) {
+          window.saveData(false);
+        }
+      }
+
+
+      checkboxes.forEach(
+        checkbox => {
+
+          checkbox.addEventListener(
+            "change",
+            updateSavedField
+          );
+
+        }
+      );
+
+      restoreChecks();
+    }
   </script>
 
 </body>
