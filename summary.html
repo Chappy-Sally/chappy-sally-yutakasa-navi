@@ -172,13 +172,14 @@
        <div class="page-buttons">
 
      <a
-        href="https://chatgpt.com/g/g-6a521739bdc08191be5387b1993ba520-tiyatuhigpt"
-        class="next-btn"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        🐶 チャッピーGPTを開く
-      </a>
+       id="openChappyBtn"
+       href="https://chatgpt.com/g/g-6a521739bdc08191be5387b1993ba520-tiyatuhigpt"
+       class="next-btn"
+       target="_blank"
+       rel="noopener noreferrer"
+     >
+       🐶 チャッピーGPTを開く
+     </a>
 
        </div>
         
@@ -220,5 +221,34 @@
 
   </div>
 
+   <script>
+  "use strict";
+
+  document.addEventListener(
+    "DOMContentLoaded",
+    () => {
+
+      const openChappyBtn =
+        document.getElementById("openChappyBtn");
+
+      if (!openChappyBtn) {
+        return;
+      }
+
+      openChappyBtn.addEventListener(
+        "click",
+        () => {
+
+          localStorage.removeItem(
+            "chappySallyMoneySafetyNaviData"
+          );
+
+        }
+      );
+
+    }
+  );
+   </script>
+  
 </body>
 </html>
