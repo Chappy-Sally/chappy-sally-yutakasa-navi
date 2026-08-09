@@ -18,6 +18,9 @@ const savedFieldIds = [
   /* お金ってなんだろう？ */
   "moneyFeelingChecks",
   "moneyFeelingOther",
+  "moneyGoalChecks",
+  "moneyGoalOther",
+  "myHappiness",
 
   /* お金って、あなたにとってどんな存在？ */
   "moneyExistenceChecks",
