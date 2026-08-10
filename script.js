@@ -149,6 +149,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setupMissionButtons();
 
   setupMeter();
+  setupChappyMessage();
 });
 
 
@@ -680,5 +681,3 @@ function setupChappyMessage() {
   chappyMessage.innerHTML =
     messages[randomIndex];
 }
-
-);
