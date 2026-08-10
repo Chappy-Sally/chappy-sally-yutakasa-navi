@@ -639,3 +639,52 @@ function escapeHtml(text) {
 
 window.updateMeterText =
   updateMeterText;
+
+
+/* ========================================
+   今日のチャッピーのひとこと
+======================================== */
+
+document.addEventListener(
+  "DOMContentLoaded",
+  () => {
+
+    const chappyMessage =
+      document.getElementById(
+        "chappyMessage"
+      );
+
+    if (!chappyMessage) {
+      return;
+    }
+
+
+    const messages = [
+
+      "💰 お金は、しあわせそのものじゃなくて<br>しあわせを運んでくれるツール😊",
+
+      "🌿 不安な日は、<br>答えを出すより安心に戻るのが先でもいいよ。",
+
+      "🤭 お金さん、<br>今日もどこかで働いてるかもよ。",
+
+      "🌈 使ったお金は、<br>食べ物や安心や楽しさに姿を変えてるよ。",
+
+      "💖 豊かさは、<br>たくさん持つことより「ある」に気づくことから。",
+
+      "🐶 今日も大丈夫。<br>ひとつ気づけたら、それで花まる🌼"
+
+    ];
+
+
+    const randomIndex =
+      Math.floor(
+        Math.random() *
+        messages.length
+      );
+
+
+    chappyMessage.innerHTML =
+      messages[randomIndex];
+
+  }
+);
