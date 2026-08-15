@@ -9,18 +9,57 @@
   >
 
   <title>
-    内容をまとめる｜お金の不安を安心に戻すナビ
+    今の私のお金メモ｜お金の不安を安心に戻すナビ
   </title>
 
   <meta
     name="description"
-    content="これまで選んだ内容や入力したことを、ひとつの文章にまとめてコピーするページです。"
+    content="これまで選んだことや入力したことを、自分でやさしく振り返る最終確認ページです。"
   >
 
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="pages.css">
 
   <script src="storage.js" defer></script>
+
+  <style>
+    .summary-result {
+      margin-top: 18px;
+      padding: 20px 18px;
+      border: 2px solid #f0d8c3;
+      border-radius: 20px;
+      background: #fffaf6;
+      color: #6b4423;
+      font-size: 16px;
+      line-height: 1.9;
+      white-space: pre-wrap;
+      text-align: left;
+      word-break: break-word;
+    }
+
+    .summary-empty {
+      text-align: center;
+      color: #80634d;
+    }
+
+    .summary-guide {
+      margin-top: 18px;
+      padding: 16px;
+      border-radius: 18px;
+      background: #fffdf8;
+      text-align: center;
+      line-height: 1.8;
+      color: #6b4423;
+    }
+
+    .gpt-note {
+      margin-top: 12px;
+      font-size: 14px;
+      line-height: 1.7;
+      text-align: center;
+      color: #80634d;
+    }
+  </style>
 </head>
 
 <body>
@@ -38,71 +77,80 @@
         </p>
 
         <h1 class="page-title">
-          📝 内容をまとめる
+          🌿 今の私の<br>
+          お金メモ
         </h1>
 
         <p class="section-text">
           ここまで選んだことや入力したことを、<br>
-          ひとつの文章にまとめるよ😊🌿
+          最後にちょっと眺めてみよう😊
         </p>
 
         <p class="section-text">
-          全部のページをやっていなくても大丈夫。<br>
-          入力したところだけがまとめられるよ✨
+          新しく何かを書く必要はないよ。<br>
+          今の自分を確認するだけで大丈夫🌿
         </p>
 
       </header>
 
 
-      <!-- まとめについて -->
+      <!-- メッセージ -->
       <section class="message-box">
 
         <p class="main-message">
-          もう新しく書かなくて大丈夫😊
+          「私、こんなふうに感じてたんだ」
         </p>
 
         <p class="sub-message">
-          ここまでの内容をそのまままとめて、<br>
-          必要ならチャッピーGPTに持っていこう🐶🌈
+          並べて見てみるだけでも、<br>
+          自分の気持ちが少し見えやすくなることがあるよ😊
         </p>
 
       </section>
 
 
-      <!-- まとめられる内容 -->
+      <!-- 最終確認 -->
       <section class="work-block">
 
         <h2 class="work-title">
-          🌿 こんな内容がまとまるよ
+          📝 ここまでの私を見てみよう
         </h2>
 
-        <div class="example-box">
+        <p class="mini-text">
+          入力したところだけが表示されるよ。<br>
+          空欄だったところは気にしなくて大丈夫✨
+        </p>
 
-          <p>
-            💰 今のお金への気持ち
-          </p>
-
-          <p>
-            🌈 お金で手に入れたい幸せ
-          </p>
-
-          <p>
-            💭 お金が自分にとってどんな存在か
-          </p>
-
-          <p>
-            🌿 今のお金の不安や気持ち
-          </p>
-
-          <p>
-            🌱 見つけた豊かさ
-          </p>
-
+        <div
+          id="summaryResult"
+          class="summary-result"
+        >
+          読み込み中です😊
         </div>
 
-        <p class="mini-text">
-          書いていないところは入らないから、<br>
-          気楽に使ってね😊
+      </section>
+
+
+      <!-- やさしい振り返り -->
+      <section class="hint-box">
+
+        <h2 class="hint-title">
+          💡 眺めてみて、どうかな？
+        </h2>
+
+        <p>
+          正解を探さなくても大丈夫。
+        </p>
+
+        <p>
+          「私は安心したかったんだな」<br>
+          「自由が欲しかったんだな」<br>
+          「思っていたより不安だったかも」
+        </p>
+
+        <p>
+          そんなふうに、ひとつでも<br>
+          自分の気持ちに気づけたら花まるだよ😊🌼
         </p>
 
       </section>
@@ -112,13 +160,13 @@
       <section class="action-section">
 
         <h2 class="action-title">
-          🐶 まとめをコピーする
+          📝 この内容をコピーする
         </h2>
 
         <p class="mini-text">
-          下のボタンをタップすると、<br>
-          これまでの内容がひとつの文章として<br>
-          コピーされるよ😊
+          もう少し話してみたい時は、<br>
+          今の内容をコピーして<br>
+          チャッピーGPTに持っていけるよ🐶🌿
         </p>
 
         <div class="action-buttons">
@@ -128,15 +176,7 @@
             class="main-btn"
             type="button"
           >
-            📝 まとめをコピー
-          </button>
-
-          <button
-            id="resetBtn"
-            class="sub-btn"
-            type="button"
-          >
-            入力内容をすべてリセット
+            📝 この内容をコピー
           </button>
 
         </div>
@@ -150,62 +190,66 @@
       </section>
 
 
-      <!-- チャッピーGPTへの案内 -->
+      <!-- チャッピーGPT -->
       <section class="hint-box">
 
         <h2 class="hint-title">
-          🐶 コピーしたあとは
+          🐶 もう少し話してみる？
         </h2>
 
         <p>
-          チャッピーGPTを開いて、<br>
-          コピーした文章をそのまま貼り付けてね😊
+          コピーした文章をチャッピーGPTに貼り付けると、<br>
+          今の気持ちを一緒に整理したり、<br>
+          もう少し深く見ていけるよ😊
         </p>
 
-        <p>
-          選んだ内容をもとに、<br>
-          今の気持ちや思い込み、<br>
-          本当はどんな安心が欲しかったのかを<br>
-          一緒に見ていけるよ🌿
+        <div class="page-buttons">
+
+          <a
+            id="openChappyBtn"
+            href="https://chatgpt.com/g/g-6a521739bdc08191be5387b1993ba520-tiyatuhigpt"
+            class="next-btn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            🐶 チャッピーGPTを開く
+          </a>
+
+        </div>
+
+        <p class="gpt-note">
+          チャッピーGPTを開いたら、<br>
+          コピーした文章をそのまま貼り付けてね🌿
         </p>
 
-       <div class="page-buttons">
-
-     <a
-       id="openChappyBtn"
-       href="https://chatgpt.com/g/g-6a521739bdc08191be5387b1993ba520-tiyatuhigpt"
-       class="next-btn"
-       target="_blank"
-       rel="noopener noreferrer"
-     >
-       🐶 チャッピーGPTを開く
-     </a>
-
-       </div>
-        
       </section>
 
 
-      <!-- 終わりのメッセージ -->
+      <!-- 終わり -->
       <section class="complete-box">
 
         <p class="complete-main">
-          ここまで見つけたことだけで十分だよ🌼
+          今の自分を、ここまで見つけられました🌼
         </p>
 
         <p>
-          全部答えなくても大丈夫。
+          すぐに答えが出なくても大丈夫。
         </p>
 
         <p>
-          ひとつでも自分の気持ちに気づけたら、<br>
-          今日はそれだけで花まる😊🌈
+          自分が何を感じていて、<br>
+          本当は何を大切にしたいのか。
+        </p>
+
+        <p>
+          それに気づくことも、<br>
+          安心に戻るためのひとつの一歩だよ😊🌈
         </p>
 
       </section>
 
 
-      <!-- ページ移動 -->
+      <!-- メニューへ -->
       <div class="page-buttons">
 
         <a
@@ -221,34 +265,75 @@
 
   </div>
 
-   <script>
-  "use strict";
 
-  document.addEventListener(
-    "DOMContentLoaded",
-    () => {
+  <script>
+    "use strict";
 
-      const openChappyBtn =
-        document.getElementById("openChappyBtn");
+    document.addEventListener(
+      "DOMContentLoaded",
+      () => {
 
-      if (!openChappyBtn) {
-        return;
-      }
+        /* =====================================
+           入力内容を画面に表示
+        ====================================== */
 
-      openChappyBtn.addEventListener(
-        "click",
-        () => {
-
-          localStorage.removeItem(
-            "chappySallyMoneySafetyNaviData"
+        const summaryResult =
+          document.getElementById(
+            "summaryResult"
           );
 
-        }
-      );
+        if (
+          summaryResult &&
+          typeof window.createSummaryText === "function"
+        ) {
 
-    }
-  );
-   </script>
-  
+          const summaryText =
+            window.createSummaryText();
+
+          if (summaryText.trim()) {
+
+            summaryResult.textContent =
+              summaryText;
+
+          } else {
+
+            summaryResult.textContent =
+              "まだ入力された内容はないみたい😊";
+
+            summaryResult.classList.add(
+              "summary-empty"
+            );
+          }
+        }
+
+
+        /* =====================================
+           チャッピーGPTを開いたら
+           次回用に入力内容をリセット
+        ====================================== */
+
+        const openChappyBtn =
+          document.getElementById(
+            "openChappyBtn"
+          );
+
+        if (openChappyBtn) {
+
+          openChappyBtn.addEventListener(
+            "click",
+            () => {
+
+              localStorage.removeItem(
+                "chappySallyMoneySafetyNaviData"
+              );
+
+            }
+          );
+        }
+
+      }
+    );
+  </script>
+
 </body>
 </html>
